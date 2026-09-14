@@ -23,15 +23,12 @@ keywords:
   - Model Confidence Set
   - Viet Nam
 authors:
+  - family-names: "Truong Tan"
+    given-names: "Quan"
+    orcid: "https://orcid.org/0009-0001-0241-5512"
+    affiliation: "University of Economics, Hue University, 99 Ho Dac Di Street, Hue City, Viet Nam"
   - family-names: "Tran Thai"
     given-names: "Hoa"
     email: "tranthaihoa@hueuni.edu.vn"
-    affiliation: "University of Economics, Hue University, Hue, Viet Nam; University of Sciences, Hue University, Hue, Viet Nam"
-  - family-names: "Le"
-    given-names: "Thanh Manh"
-    email: "lmthanh@hueuni.edu.vn"
-    affiliation: "University of Sciences, Hue University, Hue, Viet Nam"
-  - family-names: "Nguyen-Dinh"
-    given-names: "Cuong H."
-    email: "ndhcuong@ufm.edu.vn"
-    affiliation: "University of Finance and Marketing, Hue, Viet Nam"
+    orcid: "https://orcid.org/0009-0006-2405-4697"
+    affiliation: "University of Economics, Hue University, 99 Ho Dac Di Street, Hue City, Viet Nam"

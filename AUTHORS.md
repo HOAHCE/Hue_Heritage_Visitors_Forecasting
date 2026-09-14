@@ -1,15 +1,12 @@
 # Authors
 
-**Hoa Tran Thai** <sup>1,2</sup>, **Thanh Manh Le** <sup>2</sup>, **Cuong H. Nguyen-Dinh** <sup>3,\*</sup>
+**Quan Truong Tan** <sup>1</sup>, **Hoa Tran Thai** <sup>1,\*</sup>
 
-<sup>1</sup> University of Economics, Hue University, Hue, Viet Nam
-<sup>2</sup> University of Sciences, Hue University, Hue, Viet Nam
-<sup>3</sup> University of Finance and Marketing, Hue, Viet Nam
+<sup>1</sup> University of Economics, Hue University, 99 Ho Dac Di Street, Hue City, Viet Nam
 
 <sup>\*</sup> Corresponding author
 
-| Author | Affiliation(s) | Email |
-|---|---|---|
-| Hoa Tran Thai | University of Economics, Hue University; University of Sciences, Hue University | tranthaihoa@hueuni.edu.vn |
-| Thanh Manh Le | University of Sciences, Hue University | lmthanh@hueuni.edu.vn |
-| Cuong H. Nguyen-Dinh (corresponding author) | University of Finance and Marketing | ndhcuong@ufm.edu.vn |
+| Author | Affiliation | ORCID | Email |
+|---|---|---|---|
+| Quan Truong Tan | University of Economics, Hue University, 99 Ho Dac Di Street, Hue City, Viet Nam | [0009-0001-0241-5512](https://orcid.org/0009-0001-0241-5512) | — |
+| Hoa Tran Thai (corresponding author) | University of Economics, Hue University, 99 Ho Dac Di Street, Hue City, Viet Nam | [0009-0006-2405-4697](https://orcid.org/0009-0006-2405-4697) | tranthaihoa@hueuni.edu.vn |
