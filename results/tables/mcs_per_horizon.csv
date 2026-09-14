@@ -1,0 +1,73 @@
+destination,site,horizon,model,MCS_pvalue,in_MCS_90
+Lăng vua Khải Định,Khai Dinh Tomb,1,RF,1.0,True
+Lăng vua Khải Định,Khai Dinh Tomb,1,ARIMAX,0.312,True
+Lăng vua Khải Định,Khai Dinh Tomb,1,DLM,0.312,True
+Lăng vua Khải Định,Khai Dinh Tomb,1,ETS,0.312,True
+Lăng vua Khải Định,Khai Dinh Tomb,1,TFT,0.312,True
+Lăng vua Khải Định,Khai Dinh Tomb,1,SeasonalNaive7,0.101,True
+Lăng vua Khải Định,Khai Dinh Tomb,1,SARIMAX,0.014,False
+Lăng vua Khải Định,Khai Dinh Tomb,1,LSTM,0.001,False
+Lăng vua Khải Định,Khai Dinh Tomb,7,TFT,1.0,True
+Lăng vua Khải Định,Khai Dinh Tomb,7,ARIMAX,0.096,False
+Lăng vua Khải Định,Khai Dinh Tomb,7,RF,0.096,False
+Lăng vua Khải Định,Khai Dinh Tomb,7,DLM,0.074,False
+Lăng vua Khải Định,Khai Dinh Tomb,7,ETS,0.074,False
+Lăng vua Khải Định,Khai Dinh Tomb,7,SeasonalNaive7,0.064,False
+Lăng vua Khải Định,Khai Dinh Tomb,7,LSTM,0.045,False
+Lăng vua Khải Định,Khai Dinh Tomb,7,SARIMAX,0.022,False
+Lăng vua Khải Định,Khai Dinh Tomb,30,TFT,1.0,True
+Lăng vua Khải Định,Khai Dinh Tomb,30,DLM,0.003,False
+Lăng vua Khải Định,Khai Dinh Tomb,30,LSTM,0.003,False
+Lăng vua Khải Định,Khai Dinh Tomb,30,RF,0.003,False
+Lăng vua Khải Định,Khai Dinh Tomb,30,ARIMAX,0.0,False
+Lăng vua Khải Định,Khai Dinh Tomb,30,ETS,0.0,False
+Lăng vua Khải Định,Khai Dinh Tomb,30,SARIMAX,0.0,False
+Lăng vua Khải Định,Khai Dinh Tomb,30,SeasonalNaive7,0.0,False
+Lăng vua Minh Mạng,Minh Mang Tomb,1,RF,1.0,True
+Lăng vua Minh Mạng,Minh Mang Tomb,1,ETS,0.628,True
+Lăng vua Minh Mạng,Minh Mang Tomb,1,TFT,0.628,True
+Lăng vua Minh Mạng,Minh Mang Tomb,1,DLM,0.327,True
+Lăng vua Minh Mạng,Minh Mang Tomb,1,ARIMAX,0.08,False
+Lăng vua Minh Mạng,Minh Mang Tomb,1,SeasonalNaive7,0.08,False
+Lăng vua Minh Mạng,Minh Mang Tomb,1,SARIMAX,0.051,False
+Lăng vua Minh Mạng,Minh Mang Tomb,1,LSTM,0.006,False
+Lăng vua Minh Mạng,Minh Mang Tomb,7,TFT,1.0,True
+Lăng vua Minh Mạng,Minh Mang Tomb,7,ETS,0.21,True
+Lăng vua Minh Mạng,Minh Mang Tomb,7,RF,0.21,True
+Lăng vua Minh Mạng,Minh Mang Tomb,7,SeasonalNaive7,0.21,True
+Lăng vua Minh Mạng,Minh Mang Tomb,7,DLM,0.113,True
+Lăng vua Minh Mạng,Minh Mang Tomb,7,SARIMAX,0.054,False
+Lăng vua Minh Mạng,Minh Mang Tomb,7,LSTM,0.007,False
+Lăng vua Minh Mạng,Minh Mang Tomb,7,ARIMAX,0.004,False
+Lăng vua Minh Mạng,Minh Mang Tomb,30,TFT,1.0,True
+Lăng vua Minh Mạng,Minh Mang Tomb,30,ETS,0.012,False
+Lăng vua Minh Mạng,Minh Mang Tomb,30,RF,0.012,False
+Lăng vua Minh Mạng,Minh Mang Tomb,30,DLM,0.004,False
+Lăng vua Minh Mạng,Minh Mang Tomb,30,SARIMAX,0.004,False
+Lăng vua Minh Mạng,Minh Mang Tomb,30,SeasonalNaive7,0.003,False
+Lăng vua Minh Mạng,Minh Mang Tomb,30,ARIMAX,0.0,False
+Lăng vua Minh Mạng,Minh Mang Tomb,30,LSTM,0.0,False
+Đại Nội,Imperial City (Dai Noi),1,RF,1.0,True
+Đại Nội,Imperial City (Dai Noi),1,DLM,0.57,True
+Đại Nội,Imperial City (Dai Noi),1,ETS,0.448,True
+Đại Nội,Imperial City (Dai Noi),1,ARIMAX,0.11,True
+Đại Nội,Imperial City (Dai Noi),1,TFT,0.033,False
+Đại Nội,Imperial City (Dai Noi),1,SeasonalNaive7,0.017,False
+Đại Nội,Imperial City (Dai Noi),1,LSTM,0.002,False
+Đại Nội,Imperial City (Dai Noi),1,SARIMAX,0.0,False
+Đại Nội,Imperial City (Dai Noi),7,TFT,1.0,True
+Đại Nội,Imperial City (Dai Noi),7,RF,0.226,True
+Đại Nội,Imperial City (Dai Noi),7,ETS,0.222,True
+Đại Nội,Imperial City (Dai Noi),7,SeasonalNaive7,0.222,True
+Đại Nội,Imperial City (Dai Noi),7,DLM,0.059,False
+Đại Nội,Imperial City (Dai Noi),7,ARIMAX,0.051,False
+Đại Nội,Imperial City (Dai Noi),7,LSTM,0.033,False
+Đại Nội,Imperial City (Dai Noi),7,SARIMAX,0.0,False
+Đại Nội,Imperial City (Dai Noi),30,TFT,1.0,True
+Đại Nội,Imperial City (Dai Noi),30,DLM,0.02,False
+Đại Nội,Imperial City (Dai Noi),30,RF,0.02,False
+Đại Nội,Imperial City (Dai Noi),30,ARIMAX,0.013,False
+Đại Nội,Imperial City (Dai Noi),30,ETS,0.0,False
+Đại Nội,Imperial City (Dai Noi),30,LSTM,0.0,False
+Đại Nội,Imperial City (Dai Noi),30,SARIMAX,0.0,False
+Đại Nội,Imperial City (Dai Noi),30,SeasonalNaive7,0.0,False

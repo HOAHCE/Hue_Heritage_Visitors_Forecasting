@@ -1,0 +1,10 @@
+destination,site,horizon,best_model,best_MAE,best_CI95,runner_up,runner_MAE,separated_95CI
+Lăng vua Khải Định,Khai Dinh Tomb,1,RF,244.3,"[243, 245]",ETS,256.8,True
+Lăng vua Khải Định,Khai Dinh Tomb,7,TFT,324.5,"[296, 353]",RF,396.7,True
+Lăng vua Khải Định,Khai Dinh Tomb,30,TFT,352.2,"[315, 390]",RF,504.0,True
+Lăng vua Minh Mạng,Minh Mang Tomb,1,RF,134.7,"[134, 135]",ETS,135.7,True
+Lăng vua Minh Mạng,Minh Mang Tomb,7,TFT,164.5,"[151, 178]",RF,178.1,False
+Lăng vua Minh Mạng,Minh Mang Tomb,30,TFT,177.3,"[148, 207]",RF,229.4,True
+Đại Nội,Imperial City (Dai Noi),1,RF,578.6,"[575, 582]",ETS,630.1,True
+Đại Nội,Imperial City (Dai Noi),7,TFT,882.0,"[831, 933]",RF,1011.2,True
+Đại Nội,Imperial City (Dai Noi),30,TFT,957.6,"[835, 1081]",ARIMAX,1492.4,True

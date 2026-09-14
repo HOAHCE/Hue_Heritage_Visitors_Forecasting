@@ -1,0 +1,27 @@
+# Python 3.10+ recommended. A CUDA-capable GPU is strongly recommended for the
+# Temporal Fusion Transformer (10 seeds x 3 sites).
+
+# --- core scientific stack ---
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+matplotlib>=3.7
+
+# --- classical / statistical forecasting ---
+statsmodels>=0.14          # ETS, SARIMAX, ARIMAX
+arch>=6.2                  # Model Confidence Set (Hansen, Lunde & Nason, 2011)
+tbats>=1.1                 # optional TBATS baseline
+pmdarima>=2.0              # optional; statsmodels is used as fallback
+
+# --- machine learning / interpretation ---
+scikit-learn>=1.3          # RandomForest, KNNImputer
+shap>=0.44                 # TreeExplainer for RandomForest
+
+# --- deep learning ---
+torch>=2.0
+lightning>=2.1
+pytorch-forecasting>=1.0   # TemporalFusionTransformer, TimeSeriesDataSet
+optuna>=3.4                # TFT hyper-parameter search
+
+# --- calendar features ---
+holidays>=0.40             # Vietnamese public holidays

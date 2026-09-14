@@ -1,0 +1,111 @@
+# Results
+
+Everything here is **regenerated** by `code/Visitors_Forecasting_RF_TFT_perHorizon_v5.ipynb`.
+The files are committed so that the manuscript's numbers and figures can be checked
+without re-running several GPU-hours of training.
+
+Naming: Vietnamese site names appear in the `destination` column, English names in the
+`site` column; figure filenames use ASCII slugs `dai_noi`, `minh_mang`, `khai_dinh`.
+
+---
+
+## `tables/` — 12 CSV files
+
+| File | Rows | Description |
+|---|---|---|
+| `best_per_horizon.csv` | 9 | **Headline table.** Best model per site × horizon with mean MAE, 95% CI, runner-up, and whether the two CIs are disjoint (`separated_95CI`). |
+| `crossover_check.csv` | 3 | The RF ↔ TFT crossover per site: champion at h=1, champion at h=30, and how many of the 10 seeds reproduce it. |
+| `metrics_agg.csv` | 216 | Mean, SD and 95% CI across seeds for MAE / RMSE / MAPE, by site × model × horizon. |
+| `metrics_by_seed.csv` | 720 | Raw per-seed metrics (MAE, RMSE, MSE, MAPE, R²) — the input to every aggregation. |
+| `rank_by_seed.csv` | 720 | Model rank by MAE within each site × horizon × seed; used for the stability analysis. |
+| `dm_best_per_horizon.csv` | 63 | Diebold-Mariano tests of the per-horizon champion against each other model. |
+| `mcs_per_horizon.csv` | 72 | Model Confidence Set p-values and 90% membership, by site × horizon. |
+| `tft_quantile_eval.csv` | 9 | TFT probabilistic calibration: mean pinball loss, PICP and MPIW at nominal 80% and 95%. |
+| `compute_cost.csv` | 8 | Mean/SD fit time and mean inference time per model. |
+| `shap_importance_dai_noi.csv` | 17 | Mean absolute SHAP value per feature — Imperial City. |
+| `shap_importance_minh_mang.csv` | 17 | Mean absolute SHAP value per feature — Minh Mang Tomb. |
+| `shap_importance_khai_dinh.csv` | 17 | Mean absolute SHAP value per feature — Khai Dinh Tomb. |
+
+### Selected column definitions
+
+**`best_per_horizon.csv`**
+
+| Column | Description |
+|---|---|
+| `destination` / `site` | Site name, Vietnamese / English |
+| `horizon` | Forecast horizon in days (1, 7, 30) |
+| `best_model` | Lowest mean MAE across the 10 seeds |
+| `best_MAE`, `best_CI95` | Its mean MAE and 95% confidence interval |
+| `runner_up`, `runner_MAE` | Second-placed model and its mean MAE |
+| `separated_95CI` | `True` if the champion's CI upper bound is below the runner-up's lower bound |
+
+**`dm_best_per_horizon.csv`**
+
+| Column | Description |
+|---|---|
+| `DM` | Diebold-Mariano statistic (negative ⇒ champion has lower loss) |
+| `p_value` | Two-sided p-value |
+| `champion_significantly_better` | `True` when `DM < 0` and `p < 0.05` |
+
+Blank `DM` / `p_value` cells occur where the loss-differential variance was non-positive
+and the statistic is undefined; those pairs are reported as not significant.
+
+**`mcs_per_horizon.csv`**
+
+| Column | Description |
+|---|---|
+| `MCS_pvalue` | Model Confidence Set p-value |
+| `in_MCS_90` | `True` if the model belongs to the 90% superior set |
+
+**`tft_quantile_eval.csv`**
+
+| Column | Description |
+|---|---|
+| `mean_pinball` | Pinball loss averaged over the 7 quantiles (a CRPS approximation) |
+| `PICP80` / `PICP95` | Empirical coverage (%) of `[q0.1, q0.9]` / `[q0.02, q0.98]` |
+| `nominal80` / `nominal95` | Nominal coverage (80 / 95) for comparison |
+| `MPIW80` / `MPIW95` | Mean prediction-interval width, in visitors |
+
+Coverage falls below nominal at every site and horizon — the interval under-calibration
+reported in the manuscript.
+
+---
+
+## `figures/` — 22 PNG files (120 dpi)
+
+| Pattern | Count | Description |
+|---|---|---|
+| `mae_ci_{site}.png` | 3 | MAE ± 95% CI versus horizon for RF, TFT and DLM — shows the crossover. |
+| `bestfit_{site}_h{1,7,30}.png` | 9 | Per-horizon champion's forecast versus actuals across the test block. |
+| `shap_summary_{site}.png` | 3 | SHAP beeswarm summary (top 15 features). |
+| `shap_bar_{site}.png` | 3 | SHAP mean(\|value\|) feature importance (top 15). |
+| `tft_coverage_{site}.png` | 3 | TFT empirical versus nominal interval coverage. |
+| `compute_cost.png` | 1 | Mean training time per model (log scale). |
+
+`{site}` ∈ `dai_noi`, `minh_mang`, `khai_dinh`.
+
+---
+
+## `predictions/`
+
+| File | Description |
+|---|---|
+| `tft_quantiles.csv` | TFT quantile forecasts: `destination`, `origin`, `horizon`, `y_true`, the seven quantile columns `q0.02 … q0.98`, and `seed`. Input to the probabilistic evaluation. |
+| `multi_predictions.csv` | Point forecasts from every model × site × horizon × origin × seed (`destination`, `origin`, `horizon`, `y_true`, `y_pred`, `model`, `seed`). Input to `metrics_by_seed.csv`, the Diebold-Mariano tests and the MCS. |
+
+`origin` is the `time_idx` of the forecast origin; the forecast target day is
+`origin + horizon - 1`.
+
+> **`multi_predictions.csv` is not included in this repository.** At ~8.5 MB it exceeded
+> the transfer limit of the tooling used to assemble the repository. It is fully
+> regenerated by Section 6.1 of the notebook, and every table derived from it
+> (`metrics_by_seed.csv`, `metrics_agg.csv`, `dm_best_per_horizon.csv`,
+> `mcs_per_horizon.csv`, `rank_by_seed.csv`) **is** included, so no published result
+> depends on having it. See the repository issue tracker or contact the corresponding
+> author if you need the raw file directly.
+
+---
+
+## Licence
+
+Results are released under **CC BY 4.0** — see [`../LICENSE-DATA`](../LICENSE-DATA).
