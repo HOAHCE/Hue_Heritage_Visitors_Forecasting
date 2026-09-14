@@ -2,7 +2,7 @@
 
 **Horizon-specific model selection for daily visitor demand at the Complex of Hue Monuments, Viet Nam**
 
-Data, code and results supporting the manuscript submitted to *PeerJ Computer Science*.
+Data, code and results supporting the manuscript
 
 ---
 
