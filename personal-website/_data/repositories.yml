@@ -1,0 +1,10 @@
+# Dữ liệu cho trang /repositories/
+github_users:
+  - HOAHCE
+
+repo_description_lines_max: 2
+
+github_repos:
+  - HOAHCE/Hue_Heritage_Visitors_Forecasting
+  - HOAHCE/Tourist-demand-forcasting
+  - HOAHCE/Decomposition-Ensembles-for-Bitcoin-Price-Forecasting

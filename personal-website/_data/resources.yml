@@ -1,0 +1,11 @@
+# Tài liệu dùng chung cho nhiều học phần (đặt file trong assets/pdf/).
+# Hiển thị ở cuối trang /teaching/ và /vi/giang-day/.
+# TODO: thay bằng tài liệu thật, hoặc xoá hết nội dung dưới (giữ lại file rỗng) nếu chưa cần.
+
+- name: "Hướng dẫn cài đặt Python và Jupyter"
+  url: /assets/pdf/example_pdf.pdf
+  description: "Dành cho sinh viên mới bắt đầu thực hành."
+
+- name: "Quy định trình bày báo cáo chuyên đề"
+  url: /assets/pdf/example_pdf.pdf
+  description: "Mẫu và yêu cầu định dạng."

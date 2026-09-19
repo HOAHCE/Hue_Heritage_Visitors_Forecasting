@@ -1,0 +1,7 @@
+# Khai báo đồng tác giả để al-folio tự tạo liên kết tới trang cá nhân của họ
+# trong danh mục công bố. Bỏ trống cũng không sao.
+# Cú pháp:
+#
+# "nguyen":
+#   - firstname: ["Van A", "V. A."]
+#     url: https://example.com

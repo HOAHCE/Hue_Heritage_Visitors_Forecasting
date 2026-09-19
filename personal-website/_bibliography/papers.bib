@@ -1,0 +1,47 @@
+---
+---
+
+@comment{
+
+  CÁCH THÊM MỘT CÔNG BỐ MỚI
+  -------------------------
+  Chỉ cần dán thêm một khối entry (article, inproceedings, book, incollection...)
+  vào file này. Trang /publications/ và /vi/nghien-cuu/ sẽ tự cập nhật, tự nhóm
+  theo năm, và tự in đậm tên anh trong danh sách tác giả.
+
+  Cách nhanh nhất để lấy khối BibTeX: bấm nút "Cite" trên Google Scholar hoặc
+  trên trang của tạp chí, chọn BibTeX, rồi dán vào đây.
+
+  Các trường riêng của al-folio (đều KHÔNG bắt buộc):
+    abbr        = {JTR}                     -> nhãn nhỏ bên trái
+    selected    = {true}                    -> bài chọn lọc, hiện trên trang chủ
+    bibtex_show = {true}                    -> nút xem mã BibTeX
+    pdf         = {ten-file.pdf}            -> file đặt trong assets/pdf/
+    slides      = {ten-slide.pdf}           -> file đặt trong assets/pdf/
+    code        = {https://github.com/...}  -> link mã nguồn
+    html        = {https://doi.org/...}     -> link bài báo
+    preview     = {ten-anh.png}             -> ảnh trong assets/img/publication_preview/
+    abstract    = {Tóm tắt...}              -> nút xem tóm tắt
+
+  Tên tác giả viết theo dạng {Họ, Tên đệm Tên}, ví dụ: {Tran, Thai Hoa}.
+  Nhiều tác giả thì nối bằng chữ "and".
+  Nhờ khai báo scholar.last_name trong _config.yml, tên anh tự được làm nổi bật.
+
+  LƯU Ý: mọi ghi chú trong file .bib phải nằm trong khối comment như thế này.
+  Viết chữ tự do bên ngoài có thể làm hỏng quá trình build.
+
+}
+
+@article{TODO_thay_bang_cong_bo_that,
+  abbr         = {TODO},
+  title        = {TODO: thay khối này bằng một công bố thật của anh},
+  author       = {Tran, Thai Hoa},
+  journal      = {TODO: tên tạp chí},
+  volume       = {1},
+  number       = {1},
+  pages        = {1--10},
+  year         = {2024},
+  selected     = {true},
+  bibtex_show  = {true},
+  abstract     = {TODO: dán tóm tắt bài báo vào đây, hoặc xoá dòng này.}
+}

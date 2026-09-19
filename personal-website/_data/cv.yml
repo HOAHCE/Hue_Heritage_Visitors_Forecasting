@@ -1,0 +1,82 @@
+# Dữ liệu cho trang /cv/. Mỗi mục trong "sections" là một khối trên trang CV.
+# Xoá bớt hoặc thêm mục đều được — trang tự sinh lại theo file này.
+# TODO: điền đầy đủ thông tin thật; các chỗ để trống "" là chỗ cần bổ sung.
+
+cv:
+  name: Trần Thái Hòa
+  label: Giảng viên / Lecturer
+  email: "" # TODO: email muốn công khai
+  location: Huế, Việt Nam
+  image: ""
+  summary: >
+    Giảng viên Trường Đại học Kinh tế, Đại học Huế. Nghiên cứu về dự báo nhu cầu du lịch,
+    chuỗi thời gian và ứng dụng khoa học dữ liệu trong kinh tế.
+
+  social_networks:
+    - network: GitHub
+      username: HOAHCE
+
+  address:
+    street: 99 Hồ Đắc Di
+    city: Thành phố Huế
+    region: Thừa Thiên Huế
+    postalCode: ""
+    countryCode: VN
+
+  sections:
+    # ----- HỌC TẬP -----
+    Education:
+      # TODO: thay bằng quá trình học tập thật của anh
+      - institution: "" # ví dụ: Trường Đại học Kinh tế, Đại học Huế
+        location: ""
+        url: ""
+        area: "" # chuyên ngành
+        studyType: "" # Cử nhân / Thạc sĩ / Tiến sĩ
+        start_date:
+        end_date:
+        courses: ""
+        highlights:
+          - "Tên luận văn/luận án (nếu có)."
+
+    # ----- CÔNG TÁC -----
+    Experience:
+      - company: Trường Đại học Kinh tế, Đại học Huế
+        position: Giảng viên
+        location: Huế, Việt Nam
+        start_date: # TODO: năm bắt đầu công tác
+        end_date: hiện nay
+        summary: ""
+        highlights:
+          - "Giảng dạy các học phần: ..." # TODO
+          - "Hướng dẫn khoá luận tốt nghiệp." # TODO
+
+    # ----- HƯỚNG NGHIÊN CỨU -----
+    Interests:
+      - name: Dự báo & chuỗi thời gian
+        icon: fa-solid fa-chart-line
+        keywords: "Tourism demand forecasting, time series, decomposition–ensemble, machine learning"
+
+      - name: Kinh tế du lịch
+        icon: fa-solid fa-landmark
+        keywords: "Heritage tourism, visitor demand, destination management"
+
+    # ----- KỸ NĂNG -----
+    Skills:
+      - name: Phân tích dữ liệu
+        level: ""
+        icon: fa-solid fa-code
+        keywords: "Python, R, Jupyter, pandas, scikit-learn, statsmodels"
+
+    # ----- NGOẠI NGỮ -----
+    Languages:
+      - name: Tiếng Việt
+        summary: "Tiếng mẹ đẻ"
+      - name: Tiếng Anh
+        summary: "" # TODO: trình độ
+
+    # ----- GIẢI THƯỞNG / CHỨNG CHỈ (xoá nếu chưa có) -----
+    Certificates:
+      - name: "" # TODO
+        date:
+        issuer: ""
+        icon: fa-solid fa-certificate

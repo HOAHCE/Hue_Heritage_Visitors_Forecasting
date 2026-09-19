@@ -1,0 +1,20 @@
+# Đề tài / dự án nghiên cứu khoa học.
+# Hiển thị ở cuối trang /publications/ (tiếng Anh) và /vi/nghien-cuu/ (tiếng Việt).
+# Các trường *_vi là bản tiếng Việt; nếu bỏ trống thì trang tiếng Việt dùng bản tiếng Anh.
+# Thêm đề tài mới = thêm một khối "- title:" nữa, không cần sửa code.
+
+# TODO: thay toàn bộ ví dụ dưới đây bằng đề tài thật của anh (lấy từ CSDL Khoa học ĐH Huế)
+- title: "Forecasting visitor demand for Hue heritage sites"
+  title_vi: "Dự báo lượng khách đến các điểm di sản Huế"
+  code: "DHH-2024-XX-XX"       # mã số đề tài, bỏ trống nếu không có
+  level: "Hue University"
+  level_vi: "Cấp Đại học Huế"
+  role: "Principal investigator"
+  role_vi: "Chủ nhiệm đề tài"
+  start_year: 2024
+  end_year: 2025
+  status: "Ongoing"
+  status_vi: "Đang thực hiện"
+  description: "Short one-line description of the project."
+  description_vi: "Mô tả ngắn một dòng về đề tài."
+  url: # link tới trang đề tài, nếu có

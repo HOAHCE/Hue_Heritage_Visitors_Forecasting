@@ -1,0 +1,27 @@
+# Các liên kết hồ sơ hiển thị dưới ảnh đại diện và (tuỳ chọn) trên navbar.
+# Thứ tự khai báo ở đây chính là thứ tự hiển thị.
+# Danh sách key hỗ trợ: https://github.com/george-gca/jekyll-socials
+
+# TODO: bỏ dấu # ở đầu dòng dưới và điền email anh MUỐN công khai trên trang.
+#       Nên dùng email công vụ của trường thay vì email cá nhân.
+# email: ten.email@hce.edu.vn
+
+orcid_id: 0009-0006-2405-4697
+scholar_userid: mYEjZ20AAAAJ
+github_username: HOAHCE
+
+# TODO: bỏ dấu # và điền nếu anh có các hồ sơ sau
+# linkedin_username:
+# researchgate_profile:
+# scopus_id:
+# publons_id:
+
+rss_icon: true # biểu tượng RSS cho blog
+
+# TODO: đặt file CV (PDF) vào assets/pdf/ rồi điền đường dẫn vào đây
+# cv_pdf: /assets/pdf/cv-tran-thai-hoa.pdf
+
+custom_social: # liên kết tới hồ sơ trên CSDL Khoa học Đại học Huế
+  logo: https://csdlkhoahoc.hueuni.edu.vn/favicon.ico
+  title: CSDL Khoa học Đại học Huế
+  url: https://csdlkhoahoc.hueuni.edu.vn/index.php/scientist/detail/id/2119
