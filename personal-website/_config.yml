@@ -345,8 +345,10 @@ jekyll-archives:
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
-display_tags: ["dự-báo", "du-lịch", "python", "giảng-dạy"] # các thẻ hiển thị đầu trang blog
-display_categories: ["nghiên-cứu", "giảng-dạy"] # các chuyên mục hiển thị đầu trang blog
+# Dùng chữ KHÔNG DẤU cho thẻ và chuyên mục: chúng trở thành đường dẫn
+# (/blog/tag/du-bao/), có dấu sẽ bị mã hoá thành %C3%A1... khi chia sẻ.
+display_tags: ["du-bao", "du-lich", "python", "giang-day"]
+display_categories: ["nghien-cuu", "giang-day"]
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

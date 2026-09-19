@@ -94,14 +94,15 @@ layout: post
 title: Tiêu đề bài viết
 date: 2025-11-20 09:00:00 +0700
 description: Mô tả ngắn hiện ở danh sách bài viết.
-tags: [dự-báo, python]
-categories: [nghiên-cứu]
+tags: [du-bao, python]
+categories: [nghien-cuu]
 ---
 
 Nội dung viết bằng Markdown.
 ```
 
-- `tags` và `categories` muốn hiện ở đầu trang blog thì khai báo thêm trong
+- `tags` và `categories` nên viết **không dấu**, vì chúng trở thành đường dẫn
+  (`/blog/tag/du-bao/`). Muốn chúng hiện ở đầu trang blog thì khai báo thêm trong
   `_config.yml` (mục `display_tags`, `display_categories`).
 - Chèn ảnh: đặt ảnh vào `assets/img/`, rồi dùng `![Chú thích](/assets/img/ten-anh.jpg)`.
 
