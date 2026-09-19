@@ -50,32 +50,41 @@ Nhánh `gh-pages` được workflow tự tạo sau lần build đầu tiên. N�
 
 Sau đó trang chạy tại `https://HOAHCE.github.io`.
 
-### Bước 4 — Trỏ tên miền riêng
+### Bước 4 — Trỏ tên miền `tranthaihoa.id.vn`
 
-**a) Tại GitHub:** Settings → Pages → **Custom domain** → điền tên miền (ví dụ `tranthaihoa.vn`)
-→ **Save**. GitHub tự tạo file `CNAME` trong repo.
+Mã nguồn đã có sẵn file `CNAME` chứa `tranthaihoa.id.vn`, và `_config.yml` đã đặt
+`url: https://tranthaihoa.id.vn`. Chỉ còn hai việc:
 
-**b) Tại nhà cung cấp tên miền**, tạo các bản ghi DNS:
+**a) Tại Tenten.vn** — đăng nhập https://tenten.vn → **Quản lý tên miền** → chọn
+`tranthaihoa.id.vn` → **Quản lý DNS** (hoặc *Cấu hình bản ghi DNS*). Xoá các bản ghi A
+đang trỏ tới trang chờ (parking) của Tenten, rồi thêm:
 
-| Loại | Host/Name | Giá trị |
-| --- | --- | --- |
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| CNAME | `www` | `HOAHCE.github.io.` |
+| Loại | Host / Tên | Giá trị / Trỏ tới | TTL |
+| --- | --- | --- | --- |
+| A | `@` | `185.199.108.153` | mặc định |
+| A | `@` | `185.199.109.153` | mặc định |
+| A | `@` | `185.199.110.153` | mặc định |
+| A | `@` | `185.199.111.153` | mặc định |
+| CNAME | `www` | `hoahce.github.io.` | mặc định |
 
-Nếu chỉ muốn dùng `www.tenmien.vn` thì chỉ cần bản ghi CNAME.
+> Cả 4 bản ghi A đều dùng host `@` — đó là cách GitHub cân bằng tải, không phải khai trùng.
+> Nếu ô Host của Tenten không nhận ký tự `@`, hãy để **trống** hoặc điền
+> `tranthaihoa.id.vn`. Giá trị CNAME nhớ giữ **dấu chấm ở cuối**.
 
-**c)** Đợi DNS lan truyền (15 phút – 24 giờ), quay lại Settings → Pages và tích
-**Enforce HTTPS**.
+**b) Tại GitHub** — repo `HOAHCE.github.io` → **Settings** → **Pages** →
+mục **Custom domain** điền `tranthaihoa.id.vn` → **Save**.
 
-**d) Quan trọng:** mở `_config.yml`, sửa dòng `url:` thành tên miền thật:
+Đợi DNS lan truyền (thường 15–60 phút, tối đa 24 giờ). Khi GitHub báo
+*DNS check successful*, quay lại tích **Enforce HTTPS** để trang chạy `https://`.
+Chứng chỉ SSL do GitHub cấp miễn phí, tự gia hạn.
 
-```yaml
-url: https://tranthaihoa.vn
-baseurl: ""
+Kiểm tra DNS đã cập nhật chưa:
+
+```bash
+nslookup tranthaihoa.id.vn
 ```
+
+Kết quả đúng là 4 địa chỉ `185.199.10x.153` ở trên.
 
 ---
 
@@ -206,6 +215,42 @@ Báo cáo tại Hội thảo ABC, Đà Nẵng.
 
 ---
 
+## 3b. Ba file ghi đè theme
+
+Theme al-folio được cài dưới dạng thư viện (gem), nên gần như toàn bộ giao diện nằm
+ngoài repo này. Chỉ có **ba file** trong repo là bản ghi đè:
+
+| File | Ghi đè cái gì |
+| --- | --- |
+| `assets/css/main.scss` | Bản sao file gốc của theme, chỉ thêm dòng `@use "custom"` ở cuối |
+| `_sass/_custom.scss` | Bảng màu và font riêng — **đây là file cần sửa khi muốn đổi giao diện** |
+| `_layouts/about.liquid` | Bản sao layout trang chủ, sửa để ba tiêu đề mục dịch được sang tiếng Việt |
+
+Khi nâng cấp theme lên phiên bản mới, nếu giao diện có chỗ lạ thì chép lại hai file
+`main.scss` và `about.liquid` từ bản mới của theme rồi áp dụng lại đúng phần sửa nói trên.
+File `_custom.scss` là của riêng anh, không cần đụng tới.
+
+---
+
+## 3c. Đổi màu và font
+
+Toàn bộ màu sắc và font nằm trong **một file duy nhất**: `_sass/_custom.scss`.
+
+- Đổi **màu chủ đạo** (màu của liên kết, tiêu đề mục): sửa `$c-blue` cho nền sáng và
+  `$c-blue-dark` cho nền tối.
+- Đổi **font**: sửa biến `$font-main`, rồi cập nhật đường dẫn Google Fonts trong
+  `_config.yml` (mục `third_party_libraries.google_fonts.url.fonts`) cho khớp.
+
+> **Quan trọng với font tiếng Việt:** đường dẫn Google Fonts phải có
+> `&subset=latin,latin-ext,vietnamese`. Thiếu tham số này, Google chỉ trả về bộ ký tự
+> latin và mọi chữ có dấu sẽ rơi sang font hệ thống, nhìn lệch hẳn so với phần còn lại.
+> Cũng nên kiểm tra font mới có hỗ trợ tiếng Việt hay không trước khi đổi — nhiều font
+> monospace phổ biến thì không.
+
+Trang có sẵn chế độ nền sáng / nền tối; nút chuyển nằm ở góc trên bên phải.
+
+---
+
 ## 4. Xem thử trên máy trước khi đẩy lên (tuỳ chọn)
 
 Không bắt buộc, nhưng tiện khi sửa nhiều. Cần Ruby ≥ 3.0:
@@ -231,14 +276,20 @@ Tất cả chỗ cần điền đều được đánh dấu `TODO` trong mã ngu
 grep -rn "TODO" _pages _data _projects _teachings _posts _news _bibliography _config.yml
 ```
 
-Cần làm trước khi công bố trang:
+Đã xong:
 
-- [ ] `_config.yml` — sửa `url:` thành tên miền thật
-- [ ] `assets/img/prof_pic.jpg` — thay bằng ảnh chân dung của anh
-- [ ] `_data/socials.yml` — mở comment dòng `email:` và điền email muốn công khai
-- [ ] `_pages/about.md` và `_pages/vi/about.md` — viết lại phần giới thiệu, bổ sung khoa/bộ môn
-- [ ] `_data/cv.yml` — điền quá trình học tập và công tác
-- [ ] `_bibliography/papers.bib` — thay khối `TODO_thay_bang_cong_bo_that` bằng công bố thật
+- [x] `_config.yml` — `url` đã trỏ về `https://tranthaihoa.id.vn`
+- [x] `CNAME` — đã tạo
+- [x] `assets/img/prof_pic.jpg` — đã dùng ảnh chân dung của anh
+- [x] `_data/socials.yml` — email `tranthaihoa@hueuni.edu.vn`
+- [x] Phần giới thiệu ở `_pages/about.md` và `_pages/vi/about.md`
+- [x] Bảng màu xám nhạt – đen – xanh nhạt, chữ monospace (`_sass/_custom.scss`)
+
+Còn lại:
+
+- [ ] `_bibliography/papers.bib` — thay khối `TODO_thay_bang_cong_bo_that` bằng danh mục
+      công bố thật (lấy từ CSDL Khoa học Đại học Huế)
+- [ ] `_data/cv.yml` — điền các bậc học (nghiên cứu sinh, thạc sĩ, cử nhân) và năm công tác
 - [ ] `_data/grants.yml` — thay ví dụ bằng đề tài thật
 - [ ] `_teachings/kinh-te-luong.md` — sửa thành học phần thật, hoặc xoá
 - [ ] `_data/resources.yml` — thay bằng tài liệu thật, hoặc xoá hết nội dung

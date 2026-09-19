@@ -3,20 +3,20 @@ layout: about
 title: about
 permalink: /
 subtitle: >
-  Lecturer, <a href='https://hce.edu.vn/'>University of Economics, Hue University</a>.
-  Tourism demand forecasting &middot; Time series &middot; Data science.
+  PhD student in Computer Science &middot; Lecturer, Faculty of Economic Information Systems,
+  <a href='https://hce.edu.vn/'>University of Economics, Hue University</a>.
 
 profile:
   align: right
-  image: prof_pic.jpg # TODO: thay bằng ảnh chân dung của anh, đặt trong assets/img/
-  image_circular: false
+  image: prof_pic.jpg
+  image_circular: true
   more_info: >
+    <p>Faculty of Economic Information Systems</p>
     <p>University of Economics, Hue University</p>
     <p>99 Ho Dac Di, Hue City, Viet Nam</p>
-    <p><!-- TODO: email / số điện thoại nếu muốn hiển thị --></p>
 
 selected_papers: true # hiện các bài báo có selected={true} trong _bibliography/papers.bib
-social: true # hiện các biểu tượng liên kết (ORCID, Scholar, GitHub...) cuối trang
+social: true # hiện các biểu tượng liên kết (email, ORCID, Scholar, GitHub...) cuối trang
 
 announcements:
   enabled: true
@@ -29,15 +29,14 @@ latest_posts:
   limit: 3
 ---
 
-I am a lecturer at the **University of Economics, Hue University**, Viet Nam.
-<!-- TODO: bổ sung khoa/bộ môn, ví dụ: "in the Faculty of ... , Department of ..." -->
+I am a **PhD student in Computer Science** and a lecturer in the
+**Faculty of Economic Information Systems** at the University of Economics,
+Hue University, Viet Nam.
 
-My research sits at the intersection of **tourism economics** and **data science**. I work on
+My work sits at the intersection of **data science** and **economics**. I am interested in
 forecasting visitor demand for heritage destinations, decomposition–ensemble methods for
 time series, and applied machine learning for economic data.
 <!-- TODO: chỉnh lại 2–3 câu này theo đúng hướng nghiên cứu anh muốn nhấn mạnh -->
-
-Before that, <!-- TODO: 1–2 câu về quá trình học tập / công tác, hoặc xoá dòng này -->.
 
 You can find my publications on
 [Google Scholar](https://scholar.google.com/citations?user=mYEjZ20AAAAJ&hl=en),
@@ -46,4 +45,4 @@ You can find my publications on
 and my code on [GitHub](https://github.com/HOAHCE).
 
 Course materials for my students are on the [teaching]({{ '/teaching/' | relative_url }}) page.
-Phiên bản tiếng Việt của trang này: [/vi/]({{ '/vi/' | relative_url }}).
+Phiên bản tiếng Việt: [/vi/]({{ '/vi/' | relative_url }}).

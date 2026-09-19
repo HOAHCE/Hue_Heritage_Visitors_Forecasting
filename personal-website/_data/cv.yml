@@ -4,12 +4,13 @@
 
 cv:
   name: Trần Thái Hòa
-  label: Giảng viên / Lecturer
-  email: "" # TODO: email muốn công khai
+  label: Nghiên cứu sinh Khoa học Máy tính / Giảng viên
+  email: tranthaihoa@hueuni.edu.vn
   location: Huế, Việt Nam
   image: ""
   summary: >
-    Giảng viên Trường Đại học Kinh tế, Đại học Huế. Nghiên cứu về dự báo nhu cầu du lịch,
+    Nghiên cứu sinh ngành Khoa học Máy tính; giảng viên Khoa Hệ thống thông tin kinh tế,
+    Trường Đại học Kinh tế, Đại học Huế. Nghiên cứu về dự báo nhu cầu du lịch,
     chuỗi thời gian và ứng dụng khoa học dữ liệu trong kinh tế.
 
   social_networks:
@@ -27,21 +28,36 @@ cv:
     # ----- HỌC TẬP -----
     Education:
       # TODO: thay bằng quá trình học tập thật của anh
-      - institution: "" # ví dụ: Trường Đại học Kinh tế, Đại học Huế
+      # Bậc tiến sĩ đang theo học
+      - institution: "" # TODO: tên cơ sở đào tạo
         location: ""
         url: ""
-        area: "" # chuyên ngành
-        studyType: "" # Cử nhân / Thạc sĩ / Tiến sĩ
+        area: Khoa học Máy tính
+        studyType: Nghiên cứu sinh
+        start_date: # TODO: năm bắt đầu
+        end_date: hiện nay
+        highlights:
+          - "TODO: hướng nghiên cứu của luận án."
+
+      # TODO: bổ sung bậc thạc sĩ và đại học
+      - institution: ""
+        location: ""
+        area: ""
+        studyType: Thạc sĩ
         start_date:
         end_date:
-        courses: ""
-        highlights:
-          - "Tên luận văn/luận án (nếu có)."
+
+      - institution: ""
+        location: ""
+        area: ""
+        studyType: Cử nhân
+        start_date:
+        end_date:
 
     # ----- CÔNG TÁC -----
     Experience:
       - company: Trường Đại học Kinh tế, Đại học Huế
-        position: Giảng viên
+        position: Giảng viên, Khoa Hệ thống thông tin kinh tế
         location: Huế, Việt Nam
         start_date: # TODO: năm bắt đầu công tác
         end_date: hiện nay

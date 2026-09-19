@@ -2,10 +2,13 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # để trống (blank) thì navbar hiển thị họ tên đầy đủ bên dưới
-first_name: Hoa
-middle_name: Thai
-last_name: Tran
+# Tên hiển thị trên thanh menu và đầu trang chủ.
+# Muốn dùng dạng tiếng Anh thì đổi thành: Thai Hoa Tran
+title: Trần Thái Hòa
+# Ba trường này dùng cho dòng bản quyền ở chân trang và thẻ metadata
+first_name: Trần
+middle_name: Thái
+last_name: Hòa
 contact_note: >
   Email là cách liên hệ nhanh nhất với tôi. /
   Email is the fastest way to reach me.
@@ -13,7 +16,7 @@ description: > # trang giới thiệu ngắn, dùng cho SEO và thẻ meta
   Trang cá nhân của Trần Thái Hòa — giảng viên Trường Đại học Kinh tế, Đại học Huế.
   Nghiên cứu về dự báo chuỗi thời gian, kinh tế du lịch và khoa học dữ liệu.
 footer_text: >
-  &copy; Trần Thái Hòa. Nội dung trên trang được chia sẻ cho mục đích học thuật.
+  Nội dung trên trang được chia sẻ cho mục đích học thuật.
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: Trần Thái Hòa, Tran Thai Hoa, Đại học Kinh tế Huế, Hue University, dự báo du lịch, tourism demand forecasting, time series, machine learning
@@ -21,10 +24,10 @@ lang: en # ngôn ngữ mặc định của mã HTML; các trang tiếng Việt t
 icon: 🏯 # emoji dùng làm favicon (hoặc đặt tên file ảnh trong /assets/img/)
 apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
 
-# !!! CẦN SửA: điền tên miền riêng của anh, kèm https://, KHÔNG có dấu / ở cuối.
-# Tạm thời để địa chỉ GitHub Pages mặc định để site chạy được ngay.
-url: https://HOAHCE.github.io
-baseurl: "" # để trống vì đây là user site (HOAHCE.github.io) hoặc tên miền riêng
+# Tên miền riêng. Đổi ở đây nếu sau này dùng tên miền khác.
+# (Nhà cung cấp: tenten.vn — xem phần DNS trong HUONG-DAN.md)
+url: https://tranthaihoa.id.vn
+baseurl: "" # để trống vì trang nằm ở gốc tên miền
 last_updated: true # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
@@ -546,7 +549,9 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      # subset=vietnamese là BẮT BUỘC: thiếu nó Google Fonts chỉ trả về bộ ký tự latin,
+      # và mọi chữ có dấu sẽ rơi về font hệ thống, trông lệch hẳn so với phần còn lại.
+      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:300,400,500,700|Material+Icons&subset=latin,latin-ext,vietnamese&display=swap"
   highlightjs:
     integrity:
       css:

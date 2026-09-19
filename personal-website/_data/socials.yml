@@ -2,9 +2,7 @@
 # Thứ tự khai báo ở đây chính là thứ tự hiển thị.
 # Danh sách key hỗ trợ: https://github.com/george-gca/jekyll-socials
 
-# TODO: bỏ dấu # ở đầu dòng dưới và điền email anh MUỐN công khai trên trang.
-#       Nên dùng email công vụ của trường thay vì email cá nhân.
-# email: ten.email@hce.edu.vn
+email: tranthaihoa@hueuni.edu.vn
 
 orcid_id: 0009-0006-2405-4697
 scholar_userid: mYEjZ20AAAAJ

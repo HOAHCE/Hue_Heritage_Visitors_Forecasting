@@ -1,0 +1,129 @@
+/*******************************************************************************
+ * Tuỳ biến riêng: bảng màu xám nhạt – đen – xanh nhạt, chữ monospace.
+ *
+ * Muốn đổi màu chủ đạo: sửa đúng một giá trị --global-theme-color bên dưới
+ * (một cho nền sáng, một cho nền tối). Không cần sửa chỗ nào khác.
+ ******************************************************************************/
+
+// ---------- Font ----------
+// Đổi sang font khác: sửa $font-main rồi cập nhật đường dẫn Google Fonts
+// trong _config.yml (mục third_party_libraries.google_fonts).
+// Danh sách dự phòng ưu tiên các font monospace CÓ dấu tiếng Việt, để nếu
+// Google Fonts tải chậm thì chữ có dấu không bị nhảy sang font khác.
+$font-main:
+  "Roboto Mono",
+  "DejaVu Sans Mono",
+  "Liberation Mono",
+  ui-monospace,
+  "SF Mono",
+  Menlo,
+  Consolas,
+  monospace;
+
+// ---------- Bảng màu ----------
+$c-black: #1c1e21; // chữ chính
+$c-grey: #6b7280; // chữ phụ, chú thích
+$c-grey-light: #f5f6f7; // nền xám nhạt
+$c-grey-line: #e3e5e8; // đường kẻ
+$c-blue: #2f6fd0; // xanh nhạt — màu chủ đạo (nền sáng)
+
+$c-black-dark: #16181a; // nền tối
+$c-text-dark: #d8dadd; // chữ trên nền tối
+$c-grey-dark: #9aa0a6;
+$c-line-dark: #2c2f33;
+$c-blue-dark: #7fb3ff; // xanh nhạt — màu chủ đạo (nền tối)
+
+:root {
+  --global-text-color: #{$c-black};
+  --global-text-color-light: #{$c-grey};
+  --global-theme-color: #{$c-blue};
+  --global-hover-color: #{$c-blue};
+  --global-divider-color: #{$c-grey-line};
+  --global-code-bg-color: #{$c-grey-light};
+  --global-card-bg-color: #{$c-grey-light};
+  --global-highlight-color: #{$c-blue};
+  --global-footer-bg-color: #{$c-grey-light};
+  --global-footer-text-color: #{$c-grey};
+  --global-footer-link-color: #{$c-black};
+  --global-distill-app-color: #{$c-grey};
+}
+
+html[data-theme="dark"] {
+  --global-bg-color: #{$c-black-dark};
+  --global-text-color: #{$c-text-dark};
+  --global-text-color-light: #{$c-grey-dark};
+  --global-theme-color: #{$c-blue-dark};
+  --global-hover-color: #{$c-blue-dark};
+  --global-hover-text-color: #{$c-black-dark};
+  --global-divider-color: #{$c-line-dark};
+  --global-code-bg-color: #1f2225;
+  --global-card-bg-color: #1f2225;
+  --global-highlight-color: #{$c-blue-dark};
+  --global-footer-bg-color: #1f2225;
+  --global-footer-text-color: #{$c-grey-dark};
+  --global-footer-link-color: #{$c-text-dark};
+}
+
+// ---------- Chữ monospace, giống trang mẫu ----------
+html,
+body {
+  font-family: $font-main;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar,
+.nav-link,
+.post-title,
+.category,
+.profile .address,
+.publications .bibliography,
+footer {
+  font-family: $font-main;
+}
+
+// Tên ở thanh menu và đầu trang chủ: đậm đều, giãn chữ hơi rộng
+.navbar-brand.title,
+.post-header .post-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+// Phụ đề dưới tên: in nghiêng, xám — như trang mẫu
+.post-header .desc {
+  font-style: italic;
+  color: var(--global-text-color-light);
+}
+
+// ---------- Tinh chỉnh nhỏ cho dễ đọc ----------
+body {
+  // Monospace trông dày hơn font thường nên nới dòng ra một chút,
+  // đặc biệt quan trọng với dấu tiếng Việt.
+  line-height: 1.7;
+}
+
+// Phụ đề dưới tên: in nghiêng, màu xám — như trang mẫu
+.profile .more-info,
+.post-description {
+  color: var(--global-text-color-light);
+}
+
+// Đường kẻ mảnh, nhạt
+hr {
+  border-top: 1px solid var(--global-divider-color);
+  opacity: 1;
+}
+
+// Thẻ (tag, category) trên trang blog
+.tag-category-list a,
+.post-tags a {
+  color: var(--global-text-color-light);
+
+  &:hover {
+    color: var(--global-theme-color);
+  }
+}
