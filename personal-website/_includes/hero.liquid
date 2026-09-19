@@ -1,0 +1,56 @@
+{%- comment -%}
+  Banner trang chủ. Toàn bộ nội dung lấy từ khối "hero:" trong front matter của
+  _pages/about.md (bản tiếng Anh) và _pages/vi/about.md (bản tiếng Việt).
+  Sửa chữ, nút bấm hay liên kết đều chỉ cần sửa ở hai file đó, không đụng tới file này.
+{%- endcomment -%}
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      {% if page.hero.badge %}
+        <span class="hero-badge">{{ page.hero.badge }}</span>
+      {% endif %}
+
+      <h1 class="hero-title">
+        {{ page.hero.title }}
+        {% if page.hero.role %}
+          <span class="hero-role">{{ page.hero.role }}</span>
+        {% endif %}
+      </h1>
+
+      {% if page.hero.description %}
+        <p class="hero-desc">{{ page.hero.description }}</p>
+      {% endif %}
+
+      {% if page.hero.buttons %}
+        <div class="hero-actions">
+          {% for btn in page.hero.buttons %}
+            <a
+              class="hero-btn {% if btn.style == 'ghost' %}hero-btn-ghost{% else %}hero-btn-primary{% endif %}"
+              href="{{ btn.url | relative_url }}"
+            >
+              {{ btn.label }} <span aria-hidden="true">&rarr;</span>
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if page.hero.links %}
+        <p class="hero-links">
+          {% for l in page.hero.links %}
+            <a href="{{ l.url }}">{{ l.label }}</a>
+          {% endfor %}
+        </p>
+      {% endif %}
+    </div>
+
+    {% if page.hero.image %}
+      <div class="hero-photo">
+        <img
+          src="{{ page.hero.image | prepend: '/assets/img/' | relative_url }}"
+          alt="{{ page.hero.title | strip_html }}"
+          loading="eager"
+        >
+      </div>
+    {% endif %}
+  </div>
+</section>

@@ -8,17 +8,18 @@
 // ---------- Font ----------
 // Đổi sang font khác: sửa $font-main rồi cập nhật đường dẫn Google Fonts
 // trong _config.yml (mục third_party_libraries.google_fonts).
-// Danh sách dự phòng ưu tiên các font monospace CÓ dấu tiếng Việt, để nếu
-// Google Fonts tải chậm thì chữ có dấu không bị nhảy sang font khác.
+// Inter: sans-serif đơn giản, phổ biến, có đầy đủ dấu tiếng Việt.
+// Danh sách dự phòng chỉ gồm các font hệ thống chắc chắn có dấu tiếng Việt,
+// nên kể cả khi Google Fonts tải chậm thì chữ cũng không bị vỡ dấu.
 $font-main:
-  "Roboto Mono",
-  "DejaVu Sans Mono",
-  "Liberation Mono",
-  ui-monospace,
-  "SF Mono",
-  Menlo,
-  Consolas,
-  monospace;
+  "Inter",
+  system-ui,
+  -apple-system,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
 
 // ---------- Bảng màu ----------
 $c-black: #1c1e21; // chữ chính
@@ -80,7 +81,6 @@ h6,
 .nav-link,
 .post-title,
 .category,
-.profile .address,
 .publications .bibliography,
 footer {
   font-family: $font-main;
@@ -101,8 +101,7 @@ footer {
 
 // ---------- Tinh chỉnh nhỏ cho dễ đọc ----------
 body {
-  // Monospace trông dày hơn font thường nên nới dòng ra một chút,
-  // đặc biệt quan trọng với dấu tiếng Việt.
+  // Nới dòng cho dễ đọc, nhất là với chữ tiếng Việt nhiều dấu.
   line-height: 1.7;
 }
 
@@ -126,4 +125,215 @@ hr {
   &:hover {
     color: var(--global-theme-color);
   }
+}
+
+/*******************************************************************************
+ * Banner trang chủ (_includes/hero.liquid)
+ *
+ * Đổi màu nền banner: sửa $hero-from và $hero-to bên dưới.
+ ******************************************************************************/
+
+$hero-from: #3b82d6;
+$hero-to: #2f6fd0;
+
+.hero {
+  // Kéo banner tràn hết chiều ngang màn hình, thoát khỏi khung nội dung.
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+
+  // Khung nội dung của theme có lớp .mt-5 (48px) ở trên; kéo ngược lại đúng
+  // bằng đó để banner dính liền dưới thanh menu, không hở một vệt trắng.
+  margin-top: -3rem;
+
+  padding: 3.5rem 1.5rem 3rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, $hero-from 0%, $hero-to 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+// Banner đã tràn 100vw nên chặn thanh cuộn ngang thừa do bề rộng thanh cuộn.
+body {
+  overflow-x: hidden;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 930px; // khớp với site.max_width
+  margin: 0 auto;
+}
+
+.hero-text {
+  flex: 1 1 62%;
+  min-width: 0;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  margin-bottom: 1.25rem;
+  background: #fff;
+  color: $c-black;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.hero-title {
+  margin: 0 0 1rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+
+  .hero-role {
+    display: block;
+    font-weight: 500;
+    opacity: 0.95;
+    // Theme đặt màu riêng cho thẻ <span>; phải ép về màu chữ của banner,
+    // nếu không dòng này sẽ ra màu đen trên nền xanh.
+    color: inherit;
+  }
+}
+
+.hero-desc {
+  margin: 0 0 1.75rem;
+  max-width: 34rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  white-space: nowrap; // giữ mũi tên luôn nằm cùng dòng với chữ
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  // Mũi tên nằm trong thẻ <span>, mà theme đặt màu riêng cho <span>.
+  // Không ép inherit thì mũi tên ra màu đen, lẫn hẳn vào nút nền đen.
+  span {
+    color: inherit;
+  }
+}
+
+.hero-btn-primary {
+  background: $c-black;
+  color: #fff;
+
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}
+
+.hero-btn-ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
+
+  &:hover {
+    background: #fff;
+    color: $c-blue;
+  }
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    white-space: nowrap;
+
+    &::before {
+      content: "+ ";
+    }
+
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
+
+.hero-photo {
+  flex: 0 0 34%;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.25);
+  }
+}
+
+// Màn hình nhỏ: xếp dọc, ảnh xuống dưới chữ.
+@media (max-width: 767px) {
+  .hero {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions,
+  .hero-links {
+    justify-content: center;
+  }
+
+  .hero-photo img {
+    max-width: 190px;
+  }
+}
+
+// Nền tối: giảm độ chói của banner.
+html[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, #24486f 0%, #1d3a5c 100%);
 }

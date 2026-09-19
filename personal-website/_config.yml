@@ -551,7 +551,7 @@ third_party_libraries:
     url:
       # subset=vietnamese là BẮT BUỘC: thiếu nó Google Fonts chỉ trả về bộ ký tự latin,
       # và mọi chữ có dấu sẽ rơi về font hệ thống, trông lệch hẳn so với phần còn lại.
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:300,400,500,700|Material+Icons&subset=latin,latin-ext,vietnamese&display=swap"
+      fonts: "https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700|Material+Icons&subset=latin,latin-ext,vietnamese&display=swap"
   highlightjs:
     integrity:
       css:

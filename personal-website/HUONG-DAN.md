@@ -218,21 +218,54 @@ Báo cáo tại Hội thảo ABC, Đà Nẵng.
 ## 3b. Ba file ghi đè theme
 
 Theme al-folio được cài dưới dạng thư viện (gem), nên gần như toàn bộ giao diện nằm
-ngoài repo này. Chỉ có **ba file** trong repo là bản ghi đè:
+ngoài repo này. Chỉ có **bốn file** trong repo là phần tuỳ biến:
 
-| File | Ghi đè cái gì |
+| File | Việc của nó |
 | --- | --- |
+| `_sass/_custom.scss` | Bảng màu, font và toàn bộ kiểu dáng banner — **file cần sửa khi muốn đổi giao diện** |
+| `_includes/hero.liquid` | Khung HTML của banner trang chủ |
 | `assets/css/main.scss` | Bản sao file gốc của theme, chỉ thêm dòng `@use "custom"` ở cuối |
-| `_sass/_custom.scss` | Bảng màu và font riêng — **đây là file cần sửa khi muốn đổi giao diện** |
-| `_layouts/about.liquid` | Bản sao layout trang chủ, sửa để ba tiêu đề mục dịch được sang tiếng Việt |
+| `_layouts/about.liquid` | Bản sao layout trang chủ; sửa 2 điểm: bật banner, và cho phép dịch 3 tiêu đề mục |
 
 Khi nâng cấp theme lên phiên bản mới, nếu giao diện có chỗ lạ thì chép lại hai file
 `main.scss` và `about.liquid` từ bản mới của theme rồi áp dụng lại đúng phần sửa nói trên.
-File `_custom.scss` là của riêng anh, không cần đụng tới.
+Hai file còn lại là của riêng anh, không bị ảnh hưởng khi nâng cấp.
 
 ---
 
-## 3c. Đổi màu và font
+## 3c. Sửa banner trang chủ
+
+Toàn bộ chữ trên banner nằm trong khối `hero:` ở đầu file
+`_pages/about.md` (bản tiếng Anh) và `_pages/vi/about.md` (bản tiếng Việt):
+
+```yaml
+hero:
+  badge: Xin chào!                  # nhãn nhỏ phía trên
+  title: Tôi là Trần Thái Hòa       # dòng tên
+  role: Nghiên cứu sinh &amp; Giảng viên  # dòng thứ hai, chữ mảnh hơn
+  description: >                    # đoạn mô tả ngắn
+    ...
+  image: prof_pic.jpg               # ảnh trong assets/img/
+  buttons:                          # các nút bấm
+    - label: Nghiên cứu khoa học
+      url: /vi/nghien-cuu/
+      style: primary                # primary = nút đậm, ghost = nút viền
+  links:                            # hàng liên kết cuối banner
+    - label: Google Scholar
+      url: https://...
+```
+
+Thêm nút hay liên kết = thêm một dòng `- label:` nữa. Muốn **bỏ banner** và quay lại
+kiểu ảnh đại diện bên phải như cũ thì xoá cả khối `hero:` — khối `profile:` bên dưới
+sẽ tự được dùng lại.
+
+Đổi màu nền banner: sửa `$hero-from` và `$hero-to` trong `_sass/_custom.scss`.
+
+> Lưu ý dấu `&` trong YAML: viết `&amp;` như ví dụ trên, đừng viết `&` trần.
+
+---
+
+## 3d. Đổi màu và font
 
 Toàn bộ màu sắc và font nằm trong **một file duy nhất**: `_sass/_custom.scss`.
 
@@ -278,23 +311,24 @@ grep -rn "TODO" _pages _data _projects _teachings _posts _news _bibliography _co
 
 Đã xong:
 
-- [x] `_config.yml` — `url` đã trỏ về `https://tranthaihoa.id.vn`
-- [x] `CNAME` — đã tạo
-- [x] `assets/img/prof_pic.jpg` — đã dùng ảnh chân dung của anh
-- [x] `_data/socials.yml` — email `tranthaihoa@hueuni.edu.vn`
-- [x] Phần giới thiệu ở `_pages/about.md` và `_pages/vi/about.md`
-- [x] Bảng màu xám nhạt – đen – xanh nhạt, chữ monospace (`_sass/_custom.scss`)
+- [x] Tên miền `tranthaihoa.id.vn` (`_config.yml` + `CNAME`)
+- [x] Ảnh chân dung, email `tranthaihoa@hueuni.edu.vn`
+- [x] Banner trang chủ (cả bản tiếng Anh và tiếng Việt)
+- [x] Font Inter, bảng màu xám nhạt – đen – xanh nhạt
+- [x] 3 bài báo, 3 sách và 1 đề tài cấp Đại học Huế (lấy từ bản kê khai 03/2025)
+- [x] 5 học phần giảng dạy
 
-Còn lại:
+Còn lại — những chỗ này hiện đang ghi `TODO` trên trang, nên làm sớm:
 
-- [ ] `_bibliography/papers.bib` — thay khối `TODO_thay_bang_cong_bo_that` bằng danh mục
-      công bố thật (lấy từ CSDL Khoa học Đại học Huế)
+- [ ] `_bibliography/papers.bib` — bổ sung **tên đồng tác giả**, tập/số/trang và DOI.
+      Bản kê khai không ghi tên ai nên hiện mỗi công bố đang để một mình anh.
+- [ ] `_teachings/*.md` — điền học kỳ, phòng học, lịch học và tải slide/đề cương lên
 - [ ] `_data/cv.yml` — điền các bậc học (nghiên cứu sinh, thạc sĩ, cử nhân) và năm công tác
-- [ ] `_data/grants.yml` — thay ví dụ bằng đề tài thật
-- [ ] `_teachings/kinh-te-luong.md` — sửa thành học phần thật, hoặc xoá
+- [ ] Bổ sung các công bố trước 2023 (bản kê khai chỉ liệt kê 36 tháng gần nhất)
 - [ ] `_data/resources.yml` — thay bằng tài liệu thật, hoặc xoá hết nội dung
 - [ ] `_news/2025-10-02-tai-lieu-hoc-phan.md` — sửa hoặc xoá
 - [ ] `_posts/2025-10-01-chao-mung.md` — sửa hoặc xoá
+- [ ] `_projects/*.md` — viết mô tả cho 3 dự án GitHub
 - [ ] `assets/pdf/example_pdf.pdf` — xoá sau khi đã thay bằng tài liệu thật
 
 ---

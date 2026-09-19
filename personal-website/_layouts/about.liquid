@@ -12,24 +12,31 @@ layout: default
 
   Bỏ trống thì vẫn dùng chữ tiếng Anh mặc định như theme gốc.
 
+  Thay đổi thứ hai: nếu front matter có khối "hero:" thì hiển thị banner
+  (_includes/hero.liquid) thay cho tiêu đề và ảnh đại diện mặc định.
+
   LƯU Ý khi nâng cấp theme: nếu al-folio đổi layout này, hãy chép lại bản mới
   từ gem rồi áp dụng lại đúng ba thay đổi trên.
 {%- endcomment -%}
 <div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
+  {% if page.hero %}
+    {% include hero.liquid %}
+  {% else %}
+    <header class="post-header">
+      <h1 class="post-title">
+        {% if site.title == 'blank' %}
+          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+          {{ site.last_name }}
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+      </h1>
+      <p class="desc">{{ page.subtitle }}</p>
+    </header>
+  {% endif %}
 
   <article>
-    {% if page.profile %}
+    {% if page.profile and page.hero == nil %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}

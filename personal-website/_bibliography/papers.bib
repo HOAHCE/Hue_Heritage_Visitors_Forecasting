@@ -5,15 +5,15 @@
 
   CÁCH THÊM MỘT CÔNG BỐ MỚI
   -------------------------
-  Chỉ cần dán thêm một khối entry (article, inproceedings, book, incollection...)
-  vào file này. Trang /publications/ và /vi/nghien-cuu/ sẽ tự cập nhật, tự nhóm
-  theo năm, và tự in đậm tên anh trong danh sách tác giả.
+  Dán thêm một khối entry (article, inproceedings, book...) vào file này.
+  Trang /publications/ và /vi/nghien-cuu/ tự cập nhật, tự nhóm theo năm và tự
+  in đậm tên anh trong danh sách tác giả.
 
   Cách nhanh nhất để lấy khối BibTeX: bấm nút "Cite" trên Google Scholar hoặc
   trên trang của tạp chí, chọn BibTeX, rồi dán vào đây.
 
   Các trường riêng của al-folio (đều KHÔNG bắt buộc):
-    abbr        = {JTR}                     -> nhãn nhỏ bên trái
+    abbr        = {IJIT}                    -> nhãn nhỏ bên trái
     selected    = {true}                    -> bài chọn lọc, hiện trên trang chủ
     bibtex_show = {true}                    -> nút xem mã BibTeX
     pdf         = {ten-file.pdf}            -> file đặt trong assets/pdf/
@@ -22,26 +22,94 @@
     html        = {https://doi.org/...}     -> link bài báo
     preview     = {ten-anh.png}             -> ảnh trong assets/img/publication_preview/
     abstract    = {Tóm tắt...}              -> nút xem tóm tắt
+    additional_info = {...}                 -> dòng ghi chú thêm
 
   Tên tác giả viết theo dạng {Họ, Tên đệm Tên}, ví dụ: {Tran, Thai Hoa}.
-  Nhiều tác giả thì nối bằng chữ "and".
-  Nhờ khai báo scholar.last_name trong _config.yml, tên anh tự được làm nổi bật.
+  Nhiều tác giả nối bằng chữ "and".
+
+  CÒN THIẾU — cần anh bổ sung vào từng entry bên dưới:
+    - Tên các ĐỒNG TÁC GIẢ: bản kê khai không ghi tên ai, nên hiện mỗi entry
+      tạm để một mình anh. Sửa trường author = {Tran, Thai Hoa and Nguyen, Van A}.
+    - Số tập (volume), số (number), trang (pages) và doi của từng bài.
+    - Với sách "Nghiên cứu xây dựng mô hình đại học thông minh": tên các đồng chủ biên.
+    - Với sách "Ứng dụng công nghệ chuỗi khối": tên chủ biên và các tác giả khác.
+
+  LƯU Ý: trường additional_info được theme nối THẲNG vào sau tên tạp chí/nhà xuất
+  bản, không có dấu ngăn cách. Nên nếu dùng, hãy tự chừa khoảng trắng ở đầu,
+  ví dụ: additional_info = { (Chủ biên)}
 
   LƯU Ý: mọi ghi chú trong file .bib phải nằm trong khối comment như thế này.
-  Viết chữ tự do bên ngoài có thể làm hỏng quá trình build.
 
 }
 
-@article{TODO_thay_bang_cong_bo_that,
-  abbr         = {TODO},
-  title        = {TODO: thay khối này bằng một công bố thật của anh},
-  author       = {Tran, Thai Hoa},
-  journal      = {TODO: tên tạp chí},
-  volume       = {1},
-  number       = {1},
-  pages        = {1--10},
-  year         = {2024},
-  selected     = {true},
-  bibtex_show  = {true},
-  abstract     = {TODO: dán tóm tắt bài báo vào đây, hoặc xoá dòng này.}
+% =============================================================================
+% BÀI BÁO KHOA HỌC
+% =============================================================================
+
+@article{tran2025ethereum,
+  abbr            = {IJIT},
+  title           = {Hybrid model 1D-CNN and LSTM for forecasting Ethereum close prices: A case study of temporal analysis},
+  author          = {Tran, Thai Hoa},
+  journal         = {International Journal of Information Technology},
+  publisher       = {Springer},
+  year            = {2025},
+  selected        = {true},
+  bibtex_show     = {true}
+}
+
+@article{tran2023blockchain,
+  abbr            = {HUJS},
+  title           = {Phân tích khả năng ứng dụng công nghệ blockchain vào chuỗi cung ứng dầu tràm tại Huế},
+  author          = {Tran, Thai Hoa},
+  journal         = {Tạp chí Khoa học Đại học Huế: Kinh tế và phát triển},
+  publisher       = {Nhà xuất bản Đại học Huế},
+  issn            = {2588-1205},
+  year            = {2023},
+  selected        = {true},
+  bibtex_show     = {true}
+}
+
+@inproceedings{tran2023melaleuca,
+  abbr            = {Hội thảo},
+  title           = {Modelling blockchain technology applications in developing agricultural supply chains: The case of melaleuca oil in Hue},
+  author          = {Tran, Thai Hoa},
+  booktitle       = {Kỷ yếu hội thảo khoa học quốc tế — Phát triển kinh tế xanh ở Việt Nam},
+  publisher       = {Nhà xuất bản Lao Động},
+  year            = {2023},
+  bibtex_show     = {true}
+}
+
+% =============================================================================
+% SÁCH, GIÁO TRÌNH
+% =============================================================================
+
+@book{tran2023sach_dautram,
+  abbr            = {Sách},
+  title           = {Xây dựng mô hình ứng dụng công nghệ Blockchain trong quản lý chuỗi cung ứng: Trường hợp sản phẩm dầu tràm ở Huế},
+  author          = {Tran, Thai Hoa},
+  publisher       = {Nhà xuất bản Đại học Huế},
+  year            = {2023},
+  selected        = {true},
+  bibtex_show     = {true},
+  additional_info = { (Chủ biên)}
+}
+
+@book{tran2023sach_daihocthongminh,
+  abbr            = {Sách},
+  title           = {Nghiên cứu xây dựng mô hình đại học thông minh và đề xuất quá trình chuyển đổi cho các trường đại học Việt Nam},
+  author          = {Tran, Thai Hoa},
+  publisher       = {Nhà xuất bản Lao Động},
+  year            = {2023},
+  bibtex_show     = {true},
+  additional_info = { (Đồng chủ biên)}
+}
+
+@book{tran2023sach_chuoikhoi,
+  abbr            = {Sách},
+  title           = {Ứng dụng công nghệ chuỗi khối (Blockchain) nhằm phát triển chuỗi cung ứng nông nghiệp},
+  author          = {Tran, Thai Hoa},
+  publisher       = {Nhà xuất bản Lao động},
+  year            = {2023},
+  bibtex_show     = {true},
+  additional_info = { (Thành viên tham gia)}
 }
