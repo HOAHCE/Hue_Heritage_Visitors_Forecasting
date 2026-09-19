@@ -2,6 +2,9 @@
 layout: course
 title: "Công nghệ phần mềm"
 description: "Các nguyên lý và kỹ thuật của công nghệ phần mềm: quy trình phát triển, quản lý yêu cầu, thiết kế, kiểm thử và đảm bảo chất lượng."
+title_en: "Software Engineering"
+description_en: "Principles and techniques of software engineering: development process, requirements management, design, testing and quality assurance."
+term_en: "TODO: term"
 instructor: Trần Thái Hòa
 year: 2025
 term: "TODO: Học kỳ"

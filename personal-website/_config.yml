@@ -2,9 +2,10 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-# Tên hiển thị trên thanh menu và đầu trang chủ.
-# Muốn dùng dạng tiếng Anh thì đổi thành: Thai Hoa Tran
-title: Trần Thái Hòa
+# Tên hiển thị trên thanh menu và ở chân trang, theo từng ngôn ngữ.
+title: Trần Thái Hòa # dùng cho tiêu đề tab trình duyệt và thẻ metadata
+name_display: Thai Hoa Tran # hiện trên các trang tiếng Anh
+name_display_vi: Trần Thái Hòa # hiện trên các trang tiếng Việt
 # Ba trường này dùng cho dòng bản quyền ở chân trang và thẻ metadata
 first_name: Trần
 middle_name: Thái
@@ -15,10 +16,14 @@ contact_note: >
 description: > # trang giới thiệu ngắn, dùng cho SEO và thẻ meta
   Trang cá nhân của Trần Thái Hòa — giảng viên Trường Đại học Kinh tế, Đại học Huế.
   Nghiên cứu về dự báo chuỗi thời gian, kinh tế du lịch và khoa học dữ liệu.
-footer_text: >
-  Nội dung trên trang được chia sẻ cho mục đích học thuật.
+footer_text: > # chân trang bản tiếng Anh
+  Content on this site is shared for academic purposes.
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+footer_text_vi: > # chân trang bản tiếng Việt
+  Nội dung trên trang được chia sẻ cho mục đích học thuật.
+  Xây dựng bằng <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> với giao diện <a href="https://github.com/alshedivat/al-folio">al-folio</a>.
+  Lưu trữ trên <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: Trần Thái Hòa, Tran Thai Hoa, Đại học Kinh tế Huế, Hue University, dự báo du lịch, tourism demand forecasting, time series, machine learning
 lang: en # ngôn ngữ mặc định của mã HTML; các trang tiếng Việt tự khai báo lang: vi
 icon: 🏯 # emoji dùng làm favicon (hoặc đặt tên file ảnh trong /assets/img/)
@@ -144,7 +149,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Blog # tiêu đề hiển thị trên trang blog
-blog_description: Ghi chép về dữ liệu, du lịch và giảng dạy
+blog_description: # để trống: trang blog dùng chung cho cả hai ngôn ngữ
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -196,12 +201,11 @@ newsletter:
 # -----------------------------------------------------------------------------
 
 collections:
-  books:
-    output: true
   news:
+    # Tin ngắn chỉ hiện ở trang chủ, không cần trang riêng cho từng tin.
     defaults:
       layout: post
-    output: true
+    output: false
   projects:
     output: true
   teachings:
@@ -345,9 +349,6 @@ jekyll-archives:
       year: "/blog/:year/"
       tags: "/blog/:type/:name/"
       categories: "/blog/:type/:name/"
-  books:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
-
 # Dùng chữ KHÔNG DẤU cho thẻ và chuyên mục: chúng trở thành đường dẫn
 # (/blog/tag/du-bao/), có dấu sẽ bị mã hoá thành %C3%A1... khi chia sẻ.
 display_tags: ["du-bao", "du-lich", "python", "giang-day"]

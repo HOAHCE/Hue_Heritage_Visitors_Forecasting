@@ -130,26 +130,28 @@ hr {
 /*******************************************************************************
  * Banner trang chủ (_includes/hero.liquid)
  *
- * Đổi màu nền banner: sửa $hero-from và $hero-to bên dưới.
+ * Phong cách tối giản: nền sáng, chữ mảnh giãn rộng, một đường kẻ ngắn,
+ * ảnh chân dung đã tách nền nên hoà thẳng vào nền, không có khung.
+ *
+ * Đổi màu nền banner: sửa $hero-bg. Đổi màu chữ nhấn: sửa $hero-accent.
  ******************************************************************************/
 
-$hero-from: #3b82d6;
-$hero-to: #2f6fd0;
+$hero-bg: #f4f5f7; // phải trùng với nền của ảnh đã tách để ảnh hoà vào
+$hero-accent: $c-blue;
 
 .hero {
-  // Kéo banner tràn hết chiều ngang màn hình, thoát khỏi khung nội dung.
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  width: 100vw;
-
   // Khung nội dung của theme có lớp .mt-5 (48px) ở trên; kéo ngược lại đúng
   // bằng đó để banner dính liền dưới thanh menu, không hở một vệt trắng.
   margin-top: -3rem;
 
-  padding: 3.5rem 1.5rem 3rem;
-  margin-bottom: 3rem;
-  background: linear-gradient(135deg, $hero-from 0%, $hero-to 100%);
-  color: #fff;
+  // Tràn hết chiều ngang màn hình, thoát khỏi khung nội dung.
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+
+  padding: 4.5rem 1.5rem 0;
+  margin-bottom: 3.5rem;
+  background: $hero-bg;
   overflow: hidden;
 }
 
@@ -160,83 +162,86 @@ body {
 
 .hero-inner {
   display: flex;
-  align-items: center;
-  gap: 2.5rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
   max-width: 930px; // khớp với site.max_width
   margin: 0 auto;
 }
 
 .hero-text {
-  flex: 1 1 62%;
+  flex: 1 1 auto;
   min-width: 0;
-}
-
-.hero-badge {
-  display: inline-block;
-  padding: 0.3rem 0.85rem;
-  margin-bottom: 1.25rem;
-  background: #fff;
-  color: $c-black;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 3px;
+  padding-bottom: 4.5rem;
 }
 
 .hero-title {
-  margin: 0 0 1rem;
-  font-size: 2.6rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #fff;
+  margin: 0;
+  font-size: 2.3rem;
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $c-black;
 
-  .hero-role {
-    display: block;
-    font-weight: 500;
-    opacity: 0.95;
-    // Theme đặt màu riêng cho thẻ <span>; phải ép về màu chữ của banner,
-    // nếu không dòng này sẽ ra màu đen trên nền xanh.
-    color: inherit;
+  .hero-accent {
+    color: $hero-accent;
   }
 }
 
-.hero-desc {
-  margin: 0 0 1.75rem;
-  max-width: 34rem;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.88);
+.hero-rule {
+  display: block;
+  width: 64px;
+  height: 2px;
+  margin: 1.5rem 0;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.hero-role {
+  margin: 0 0 1.25rem;
+  max-width: 30rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: $c-grey;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+  margin: 0 0 2rem;
+  font-size: 0.85rem;
+  color: $c-grey;
+}
+
+.hero-stat b {
+  color: $hero-accent;
+  font-weight: 600;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-bottom: 1.75rem;
 }
 
 .hero-btn {
   display: inline-block;
-  padding: 0.7rem 1.4rem;
-  font-size: 0.85rem;
+  padding: 0.8rem 1.7rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
-  border-radius: 3px;
   border: 1px solid transparent;
-  white-space: nowrap; // giữ mũi tên luôn nằm cùng dòng với chữ
+  white-space: nowrap;
   transition:
     background 0.15s ease,
-    color 0.15s ease;
+    color 0.15s ease,
+    border-color 0.15s ease;
 
   &:hover {
     text-decoration: none;
-  }
-
-  // Mũi tên nằm trong thẻ <span>, mà theme đặt màu riêng cho <span>.
-  // Không ép inherit thì mũi tên ra màu đen, lẫn hẳn vào nút nền đen.
-  span {
-    color: inherit;
   }
 }
 
@@ -245,95 +250,129 @@ body {
   color: #fff;
 
   &:hover {
-    background: #000;
+    background: $hero-accent;
     color: #fff;
   }
 }
 
 .hero-btn-ghost {
   background: transparent;
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.7);
+  color: $c-black;
+  border-color: rgba(0, 0, 0, 0.25);
 
   &:hover {
-    background: #fff;
-    color: $c-blue;
-  }
-}
-
-.hero-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.2rem;
-  margin: 0;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-
-  a {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    white-space: nowrap;
-
-    &::before {
-      content: "+ ";
-    }
-
-    &:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
+    border-color: $hero-accent;
+    color: $hero-accent;
   }
 }
 
 .hero-photo {
-  flex: 0 0 34%;
-  display: flex;
-  justify-content: center;
+  flex: 0 0 auto;
+  align-self: flex-end;
 
   img {
-    width: 100%;
-    max-width: 280px;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 6px solid rgba(255, 255, 255, 0.25);
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 340px;
+    // Ảnh đã tách nền: để chạm đáy banner, không khung, không bo góc.
+    margin-bottom: 0;
   }
 }
 
 // Màn hình nhỏ: xếp dọc, ảnh xuống dưới chữ.
 @media (max-width: 767px) {
   .hero {
-    padding: 2.5rem 1.25rem;
+    padding: 3rem 1.25rem 0;
+    margin-bottom: 2.5rem;
   }
 
   .hero-inner {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    gap: 1.75rem;
+    gap: 0;
+  }
+
+  .hero-text {
+    padding-bottom: 2rem;
   }
 
   .hero-title {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
   }
 
-  .hero-desc {
+  .hero-role,
+  .hero-stats {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .hero-actions,
-  .hero-links {
+  .hero-rule {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-stats,
+  .hero-actions {
     justify-content: center;
   }
 
   .hero-photo img {
-    max-width: 190px;
+    max-height: 260px;
   }
 }
 
-// Nền tối: giảm độ chói của banner.
+// Nền tối: banner dùng nền xám đậm, ảnh tách nền vẫn hợp.
 html[data-theme="dark"] .hero {
-  background: linear-gradient(135deg, #24486f 0%, #1d3a5c 100%);
+  background: #202326;
+
+  .hero-title {
+    color: #e8eaed;
+  }
+
+  .hero-btn-primary {
+    background: #e8eaed;
+    color: #16181a;
+  }
+
+  .hero-btn-ghost {
+    color: #e8eaed;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .hero-rule {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+/*******************************************************************************
+ * Nút chuyển ngôn ngữ EN / VI ở góc trên bên phải (_includes/header.liquid)
+ ******************************************************************************/
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  margin-left: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+
+  .lang-opt {
+    padding: 0.1rem 0.25rem;
+    color: var(--global-text-color-light);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+
+    &.is-active {
+      color: var(--global-theme-color);
+    }
+  }
+
+  .lang-sep {
+    color: var(--global-divider-color);
+  }
 }

@@ -10,7 +10,9 @@ layout: default
       posts_title: bài viết mới
       papers_title: công bố tiêu biểu
 
-  Bỏ trống thì vẫn dùng chữ tiếng Anh mặc định như theme gốc.
+  Kèm theo đó là papers_url / posts_url để hai tiêu đề này trỏ đúng trang cùng
+  ngôn ngữ. Bỏ trống thì dùng chữ và đường dẫn tiếng Anh mặc định như theme gốc.
+  Tiêu đề mục tin ngắn không còn là liên kết, vì tin ngắn không có trang riêng.
 
   Thay đổi thứ hai: nếu front matter có khối "hero:" thì hiển thị banner
   (_includes/hero.liquid) thay cho tiêu đề và ảnh đại diện mặc định.
@@ -64,7 +66,7 @@ layout: default
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">{{ page.news_title | default: "news" }}</a>
+        {{ page.news_title | default: "news" }}
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -72,7 +74,7 @@ layout: default
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">{{ page.posts_title | default: "latest posts" }}</a>
+        <a href="{{ page.posts_url | default: '/blog/' | relative_url }}" style="color: inherit">{{ page.posts_title | default: "latest posts" }}</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
@@ -80,7 +82,7 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">{{ page.papers_title | default: "selected publications" }}</a>
+        <a href="{{ page.papers_url | default: '/publications/' | relative_url }}" style="color: inherit">{{ page.papers_title | default: "selected publications" }}</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}

@@ -2,6 +2,9 @@
 layout: course
 title: "Khởi nghiệp và đổi mới sáng tạo"
 description: "Hình thành tư duy khởi nghiệp và đổi mới sáng tạo: nhận diện cơ hội, xây dựng mô hình kinh doanh, kiểm chứng ý tưởng và trình bày dự án."
+title_en: "Entrepreneurship and Innovation"
+description_en: "Entrepreneurial and innovation thinking: spotting opportunities, building a business model, validating ideas and pitching a venture."
+term_en: "TODO: term"
 instructor: Trần Thái Hòa
 year: 2025
 term: "TODO: Học kỳ"

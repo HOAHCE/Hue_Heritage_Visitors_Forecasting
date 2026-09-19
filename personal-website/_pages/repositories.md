@@ -3,8 +3,7 @@ layout: page
 permalink: /repositories/
 title: repositories
 description: My GitHub activity and public repositories.
-nav: true
-nav_order: 6
+nav: false # tạm ẩn khỏi menu; bật lại bằng cách đổi thành true
 ---
 
 {% if site.data.repositories.github_users %}

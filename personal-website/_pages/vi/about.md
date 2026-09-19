@@ -1,54 +1,39 @@
 ---
 layout: about
-title: Tiếng Việt
+title: Giới thiệu
+nav_title: Trang chủ
 permalink: /vi/
 lang: vi
-nav: true
-nav_order: 7
+lang_alt: /
 
-# Tiêu đề tiếng Việt cho ba mục ở cuối trang chủ
 news_title: tin mới
 posts_title: bài viết mới
 papers_title: công bố tiêu biểu
+papers_url: /vi/nghien-cuu/
 
-# ---------------------------------------------------------------------------
-# Banner trang chủ (bản tiếng Việt). Sửa chữ, nút bấm, liên kết ngay tại đây.
-# ---------------------------------------------------------------------------
 hero:
-  badge: Xin chào!
-  title: Tôi là Trần Thái Hòa
-  role: Nghiên cứu sinh &amp; Giảng viên
-  description: >
-    Tôi nghiên cứu ứng dụng công nghệ blockchain và học máy vào quản lý chuỗi cung ứng,
-    chuyển đổi số và dự báo kinh tế; đồng thời giảng dạy các học phần về hệ thống
-    thông tin và công nghệ phần mềm tại Trường Đại học Kinh tế, Đại học Huế.
-  image: prof_pic.jpg
+  title: Trần Thái Hòa
+  # highlight: ...   # chữ nhấn màu xanh nối sau tên, bỏ trống thì chỉ hiện tên
+  role: >
+    Nghiên cứu sinh ngành Khoa học Máy tính · Giảng viên Khoa Hệ thống thông tin kinh tế,
+    Trường Đại học Kinh tế, Đại học Huế.
+  image: prof_pic.png
+  stats:
+    - num: "3"
+      label: Bài báo &amp; kỷ yếu
+    - num: "3"
+      label: Sách, giáo trình
+    - num: "1"
+      label: Đề tài
+    - num: "5"
+      label: Học phần
   buttons:
-    - label: Nghiên cứu khoa học
+    - label: Nghiên cứu
       url: /vi/nghien-cuu/
       style: primary
-    - label: Tài liệu giảng dạy
+    - label: Giảng dạy
       url: /vi/giang-day/
       style: ghost
-  links:
-    - label: CSDL Khoa học ĐH Huế
-      url: https://csdlkhoahoc.hueuni.edu.vn/index.php/scientist/detail/id/2119
-    - label: Google Scholar
-      url: https://scholar.google.com/citations?user=mYEjZ20AAAAJ&hl=en
-    - label: ORCID
-      url: https://orcid.org/0009-0006-2405-4697
-    - label: GitHub
-      url: https://github.com/HOAHCE
-
-# Khối profile chỉ dùng khi tắt banner (xoá khối hero: ở trên).
-profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: true
-  more_info: >
-    <p>Khoa Hệ thống thông tin kinh tế</p>
-    <p>Trường Đại học Kinh tế, Đại học Huế</p>
-    <p>99 Hồ Đắc Di, TP. Huế</p>
 
 selected_papers: true
 social: true
@@ -66,19 +51,31 @@ latest_posts:
 
 ## Giới thiệu
 
-Tôi là **nghiên cứu sinh ngành Khoa học Máy tính**, đồng thời là giảng viên
-**Khoa Hệ thống thông tin kinh tế**, Trường Đại học Kinh tế, Đại học Huế.
+Tôi là nghiên cứu sinh ngành Khoa học Máy tính, đồng thời là giảng viên Khoa Hệ thống
+thông tin kinh tế, Trường Đại học Kinh tế, Đại học Huế.
 
 Hướng nghiên cứu của tôi là ứng dụng công nghệ thông tin vào các bài toán kinh tế.
-Các công trình gần đây tập trung vào **ứng dụng blockchain trong chuỗi cung ứng
-nông nghiệp** — trong đó có đề tài cấp Đại học Huế về truy xuất nguồn gốc sản phẩm
-dầu tràm ở Huế — **chuyển đổi số và mô hình đại học thông minh** cho các trường đại học
-Việt Nam, và **học sâu trong dự báo chuỗi thời gian**, chẳng hạn mô hình lai
-1D-CNN/LSTM dự báo giá tiền mã hoá.
+Các công trình gần đây tập trung vào ứng dụng blockchain trong chuỗi cung ứng nông
+nghiệp — trong đó có đề tài cấp Đại học Huế về truy xuất nguồn gốc sản phẩm dầu tràm
+ở Huế — chuyển đổi số và mô hình đại học thông minh cho các trường đại học Việt Nam,
+và học sâu trong dự báo chuỗi thời gian, chẳng hạn mô hình lai 1D-CNN/LSTM dự báo
+giá tiền mã hoá.
 
-**Liên hệ.** Khoa Hệ thống thông tin kinh tế, Trường Đại học Kinh tế, Đại học Huế,
+## Học tập
+
+<!-- TODO: điền các bậc học. Mỗi dòng: bằng cấp, ngành, trường, năm. -->
+
+- **Nghiên cứu sinh Khoa học Máy tính**, đang theo học — *TODO: cơ sở đào tạo, năm bắt đầu*
+- **Thạc sĩ**, *TODO: chuyên ngành, trường, thời gian*
+- **Cử nhân**, *TODO: chuyên ngành, trường, thời gian*
+
+## Liên hệ
+
+Khoa Hệ thống thông tin kinh tế, Trường Đại học Kinh tế, Đại học Huế,
 99 Hồ Đắc Di, TP. Huế ·
 [tranthaihoa@hueuni.edu.vn](mailto:tranthaihoa@hueuni.edu.vn)
 
-Hồ sơ đầy đủ tại
-[CSDL Khoa học Đại học Huế](https://csdlkhoahoc.hueuni.edu.vn/index.php/scientist/detail/id/2119).
+Hồ sơ: [CSDL Khoa học Đại học Huế](https://csdlkhoahoc.hueuni.edu.vn/index.php/scientist/detail/id/2119) ·
+[Google Scholar](https://scholar.google.com/citations?user=mYEjZ20AAAAJ&hl=en) ·
+[ORCID](https://orcid.org/0009-0006-2405-4697) ·
+[GitHub](https://github.com/HOAHCE)

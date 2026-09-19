@@ -192,48 +192,93 @@ Báo cáo tại Hội thảo ABC, Đà Nẵng.
 
 | Muốn sửa gì | Mở file nào |
 | --- | --- |
-| Giới thiệu bản thân (bản tiếng Anh) | `_pages/about.md` |
-| Giới thiệu bản thân (bản tiếng Việt) | `_pages/vi/about.md` |
-| Ảnh chân dung | thay file `assets/img/prof_pic.jpg` |
-| Học tập, kinh nghiệm, kỹ năng (trang CV) | `_data/cv.yml` |
+| Banner + giới thiệu + học tập + liên hệ (tiếng Anh) | `_pages/about.md` |
+| Banner + giới thiệu + học tập + liên hệ (tiếng Việt) | `_pages/vi/about.md` |
+| Ảnh chân dung | thay file `assets/img/prof_pic.png` (ảnh đã tách nền) |
 | Liên kết ORCID / Scholar / GitHub / email | `_data/socials.yml` |
-| Tên trang, tên miền, tiêu đề blog | `_config.yml` |
+| Tên hiển thị, tên miền, chân trang | `_config.yml` |
+
+> Phần **Học tập** nằm ngay trong trang giới thiệu, không dùng trang CV riêng.
+> Trang `/cv/` hiện đang tắt khỏi menu (`nav: false` trong `_pages/cv.md`);
+> muốn dùng lại thì bật `nav: true` và điền `_data/cv.yml`.
 
 ---
 
 ## 3. Cấu trúc song ngữ
 
-- **Tiếng Anh** là bản mặc định, nằm ở đường dẫn gốc: `/`, `/publications/`, `/teaching/`, `/projects/`.
-- **Tiếng Việt** nằm dưới `/vi/`: `/vi/`, `/vi/nghien-cuu/`, `/vi/giang-day/`, `/vi/du-an/`.
-- Nút **"Tiếng Việt"** trên thanh menu dẫn sang bản tiếng Việt; trong bản tiếng Việt có
-  thanh điều hướng riêng kèm nút **English** để quay lại.
-- Blog, CV và danh mục công bố **dùng chung** cho cả hai ngôn ngữ (mỗi bài viết tự nhiên
-  đã ở một ngôn ngữ), nên anh không phải viết hai lần.
-- Muốn sửa thanh điều hướng tiếng Việt: mở `_includes/vi_nav.liquid`.
-- Muốn thêm một trang tiếng Việt mới: tạo file trong `_pages/vi/`, đặt `permalink: /vi/ten-trang/`,
-  `nav: false`, và thêm `{% raw %}{% include vi_nav.liquid %}{% endraw %}` ở đầu nội dung.
+Trang có hai phiên bản **tách bạch hoàn toàn**, mỗi bên một ngôn ngữ:
+
+| | Tiếng Anh | Tiếng Việt |
+| --- | --- | --- |
+| Trang chủ | `/` | `/vi/` |
+| Nghiên cứu | `/publications/` | `/vi/nghien-cuu/` |
+| Giảng dạy | `/teaching/` | `/vi/giang-day/` |
+| Dự án | `/projects/` | `/vi/du-an/` |
+| Blog | `/blog/` (dùng chung — chữ "Blog" giống nhau ở cả hai thứ tiếng) | |
+
+**Nút chuyển ngôn ngữ EN / VI** nằm ở góc trên bên phải, cạnh ô tìm kiếm. Mỗi trang
+tự khai báo trang tương ứng bên kia trong front matter:
+
+```yaml
+lang: vi              # ngôn ngữ của trang: en hoặc vi
+lang_alt: /teaching/  # địa chỉ trang cùng nội dung ở ngôn ngữ kia
+nav: true             # có hiện trên menu không
+nav_order: 2          # thứ tự trên menu
+nav_title: Nghiên cứu # tên ngắn hiện trên menu (nếu muốn khác tiêu đề trang)
+```
+
+Thanh menu **tự lọc theo ngôn ngữ**: trang tiếng Việt chỉ hiện các mục tiếng Việt và
+ngược lại. Trang muốn hiện ở cả hai menu (như Blog) khai báo thêm `nav_lang: both`.
+
+### Nội dung dùng chung cho hai ngôn ngữ
+
+Học phần, dự án và tin ngắn chỉ lưu **một bản**, kèm phần dịch, nên không phải nhập
+hai lần:
+
+| Nội dung | Bản tiếng Việt | Bản tiếng Anh |
+| --- | --- | --- |
+| Học phần (`_teachings/`) | `title`, `description`, `term` | `title_en`, `description_en`, `term_en` |
+| Dự án (`_projects/`) | `description_vi` | `title`, `description` |
+| Tin ngắn (`_news/`) | phần thân bài | `text_en` |
+| Đề tài (`_data/grants.yml`) | `title_vi`, `level_vi`, `role_vi`… | `title`, `level`, `role`… |
+
+Thiếu bản dịch thì trang tự dùng bản còn lại, không bị trống.
+
+**Hai chỗ cố tình giữ nguyên ngữ:**
+
+- **Tên các công bố** trong `_bibliography/papers.bib` giữ đúng ngôn ngữ gốc của bài
+  báo — đây là thông lệ học thuật, dịch tên bài báo đã xuất bản là sai.
+- **Trang chi tiết từng học phần** (`/teachings/...`) viết bằng tiếng Việt, vì đó là
+  tài liệu cho sinh viên. Muốn dịch sang tiếng Anh thì sửa trực tiếp trong
+  `_teachings/*.md`.
 
 ---
 
-## 3b. Ba file ghi đè theme
+## 4. Các file tuỳ biến theme
 
 Theme al-folio được cài dưới dạng thư viện (gem), nên gần như toàn bộ giao diện nằm
-ngoài repo này. Chỉ có **bốn file** trong repo là phần tuỳ biến:
+ngoài repo này. Trong repo chỉ có mấy file sau là phần tuỳ biến:
 
 | File | Việc của nó |
 | --- | --- |
-| `_sass/_custom.scss` | Bảng màu, font và toàn bộ kiểu dáng banner — **file cần sửa khi muốn đổi giao diện** |
+| `_sass/_custom.scss` | Bảng màu, font, kiểu dáng banner và nút chuyển ngôn ngữ — **file cần sửa khi muốn đổi giao diện** |
 | `_includes/hero.liquid` | Khung HTML của banner trang chủ |
 | `assets/css/main.scss` | Bản sao file gốc của theme, chỉ thêm dòng `@use "custom"` ở cuối |
-| `_layouts/about.liquid` | Bản sao layout trang chủ; sửa 2 điểm: bật banner, và cho phép dịch 3 tiêu đề mục |
+| `_includes/header.liquid` | Bản sao; sửa để menu hiện theo ngôn ngữ, thêm nút EN/VI |
+| `_includes/footer.liquid` | Bản sao; sửa để tên và câu bản quyền hiện theo ngôn ngữ |
+| `_includes/courses.liquid` | Bản sao; sửa để tên học phần hiện theo ngôn ngữ |
+| `_includes/projects.liquid` | Bản sao; sửa để mô tả dự án hiện theo ngôn ngữ |
+| `_includes/news.liquid` | Bản sao; sửa để tin ngắn hiện theo ngôn ngữ |
+| `_layouts/about.liquid` | Bản sao; sửa để bật banner và dịch được 3 tiêu đề mục |
 
-Khi nâng cấp theme lên phiên bản mới, nếu giao diện có chỗ lạ thì chép lại hai file
-`main.scss` và `about.liquid` từ bản mới của theme rồi áp dụng lại đúng phần sửa nói trên.
-Hai file còn lại là của riêng anh, không bị ảnh hưởng khi nâng cấp.
+Mỗi file bản sao đều có ghi chú ở đầu nói rõ đã sửa những gì. Khi nâng cấp theme,
+nếu giao diện có chỗ lạ thì chép lại file tương ứng từ bản mới của gem rồi áp dụng
+lại đúng phần sửa đã ghi chú. Riêng `_custom.scss` và `hero.liquid` là của riêng anh,
+không bị ảnh hưởng khi nâng cấp.
 
 ---
 
-## 3c. Sửa banner trang chủ
+## 5. Sửa banner trang chủ
 
 Toàn bộ chữ trên banner nằm trong khối `hero:` ở đầu file
 `_pages/about.md` (bản tiếng Anh) và `_pages/vi/about.md` (bản tiếng Việt):
@@ -265,7 +310,7 @@ sẽ tự được dùng lại.
 
 ---
 
-## 3d. Đổi màu và font
+## 6. Đổi màu và font
 
 Toàn bộ màu sắc và font nằm trong **một file duy nhất**: `_sass/_custom.scss`.
 
@@ -284,7 +329,7 @@ Trang có sẵn chế độ nền sáng / nền tối; nút chuyển nằm ở g
 
 ---
 
-## 4. Xem thử trên máy trước khi đẩy lên (tuỳ chọn)
+## 7. Xem thử trên máy trước khi đẩy lên (tuỳ chọn)
 
 Không bắt buộc, nhưng tiện khi sửa nhiều. Cần Ruby ≥ 3.0:
 
@@ -301,7 +346,7 @@ docker compose up
 
 ---
 
-## 5. Danh sách việc cần làm (TODO)
+## 8. Danh sách việc cần làm (TODO)
 
 Tất cả chỗ cần điền đều được đánh dấu `TODO` trong mã nguồn. Tìm nhanh bằng lệnh:
 
@@ -333,7 +378,7 @@ Còn lại — những chỗ này hiện đang ghi `TODO` trên trang, nên làm
 
 ---
 
-## 6. Khi gặp lỗi
+## 9. Khi gặp lỗi
 
 - Vào tab **Actions** trên GitHub, mở job *Deploy site* gần nhất để xem log lỗi.
 - Lỗi hay gặp nhất là **sai thụt lề trong file YAML** (`.yml` và phần đầu file `.md`).

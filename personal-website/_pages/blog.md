@@ -1,9 +1,10 @@
 ---
 layout: default
 permalink: /blog/
-title: blog
+title: Blog
 nav: true
 nav_order: 4
+nav_lang: both # "Blog" dùng chung, hiện ở cả menu tiếng Anh lẫn tiếng Việt
 pagination:
   enabled: true
   collection: posts

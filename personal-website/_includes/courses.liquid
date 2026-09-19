@@ -1,0 +1,53 @@
+{%- comment -%}
+  Bản sao courses.liquid của theme al-folio, sửa một điểm: tiêu đề, học kỳ và mô tả
+  học phần hiển thị theo ngôn ngữ của trang đang xem.
+
+  Mỗi file trong _teachings/ khai báo bản tiếng Việt ở các trường title/term/description,
+  và bản tiếng Anh ở title_en/term_en/description_en. Thiếu bản tiếng Anh thì tự dùng
+  bản tiếng Việt.
+{%- endcomment -%}
+{%- assign cur_lang = page.lang | default: 'en' -%}
+{% if site.teachings %}
+  <div class="courses">
+    {% assign courses_by_year = site.teachings | sort: 'year' | reverse | group_by: 'year' %}
+
+    {% for year_group in courses_by_year %}
+      <h2 class="year">{{ year_group.name }}</h2>
+      <div class="course-list">
+        {% assign year_courses = year_group.items | sort: 'title' %}
+        {% for course in year_courses %}
+          {% if cur_lang == 'vi' %}
+            {% assign c_title = course.title %}
+            {% assign c_term = course.term %}
+            {% assign c_desc = course.description %}
+          {% else %}
+            {% assign c_title = course.title_en | default: course.title %}
+            {% assign c_term = course.term_en | default: course.term %}
+            {% assign c_desc = course.description_en | default: course.description %}
+          {% endif %}
+          <div class="course-item">
+            <h3 class="course-title">
+              <a href="{{ course.url | relative_url }}">{{ c_title }}</a>
+            </h3>
+
+            <div class="course-meta">
+              {% if c_term %}
+                <span class="course-term">{{ c_term }}</span>
+              {% endif %}
+
+              {% if course.instructor %}
+                <span class="course-instructor">{{ course.instructor }}</span>
+              {% endif %}
+            </div>
+
+            {% if c_desc %}
+              <div class="course-description">
+                {{ c_desc | markdownify }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

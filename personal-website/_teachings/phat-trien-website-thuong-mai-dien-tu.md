@@ -2,6 +2,9 @@
 layout: course
 title: "Phát triển Website Thương mại điện tử"
 description: "Thiết kế và xây dựng website thương mại điện tử: kiến trúc ứng dụng web, quản trị sản phẩm, giỏ hàng, thanh toán và bảo mật."
+title_en: "E-commerce Website Development"
+description_en: "Designing and building e-commerce websites: web application architecture, product management, cart, payment and security."
+term_en: "TODO: term"
 instructor: Trần Thái Hòa
 year: 2025
 term: "TODO: Học kỳ"

@@ -1,24 +1,29 @@
 {%- comment -%}
   Banner trang chủ. Toàn bộ nội dung lấy từ khối "hero:" trong front matter của
   _pages/about.md (bản tiếng Anh) và _pages/vi/about.md (bản tiếng Việt).
-  Sửa chữ, nút bấm hay liên kết đều chỉ cần sửa ở hai file đó, không đụng tới file này.
+  Sửa chữ, số liệu, nút bấm đều chỉ cần sửa ở hai file đó, không đụng tới file này.
 {%- endcomment -%}
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      {% if page.hero.badge %}
-        <span class="hero-badge">{{ page.hero.badge }}</span>
-      {% endif %}
-
       <h1 class="hero-title">
-        {{ page.hero.title }}
-        {% if page.hero.role %}
-          <span class="hero-role">{{ page.hero.role }}</span>
+        {{ page.hero.title }}{% if page.hero.highlight %}
+          <span class="hero-accent">{{ page.hero.highlight }}</span>
         {% endif %}
       </h1>
 
-      {% if page.hero.description %}
-        <p class="hero-desc">{{ page.hero.description }}</p>
+      <span class="hero-rule" aria-hidden="true"></span>
+
+      {% if page.hero.role %}
+        <p class="hero-role">{{ page.hero.role }}</p>
+      {% endif %}
+
+      {% if page.hero.stats %}
+        <p class="hero-stats">
+          {% for s in page.hero.stats %}
+            <span class="hero-stat"><b>{{ s.num }}</b> {{ s.label }}</span>
+          {% endfor %}
+        </p>
       {% endif %}
 
       {% if page.hero.buttons %}
@@ -27,19 +32,9 @@
             <a
               class="hero-btn {% if btn.style == 'ghost' %}hero-btn-ghost{% else %}hero-btn-primary{% endif %}"
               href="{{ btn.url | relative_url }}"
-            >
-              {{ btn.label }} <span aria-hidden="true">&rarr;</span>
-            </a>
+            >{{ btn.label }}</a>
           {% endfor %}
         </div>
-      {% endif %}
-
-      {% if page.hero.links %}
-        <p class="hero-links">
-          {% for l in page.hero.links %}
-            <a href="{{ l.url }}">{{ l.label }}</a>
-          {% endfor %}
-        </p>
       {% endif %}
     </div>
 

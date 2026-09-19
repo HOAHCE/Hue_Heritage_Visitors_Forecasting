@@ -2,6 +2,9 @@
 layout: course
 title: "Phát triển hệ thống thông tin"
 description: "Quy trình phát triển hệ thống thông tin trong tổ chức: khảo sát, phân tích, thiết kế, triển khai và bảo trì."
+title_en: "Information Systems Development"
+description_en: "Developing information systems in organisations: requirements gathering, analysis, design, implementation and maintenance."
+term_en: "TODO: term"
 instructor: Trần Thái Hòa
 year: 2025
 term: "TODO: Học kỳ"

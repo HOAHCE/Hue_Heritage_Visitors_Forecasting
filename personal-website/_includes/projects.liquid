@@ -1,0 +1,42 @@
+{%- comment -%}
+  Bản sao projects.liquid của theme al-folio, sửa một điểm: tiêu đề và mô tả dự án
+  hiển thị theo ngôn ngữ của trang đang xem.
+
+  Mỗi file trong _projects/ khai báo bản tiếng Anh ở title/description và bản tiếng
+  Việt ở description_vi. Thiếu bản tiếng Việt thì tự dùng bản tiếng Anh.
+{%- endcomment -%}
+{%- assign cur_lang = page.lang | default: 'en' -%}
+{%- if cur_lang == 'vi' -%}
+  {%- assign p_desc = project.description_vi | default: project.description -%}
+{%- else -%}
+  {%- assign p_desc = project.description -%}
+{%- endif -%}
+<div class="col">
+  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
+    <div class="card h-100 hoverable">
+      {% if project.img %}
+        {%
+          include figure.liquid
+          loading="eager"
+          path=project.img
+          sizes = "250px"
+          alt="project thumbnail"
+          class="card-img-top"
+        %}
+      {% endif %}
+      <div class="card-body">
+        <h2 class="card-title">{{ project.title }}</h2>
+        <p class="card-text">{{ p_desc }}</p>
+        <div class="project-links">
+          {% if project.github %}
+            <div class="github-icon">
+              <div class="icon">
+                <a href="{{ project.github }}" title="Code repository"><i class="fa-brands fa-github gh-icon"></i></a>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

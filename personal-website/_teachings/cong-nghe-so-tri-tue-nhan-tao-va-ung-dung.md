@@ -2,6 +2,9 @@
 layout: course
 title: "Công nghệ số, Trí tuệ nhân tạo và ứng dụng"
 description: "Tổng quan các công nghệ số và trí tuệ nhân tạo cùng ứng dụng của chúng trong kinh tế và quản trị."
+title_en: "Digital Technologies, Artificial Intelligence and Applications"
+description_en: "An overview of digital technologies and artificial intelligence, and how they are applied in economics and management."
+term_en: "TODO: term"
 instructor: Trần Thái Hòa
 year: 2025
 term: "TODO: Học kỳ"
