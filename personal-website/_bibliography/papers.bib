@@ -17,74 +17,168 @@
     selected    = {true}                    -> bài chọn lọc, hiện trên trang chủ
     bibtex_show = {true}                    -> nút xem mã BibTeX
     pdf         = {ten-file.pdf}            -> file đặt trong assets/pdf/
-    slides      = {ten-slide.pdf}           -> file đặt trong assets/pdf/
     code        = {https://github.com/...}  -> link mã nguồn
     html        = {https://doi.org/...}     -> link bài báo
     preview     = {ten-anh.png}             -> ảnh trong assets/img/publication_preview/
     abstract    = {Tóm tắt...}              -> nút xem tóm tắt
-    additional_info = {...}                 -> dòng ghi chú thêm
 
   Tên tác giả viết theo dạng {Họ, Tên}, ví dụ: {Tran Thai, Hoa} — hiển thị ra
   thành "Hoa Tran Thai", đúng dạng tên tiếng Anh dùng trên trang.
   Nhiều tác giả nối bằng chữ "and".
 
-  CÒN THIẾU — cần anh bổ sung vào từng entry bên dưới:
-    - Tên các ĐỒNG TÁC GIẢ: bản kê khai không ghi tên ai, nên hiện mỗi entry
-      tạm để một mình anh. Sửa trường author = {Tran Thai, Hoa and Nguyen, Van A}.
-    - Số tập (volume), số (number), trang (pages) và doi của từng bài.
-    - Với sách "Nghiên cứu xây dựng mô hình đại học thông minh": tên các đồng chủ biên.
-    - Với sách "Ứng dụng công nghệ chuỗi khối": tên chủ biên và các tác giả khác.
+  ===========================================================================
+  CÒN THIẾU / CẦN ANH KIỂM TRA LẠI
+  ===========================================================================
 
-  LƯU Ý: trường additional_info được theme nối THẲNG vào sau tên tạp chí/nhà xuất
-  bản, không có dấu ngăn cách. Nên nếu dùng, hãy tự chừa khoảng trắng ở đầu,
-  ví dụ: additional_info = { (Chủ biên)}
+  0) Tập/số/trang và vai trò ở sách được in ra nhờ _includes/hook/bib.liquid,
+     vì layout gốc của theme chỉ in tên tạp chí rồi đến năm. Chỉ cần điền đúng
+     các trường volume / number / pages / role, không phải nhập lại lần nữa.
+
+  1) DOI: chưa có bài nào. Thêm bằng cách điền hai dòng vào entry tương ứng:
+        doi  = {10.xxxx/yyyy},
+        html = {https://doi.org/10.xxxx/yyyy},
+
+  2) TÊN VIẾT TẮT CỦA ĐỒNG TÁC GIẢ: danh sách copy từ Google Scholar chỉ ghi
+     tắt (ví dụ "TM Le", "ND Binh"). Các tên này đang giữ nguyên dạng viết tắt.
+     Anh viết đầy đủ ra thì danh mục sẽ chuyên nghiệp hơn.
+
+  3) BA CHỖ GOOGLE SCHOLAR CẮT NGẮN, cần anh điền nốt:
+     - "Integrating NASDAQ Spillover Signals..." (2026): tên hội thảo bị cắt,
+       và danh sách tác giả còn dấu "..." nên có thể thiếu người.
+     - "A Multi-Objective GA-LSTM Framework..." (2025): tên kỷ yếu bị cắt.
+     - Hai bài kỷ yếu trên cũng chưa có số trang.
+
+  4) BA CỤM CHỮ CÁI KHÔNG RÕ LÀ AI — tôi KHÔNG đoán, anh xác nhận giúp:
+     - "HBK" đứng trước Trần Thái Hòa ở bài N-BEATS (2026)
+     - "HPTD" đứng trước Hoa Tran Thai ở bài Transformer/Gold (2025)
+     - "CHND" đứng trước Hoa Tran Thai ở bài So sánh 1D-CNN, LSTM (2024)
+     Nếu đó là đồng tác giả thì bổ sung vào trường author của entry tương ứng.
+
+  5) TIÊU ĐỀ TIẾNG VIỆT: Google Scholar hiển thị IN HOA TOÀN BỘ (do tạp chí
+     trình bày như vậy). Ở đây tôi viết lại dạng chữ thường theo đúng thông lệ
+     trình bày danh mục tài liệu. Muốn giữ nguyên chữ in hoa thì sửa lại trực
+     tiếp trong các entry bên dưới.
+
+  6) Bản kê khai tháng 03/2025 còn 2 bài blockchain và 3 cuốn sách năm 2023
+     (ở cuối file) — những mục này KHÔNG có trên Google Scholar nên không có
+     số trang. Anh bổ sung sau nếu cần.
 
   LƯU Ý: mọi ghi chú trong file .bib phải nằm trong khối comment như thế này.
 
 }
 
 % =============================================================================
-% BÀI BÁO KHOA HỌC
+% BÀI BÁO TẠP CHÍ
 % =============================================================================
 
-@article{tran2025ethereum,
-  abbr            = {IJIT},
-  title           = {Hybrid model 1D-CNN and LSTM for forecasting Ethereum close prices: A case study of temporal analysis},
-  author          = {Tran Thai, Hoa},
-  journal         = {International Journal of Information Technology},
-  publisher       = {Springer},
-  year            = {2025},
-  selected        = {true},
-  bibtex_show     = {true}
+@article{tranthai2025ethereum,
+  abbr        = {IJIT},
+  title       = {Hybrid model of 1D-CNN and LSTM for forecasting Ethereum closing prices: a case study of temporal analysis},
+  author      = {Tran Thai, Hoa and Le, Thanh Manh and Nguyen-Dinh, Cuong H.},
+  journal     = {International Journal of Information Technology},
+  publisher   = {Springer},
+  volume      = {17},
+  number      = {7},
+  pages       = {3999--4011},
+  year        = {2025},
+  selected    = {true},
+  bibtex_show = {true}
 }
 
-@article{tran2023blockchain,
-  abbr            = {HUJS},
-  title           = {Phân tích khả năng ứng dụng công nghệ blockchain vào chuỗi cung ứng dầu tràm tại Huế},
-  author          = {Tran Thai, Hoa},
-  journal         = {Tạp chí Khoa học Đại học Huế: Kinh tế và phát triển},
-  publisher       = {Nhà xuất bản Đại học Huế},
-  issn            = {2588-1205},
-  year            = {2023},
-  selected        = {true},
-  bibtex_show     = {true}
+@article{tranthai2026vcb,
+  abbr        = {HUJS},
+  title       = {Dự báo giá cổ phiếu bằng các mô hình học sâu được tối ưu bằng PSO: Xét trường hợp mã cổ phiếu VCB},
+  author      = {Tran Thai, Hoa and Le, N. L. Q. and Le, L. T. Q.},
+  journal     = {Hue University Journal of Science: Economics and Development},
+  volume      = {135},
+  number      = {5A},
+  pages       = {157--177},
+  year        = {2026},
+  selected    = {true},
+  bibtex_show = {true}
 }
 
-@inproceedings{tran2023melaleuca,
-  abbr            = {Hội thảo},
-  title           = {Modelling blockchain technology applications in developing agricultural supply chains: The case of melaleuca oil in Hue},
-  author          = {Tran Thai, Hoa},
-  booktitle       = {Kỷ yếu hội thảo khoa học quốc tế — Phát triển kinh tế xanh ở Việt Nam},
-  publisher       = {Nhà xuất bản Lao Động},
-  year            = {2023},
-  bibtex_show     = {true}
+@article{tranthai2026nbeats,
+  abbr        = {TCKHCN},
+  title       = {Phân tích thực nghiệm mô hình N-BEATS cho bài toán dự báo giá Bitcoin theo nhiều khung thời gian},
+  author      = {Tran Thai, Hoa and Duong, Duc Hung and Nguyen, Thanh Nam},
+  journal     = {Tạp chí Khoa học và Công nghệ, Trường Đại học Khoa học, Đại học Huế},
+  volume      = {33},
+  number      = {1},
+  pages       = {59--73},
+  year        = {2026},
+  bibtex_show = {true}
+}
+
+@article{tranthai2024sosanh,
+  abbr        = {TCKHCN},
+  title       = {So sánh hiệu quả mô hình học sâu 1D-CNN, LSTM và mô hình lai trong dự báo giá đóng cửa Bitcoin},
+  author      = {Tran Thai, Hoa and Le, Thanh Manh},
+  journal     = {Tạp chí Khoa học và Công nghệ, Trường Đại học Khoa học, Đại học Huế},
+  volume      = {27},
+  number      = {1B},
+  pages       = {121--136},
+  year        = {2024},
+  bibtex_show = {true}
+}
+
+@article{tranthai2023blockchain,
+  abbr        = {HUJS},
+  title       = {Phân tích khả năng ứng dụng công nghệ blockchain vào chuỗi cung ứng dầu tràm tại Huế},
+  author      = {Tran Thai, Hoa},
+  journal     = {Tạp chí Khoa học Đại học Huế: Kinh tế và phát triển},
+  publisher   = {Nhà xuất bản Đại học Huế},
+  issn        = {2588-1205},
+  year        = {2023},
+  bibtex_show = {true}
+}
+
+% =============================================================================
+% BÁO CÁO HỘI THẢO, KỶ YẾU
+% =============================================================================
+
+@inproceedings{tranthai2026nasdaq,
+  abbr        = {ICCIE},
+  title       = {Integrating NASDAQ spillover signals into hybrid 1D-CNN-LSTM frameworks for multi-horizon Bitcoin forecasting},
+  author      = {Tran Thai, Hoa and Le, Thanh Manh and Hoang, H. T. and Ngoc, N. N. and Truong-Nguyen, H. T.},
+  booktitle   = {International Conference on Computational Intelligence in Engineering},
+  year        = {2026},
+  bibtex_show = {true}
+}
+
+@inproceedings{tranthai2025galstm,
+  abbr        = {FAIR},
+  title       = {A multi-objective GA-LSTM framework for simultaneous optimization of predictive accuracy and computational efficiency in Bitcoin price forecasting},
+  author      = {Tran Thai, Hoa and Le, Thanh Manh and Nguyen, D. Binh and Nguyen, T. Nam and Nguyen-Dinh, Cuong H.},
+  booktitle   = {Proceedings of the 18th National Conference on Fundamental and Applied Information Technology Research},
+  year        = {2025},
+  bibtex_show = {true}
+}
+
+@inproceedings{tranthai2025gold,
+  abbr        = {ICYREB},
+  title       = {Advancing financial forecasting: On the effectiveness of the Transformer architecture for gold price time series analysis},
+  author      = {Tran Thai, Hoa and Nguyen-Dinh, Cuong H. and Nguyen, Dung Thi Kim},
+  booktitle   = {ICYREB 2025 — The 11th International Conference for Young Researchers in Economics and Business},
+  year        = {2025},
+  bibtex_show = {true}
+}
+
+@inproceedings{tranthai2023melaleuca,
+  abbr        = {Hội thảo},
+  title       = {Modelling blockchain technology applications in developing agricultural supply chains: The case of melaleuca oil in Hue},
+  author      = {Tran Thai, Hoa},
+  booktitle   = {Kỷ yếu hội thảo khoa học quốc tế — Phát triển kinh tế xanh ở Việt Nam},
+  publisher   = {Nhà xuất bản Lao Động},
+  year        = {2023},
+  bibtex_show = {true}
 }
 
 % =============================================================================
 % SÁCH, GIÁO TRÌNH
 % =============================================================================
 
-@book{tran2023sach_dautram,
+@book{tranthai2023sach_dautram,
   abbr            = {Sách},
   title           = {Xây dựng mô hình ứng dụng công nghệ Blockchain trong quản lý chuỗi cung ứng: Trường hợp sản phẩm dầu tràm ở Huế},
   author          = {Tran Thai, Hoa},
@@ -92,25 +186,25 @@
   year            = {2023},
   selected        = {true},
   bibtex_show     = {true},
-  additional_info = { (Chủ biên)}
+  role            = {Chủ biên}
 }
 
-@book{tran2023sach_daihocthongminh,
+@book{tranthai2023sach_daihocthongminh,
   abbr            = {Sách},
   title           = {Nghiên cứu xây dựng mô hình đại học thông minh và đề xuất quá trình chuyển đổi cho các trường đại học Việt Nam},
   author          = {Tran Thai, Hoa},
   publisher       = {Nhà xuất bản Lao Động},
   year            = {2023},
   bibtex_show     = {true},
-  additional_info = { (Đồng chủ biên)}
+  role            = {Đồng chủ biên}
 }
 
-@book{tran2023sach_chuoikhoi,
+@book{tranthai2023sach_chuoikhoi,
   abbr            = {Sách},
   title           = {Ứng dụng công nghệ chuỗi khối (Blockchain) nhằm phát triển chuỗi cung ứng nông nghiệp},
   author          = {Tran Thai, Hoa},
   publisher       = {Nhà xuất bản Lao động},
   year            = {2023},
   bibtex_show     = {true},
-  additional_info = { (Thành viên tham gia)}
+  role            = {Thành viên tham gia}
 }

@@ -270,6 +270,7 @@ ngoài repo này. Trong repo chỉ có mấy file sau là phần tuỳ biến:
 | `_includes/projects.liquid` | Bản sao; sửa để mô tả dự án hiện theo ngôn ngữ |
 | `_includes/news.liquid` | Bản sao; sửa để tin ngắn hiện theo ngôn ngữ |
 | `_layouts/about.liquid` | Bản sao; sửa để bật banner và dịch được 3 tiêu đề mục |
+| `_includes/hook/bib.liquid` | **Không phải bản sao** — đây là điểm mở rộng theme cung cấp sẵn; dùng để in thêm tập(số), trang và vai trò tác giả ở sách |
 
 Mỗi file bản sao đều có ghi chú ở đầu nói rõ đã sửa những gì. Khi nâng cấp theme,
 nếu giao diện có chỗ lạ thì chép lại file tương ứng từ bản mới của gem rồi áp dụng
@@ -362,21 +363,28 @@ grep -rn "TODO" _pages _data _projects _teachings _posts _news _bibliography _co
 - [x] Tên hiển thị: **Trần Thái Hòa** (tiếng Việt) / **Hoa Tran Thai** (tiếng Anh)
 - [x] Font Inter, bảng màu xám nhạt – đen – xanh nhạt
 - [x] Quá trình học tập (cử nhân, thạc sĩ, nghiên cứu sinh)
-- [x] 3 bài báo, 3 sách, 1 đề tài cấp Đại học Huế
+- [x] 9 bài báo & kỷ yếu (2023–2026), 3 sách, 1 đề tài cấp Đại học Huế,
+      kèm đồng tác giả và tập/số/trang
 - [x] 5 học phần giảng dạy
 
 Còn lại:
 
-- [ ] `_bibliography/papers.bib` — bổ sung **tên đồng tác giả**, tập/số/trang và DOI.
-      Bản kê khai 03/2025 không ghi những thông tin này, nên hiện mỗi công bố đang
-      để một mình anh đứng tên.
-- [ ] Bổ sung các công bố trước 2023 (bản kê khai chỉ liệt kê 36 tháng gần nhất)
-- [ ] `_teachings/*.md` — khi bắt đầu học kỳ thì mở phần `term`, `location`, `time`
-      và `schedule` (đang để dạng ghi chú), rồi tải slide/đề cương lên `assets/pdf/`
+- [ ] **DOI** — chưa công bố nào có. Thêm vào entry tương ứng trong
+      `_bibliography/papers.bib`: `doi = {10.xxxx/yyyy}` và
+      `html = {https://doi.org/10.xxxx/yyyy}` để tên bài thành liên kết bấm được.
+- [ ] **Tên đồng tác giả viết tắt** — Google Scholar chỉ ghi tắt ("TM Le", "ND Binh"),
+      hiện đang giữ nguyên. Viết đầy đủ ra thì danh mục chuyên nghiệp hơn.
+- [ ] **Ba cụm chữ cái chưa rõ là ai**: "HBK" (bài N-BEATS 2026), "HPTD" (bài
+      Transformer/Gold 2025), "CHND" (bài So sánh 1D-CNN 2024). Nếu là đồng tác giả
+      thì bổ sung vào trường `author`.
+- [ ] **Hai bài kỷ yếu bị Scholar cắt ngắn**: tên hội thảo của bài NASDAQ (2026) và
+      số trang của cả hai bài kỷ yếu 2025–2026.
+- [ ] Bổ sung các công bố trước 2023, nếu có
+- [ ] `_teachings/*.md` — khi vào học kỳ thì mở phần `term`, `location`, `time`,
+      `schedule` (đang để dạng ghi chú) và tải slide/đề cương lên `assets/pdf/`
 - [ ] `_data/resources.yml` — thay bằng tài liệu thật, hoặc xoá hết nội dung
-- [ ] `_news/2025-10-02-cong-bo-moi.md` — tin mẫu, sửa hoặc xoá
-- [ ] `_posts/2025-10-01-chao-mung.md` — bài mẫu, sửa hoặc xoá
-- [ ] `_projects/*.md` — viết phần mô tả chi tiết cho 3 dự án GitHub
+- [ ] `_news/2025-10-02-cong-bo-moi.md` và `_posts/2025-10-01-chao-mung.md` — mẫu, sửa hoặc xoá
+- [ ] `_projects/*.md` — viết mô tả chi tiết cho 3 dự án GitHub
 - [ ] `assets/pdf/example_pdf.pdf` — xoá sau khi đã thay bằng tài liệu thật
 
 ---

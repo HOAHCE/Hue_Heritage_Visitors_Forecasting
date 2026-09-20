@@ -417,6 +417,7 @@ filtered_bibtex_keywords:
     pmid,
     poster,
     preview,
+    role,
     selected,
     slides,
     supp,

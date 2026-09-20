@@ -1,0 +1,28 @@
+{%- comment -%}
+  Hook do chính theme al-folio cung cấp (_layouts/bib.liquid gọi tới file này nếu
+  có), nên đây KHÔNG phải bản sao layout — nâng cấp theme không ảnh hưởng.
+
+  Việc của nó: layout gốc chỉ in tên tạp chí rồi đến năm. Hook này nối thêm
+  tập(số), trang — lấy thẳng từ các trường volume/number/pages của entry, nên
+  không phải nhập hai lần — và vai trò tác giả với sách (trường role).
+
+  Kết quả: "International Journal of Information Technology 17(7), 3999–4011, 2025"
+{%- endcomment -%}
+
+{%- if entry.volume -%}
+  {%- capture entrytype -%}
+    {{ entrytype }} {{ entry.volume }}{% if entry.number %}({{ entry.number }}){% endif %}
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if entry.pages -%}
+  {%- capture entrytype -%}
+    {{ entrytype }}, {{ entry.pages | replace: "--", "–" }}
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if entry.role -%}
+  {%- capture entrytype -%}
+    {{ entrytype }} ({{ entry.role }})
+  {%- endcapture -%}
+{%- endif -%}
