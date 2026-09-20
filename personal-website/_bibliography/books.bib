@@ -8,11 +8,21 @@
   File này tách riêng khỏi papers.bib để trang Nghiên cứu hiển thị sách thành
   một mục riêng. Trang gọi tới bằng: {% bibliography -f books %}
 
-  Cách viết tên tác giả giống papers.bib: tên anh dạng {Tran Thai, Hoa},
+  Cách viết tên tác giả giống papers.bib: tên anh dạng {Thái Hòa, Trần},
   đồng tác giả bọc trong {} để giữ nguyên thứ tự họ-tên tiếng Việt.
 
   Trường role = vai trò CỦA ANH trong cuốn sách đó, được in ra sau tên nhà xuất bản.
   Trường abbr = thể loại sách, hiện thành nhãn nhỏ bên trái.
+
+  TÊN CỦA ANH VIẾT KHÁC MỘT CHÚT — CÓ LÝ DO
+  -----------------------------------------
+  Tên anh KHÔNG bọc {} như các đồng tác giả, mà viết dạng "Họ, Tên":
+      bài tiếng Anh : Tran Thai, Hoa    -> hiện ra "Hoa Tran Thai"
+      bài tiếng Việt: Thái Hòa, Trần    -> hiện ra "Trần Thái Hòa"
+  Theme chỉ in đậm được tên tác giả khi tách được phần họ và phần tên riêng.
+  Tên bọc trong {} thì phần tên riêng rỗng, và phép so khớp của theme luôn sai,
+  nên tên anh sẽ không được in đậm. Cách viết trên là để giữ được nút in đậm đó.
+  Hai giá trị này phải khớp với scholar.last_name / scholar.first_name trong _config.yml.
 
   CẦN KIỂM TRA: hai cuốn "Ứng dụng công nghệ chuỗi khối (Blockchain)..." (2023) và
   "Thương mại và Logistics Việt Nam..." (2022) đang mang CÙNG một mã ISBN
@@ -23,7 +33,7 @@
 @book{sach2026marketingxanh,
   abbr        = {Tham khảo},
   title       = {Mối liên hệ giữa marketing xanh trên mạng xã hội và ý định quay trở lại của du khách nội địa ở Việt Nam},
-  author      = {{Trương Tấn Quân} and {Nguyễn Hữu Hoàng Thọ} and {Hoàng Đức Sinh} and {Lê Thanh An} and {Lê Anh Quý} and {Nguyễn Thanh Tuấn} and Tran Thai, Hoa and {Trần Hữu Tuấn}},
+  author      = {{Trương Tấn Quân} and {Nguyễn Hữu Hoàng Thọ} and {Hoàng Đức Sinh} and {Lê Thanh An} and {Lê Anh Quý} and {Nguyễn Thanh Tuấn} and Thái Hòa, Trần and {Trần Hữu Tuấn}},
   publisher   = {Nhà xuất bản Đại học Huế},
   isbn        = {978-632-627-296-3},
   year        = {2026},
@@ -34,7 +44,7 @@
 @book{sach2024logistics,
   abbr        = {Giáo trình},
   title       = {Quản trị Logistics căn bản},
-  author      = {{Đặng Đình Đào} and Tran Thai, Hoa and {Trần Văn Bão} and {Nguyễn Thái Bình}},
+  author      = {{Đặng Đình Đào} and Thái Hòa, Trần and {Trần Văn Bão} and {Nguyễn Thái Bình}},
   publisher   = {Nhà xuất bản Lao Động},
   isbn        = {978-604-492-200-3},
   year        = {2024},
@@ -45,7 +55,7 @@
 @book{sach2023daihocthongminh,
   abbr        = {Chuyên khảo},
   title       = {Nghiên cứu xây dựng mô hình đại học thông minh và đề xuất quá trình chuyển đổi cho các trường đại học Việt Nam},
-  author      = {Tran Thai, Hoa and {Nguyễn Thanh Tuấn} and {Lê Minh Tuấn}},
+  author      = {Thái Hòa, Trần and {Nguyễn Thanh Tuấn} and {Lê Minh Tuấn}},
   publisher   = {Nhà xuất bản Đại học Huế},
   isbn        = {978-604-399-577-0},
   year        = {2023},
@@ -56,7 +66,7 @@
 @book{sach2023dautram,
   abbr        = {Chuyên khảo},
   title       = {Xây dựng mô hình ứng dụng công nghệ Blockchain trong quản lý chuỗi cung ứng: Trường hợp sản phẩm dầu tràm ở Huế},
-  author      = {Tran Thai, Hoa and {Trương Tấn Quân} and {Dương Đắc Quang Hảo} and {Nguyễn Thanh Tuấn}},
+  author      = {Thái Hòa, Trần and {Trương Tấn Quân} and {Dương Đắc Quang Hảo} and {Nguyễn Thanh Tuấn}},
   publisher   = {Nhà xuất bản Đại học Huế},
   isbn        = {978-604-399-551-0},
   year        = {2023},
@@ -67,7 +77,7 @@
 @book{sach2023chuoikhoi,
   abbr        = {Chuyên khảo},
   title       = {Ứng dụng công nghệ chuỗi khối (Blockchain) nhằm phát triển chuỗi cung ứng nông nghiệp},
-  author      = {{Dương Đắc Quang Hảo} and Tran Thai, Hoa and {Nguyễn Thị Minh Hòa} and {Hoàng La Phương Hiền}},
+  author      = {{Dương Đắc Quang Hảo} and Thái Hòa, Trần and {Nguyễn Thị Minh Hòa} and {Hoàng La Phương Hiền}},
   publisher   = {Nhà xuất bản Lao Động},
   isbn        = {978-604-393-670-4},
   year        = {2023},
@@ -78,7 +88,7 @@
 @book{sach2023quantrilogistics,
   abbr        = {Giáo trình},
   title       = {Giáo trình Quản trị hoạt động logistics và thương mại doanh nghiệp},
-  author      = {{Đặng Đình Đào} and Tran Thai, Hoa and {Trương Tấn Quân}},
+  author      = {{Đặng Đình Đào} and Thái Hòa, Trần and {Trương Tấn Quân}},
   publisher   = {Nhà xuất bản Tài chính},
   isbn        = {978-604-793-664-9},
   year        = {2023},
@@ -89,7 +99,7 @@
 @book{sach2022thuongmai,
   abbr        = {Chuyên khảo},
   title       = {Thương mại và logistics Việt Nam thời kỳ đổi mới 1986–2021, triển vọng đến năm 2045},
-  author      = {{Đặng Đình Đào} and {Trần Văn Hòa} and {Trương Tấn Quân} and Tran Thai, Hoa},
+  author      = {{Đặng Đình Đào} and {Trần Văn Hòa} and {Trương Tấn Quân} and Thái Hòa, Trần},
   publisher   = {Nhà xuất bản Lao Động},
   isbn        = {978-604-393-670-4},
   year        = {2022},
@@ -100,7 +110,7 @@
 @book{sach2020quanlytoandien,
   abbr        = {Chuyên khảo},
   title       = {Ứng dụng mô hình quản lý toàn diện trường đại học trong các trường đại học ở Việt Nam: Thử nghiệm tại Trường Đại học Kinh tế, Đại học Huế},
-  author      = {{Nguyễn Thanh Tuấn} and {Dương Thị Hải Phương} and {Mai Thu Giang} and Tran Thai, Hoa and {Nguyễn Hữu Hoàng Thọ} and {Trần Thị Khánh Linh} and {Nguyễn Thị Phương Thảo}},
+  author      = {{Nguyễn Thanh Tuấn} and {Dương Thị Hải Phương} and {Mai Thu Giang} and Thái Hòa, Trần and {Nguyễn Hữu Hoàng Thọ} and {Trần Thị Khánh Linh} and {Nguyễn Thị Phương Thảo}},
   publisher   = {Nhà xuất bản Lao động xã hội},
   isbn        = {978-604-65-4644-3},
   year        = {2020},

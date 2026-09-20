@@ -124,15 +124,42 @@ Danh mục chia làm **hai file**:
 | `_bibliography/papers.bib` | Bài báo tạp chí và báo cáo hội thảo |
 | `_bibliography/books.bib` | Sách và giáo trình |
 
-Cách viết **tên tác giả** — quan trọng, viết sai là tên người ta bị đảo lộn:
+Cách viết **tên tác giả** — quan trọng, viết sai là tên người ta bị đảo lộn.
+
+**Nguyên tắc: bài viết bằng ngôn ngữ nào thì ghi tên theo ngôn ngữ đó.**
+
+Bài tiếng Anh:
 
 ```bibtex
-author = {Tran Thai, Hoa and {Lê Mạnh Thạnh} and {Nguyễn Đình Hoa Cương}}
+author = {Tran Thai, Hoa and {Thanh Manh Le} and {Cuong Hoa Nguyen-Dinh}}
 ```
 
-- Tên anh viết dạng `Họ, Tên` **không bọc ngoặc**, nhờ vậy trang tự in đậm tên anh.
-- Tên đồng tác giả người Việt **bọc trong dấu `{}`** để giữ nguyên thứ tự họ-tên.
-  Không bọc thì BibTeX sẽ đảo thành "Thạnh Lê Mạnh".
+Bài tiếng Việt:
+
+```bibtex
+author = {Thái Hòa, Trần and {Lê Mạnh Thạnh} and {Nguyễn Đình Hoa Cương}}
+```
+
+- **Đồng tác giả** luôn bọc trong dấu `{}` để giữ nguyên thứ tự họ-tên.
+  Không bọc thì BibTeX đảo thành "Thạnh Lê Mạnh", sai tên người ta.
+- **Tên anh** thì ngược lại: viết dạng `Họ, Tên` và **không bọc `{}`**, vì theme chỉ
+  in đậm được tên tác giả khi tách rời được phần họ và phần tên riêng.
+  Hai giá trị đó phải khớp với `scholar.last_name` và `scholar.first_name`
+  trong `_config.yml`:
+
+  | | Viết trong .bib | Hiện ra trên trang |
+  | --- | --- | --- |
+  | Bài tiếng Anh | `Tran Thai, Hoa` | Hoa Tran Thai |
+  | Bài tiếng Việt | `Thái Hòa, Trần` | Trần Thái Hòa |
+
+Bảng chuyển tên đồng tác giả sang dạng Latin nằm ở đầu file `papers.bib`.
+
+**Thêm DOI** cho một bài — nên làm, vì khi đó tên bài có thêm nút bấm sang bài gốc:
+
+```bibtex
+  doi  = {10.1007/s41870-025-02472-6},
+  html = {https://doi.org/10.1007/s41870-025-02472-6},
+```
 
 
 Mở `_bibliography/papers.bib`, dán thêm một khối BibTeX (lấy sẵn từ nút "Cite" trên
@@ -383,21 +410,24 @@ grep -rn "TODO" _pages _data _projects _teachings _posts _news _bibliography _co
 - [x] Quá trình học tập (cử nhân, thạc sĩ, nghiên cứu sinh)
 - [x] **18 bài báo & kỷ yếu** (2013–2026), **8 sách, giáo trình**, **11 đề tài**
       — lấy từ ba file kết xuất CSDL Khoa học ĐH Huế, đủ đồng tác giả và tập/số/trang
+- [x] Tên tác giả thống nhất theo ngôn ngữ từng bài (Anh / Việt)
 - [x] 5 học phần giảng dạy
 
 Còn lại:
 
-- [ ] **DOI** — chưa công bố nào có. Thêm `doi` và `html` vào entry thì tên bài
-      thành liên kết bấm được. Đáng làm nhất cho bài IJIT 2025 và bài CCIS 2026.
-- [ ] **Vài bài chỉ có trang bắt đầu** trong file CSDL (bài GRU 2026 trang 15,
-      ba bài logistics 2023, bài ICYREB 2025 trang 379). Bổ sung trang kết thúc.
+- [ ] **DOI — mới có 1/18 bài** (bài IJIT 2025). Các dịch vụ tra DOI (Crossref,
+      doi.org, OpenAlex) đều bị chặn trong môi trường tôi làm việc, và tạp chí
+      trong nước hầu như không có trong chỉ mục tìm kiếm. Anh bổ sung dần; cách
+      thêm xem mục 2.2 ở trên.
+- [ ] **Bảng chuyển tên đồng tác giả sang dạng Latin** ở đầu `papers.bib` — hai
+      dòng đầu lấy đúng theo trang Springer, phần còn lại do tôi chuyển theo lối
+      thông thường. Anh đối chiếu với bản in thật của từng bài.
+- [ ] **Vài bài chỉ có trang bắt đầu** (bài GRU 2026 trang 15, ba bài logistics
+      2023, bài ICYREB 2025 trang 379). Bổ sung trang kết thúc.
 - [ ] **Bài CCIS 2026** — file CSDL ghi nhà xuất bản là "Marcel Dekker Inc.",
-      nhưng Communications in Computer and Information Science là tùng thư của
-      Springer. Tôi để trống chỗ này, anh điền lại.
-- [ ] **Hai cuốn sách trùng mã ISBN** `978-604-393-670-4`: cuốn "Ứng dụng công nghệ
-      chuỗi khối..." (2023) và "Thương mại và Logistics Việt Nam..." (2022).
-- [ ] **Ba số liệu lệch giữa CSDL và Google Scholar** — xem ghi chú đầu file
-      `papers.bib`, mục "CẦN ANH KIỂM TRA LẠI".
+      nhưng đây là tùng thư của Springer. Tôi để trống, anh điền lại.
+- [ ] **Hai cuốn sách trùng mã ISBN** `978-604-393-670-4`.
+- [ ] **Ba số liệu lệch giữa CSDL và Google Scholar** — xem ghi chú đầu `papers.bib`.
 - [ ] `_teachings/*.md` — khi vào học kỳ thì mở phần `term`, `location`, `time`,
       `schedule` (đang để dạng ghi chú) và tải slide/đề cương lên `assets/pdf/`
 - [ ] `_data/resources.yml` — thay bằng tài liệu thật, hoặc xoá hết nội dung

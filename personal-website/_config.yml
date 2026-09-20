@@ -360,9 +360,13 @@ display_categories: ["nghien-cuu", "giang-day"]
 # -----------------------------------------------------------------------------
 
 scholar:
-  # Dùng để tự động làm nổi bật tên anh trong danh sách đồng tác giả
-  last_name: [Tran Thai, Tran]
-  first_name: [Hoa, H., Thai Hoa]
+  # Dùng để tự động in đậm tên anh trong danh sách đồng tác giả.
+  # Dùng để in đậm tên anh trong danh sách tác giả. Hai danh sách này phải khớp
+  # với cách viết tên anh trong .bib — xem ghi chú đầu file papers.bib:
+  #   bài tiếng Anh : "Tran Thai, Hoa"  -> họ "Tran Thai", tên "Hoa"
+  #   bài tiếng Việt: "Thái Hòa, Trần"  -> họ "Thái Hòa", tên "Trần"
+  last_name: ["Tran Thai", "Thái Hòa"]
+  first_name: [Hoa, "Trần"]
 
   style: apa
   locale: en
