@@ -136,7 +136,9 @@ hr {
  * Đổi màu nền banner: sửa $hero-bg. Đổi màu chữ nhấn: sửa $hero-accent.
  ******************************************************************************/
 
-$hero-bg: #f4f5f7; // phải trùng với nền của ảnh đã tách để ảnh hoà vào
+// Đổi $hero-bg thì phải tạo lại ảnh assets/img/prof_pic.png với đúng màu nền mới,
+// nếu không viền tròn của ảnh sẽ lộ ra thành một khung xám trên nền banner.
+$hero-bg: #f4f5f7;
 $hero-accent: $c-blue;
 
 .hero {
@@ -149,7 +151,7 @@ $hero-accent: $c-blue;
   margin-right: calc(50% - 50vw);
   width: 100vw;
 
-  padding: 4.5rem 1.5rem 0;
+  padding: 3.5rem 1.5rem;
   margin-bottom: 3.5rem;
   background: $hero-bg;
   overflow: hidden;
@@ -162,7 +164,7 @@ body {
 
 .hero-inner {
   display: flex;
-  align-items: flex-end;
+  align-items: center; // ảnh căn đều trên dưới so với khối chữ
   justify-content: space-between;
   gap: 2rem;
   max-width: 930px; // khớp với site.max_width
@@ -172,7 +174,6 @@ body {
 .hero-text {
   flex: 1 1 auto;
   min-width: 0;
-  padding-bottom: 4.5rem;
 }
 
 .hero-title {
@@ -268,22 +269,22 @@ body {
 
 .hero-photo {
   flex: 0 0 auto;
-  align-self: flex-end;
 
   img {
     display: block;
-    width: auto;
+    width: 300px;
     max-width: 100%;
-    max-height: 340px;
-    // Ảnh đã tách nền: để chạm đáy banner, không khung, không bo góc.
-    margin-bottom: 0;
+    height: auto;
+    // Ảnh đã tách nền và tô lại đúng màu nền banner, nên viền tròn hoà
+    // vào nền, không tạo thành khung.
+    border-radius: 50%;
   }
 }
 
 // Màn hình nhỏ: xếp dọc, ảnh xuống dưới chữ.
 @media (max-width: 767px) {
   .hero {
-    padding: 3rem 1.25rem 0;
+    padding: 2.5rem 1.25rem;
     margin-bottom: 2.5rem;
   }
 
@@ -291,11 +292,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 0;
-  }
-
-  .hero-text {
-    padding-bottom: 2rem;
+    gap: 1.5rem;
   }
 
   .hero-title {
@@ -319,7 +316,7 @@ body {
   }
 
   .hero-photo img {
-    max-height: 260px;
+    width: 200px;
   }
 }
 

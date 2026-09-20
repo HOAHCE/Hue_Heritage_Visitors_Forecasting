@@ -357,23 +357,26 @@ grep -rn "TODO" _pages _data _projects _teachings _posts _news _bibliography _co
 Đã xong:
 
 - [x] Tên miền `tranthaihoa.id.vn` (`_config.yml` + `CNAME`)
-- [x] Ảnh chân dung, email `tranthaihoa@hueuni.edu.vn`
-- [x] Banner trang chủ (cả bản tiếng Anh và tiếng Việt)
+- [x] Banner trang chủ kiểu tối giản, ảnh tròn nền trùng màu banner
+- [x] Hai phiên bản Anh / Việt tách bạch, có nút chuyển EN–VI ở góc trên phải
+- [x] Tên hiển thị: **Trần Thái Hòa** (tiếng Việt) / **Hoa Tran Thai** (tiếng Anh)
 - [x] Font Inter, bảng màu xám nhạt – đen – xanh nhạt
-- [x] 3 bài báo, 3 sách và 1 đề tài cấp Đại học Huế (lấy từ bản kê khai 03/2025)
+- [x] Quá trình học tập (cử nhân, thạc sĩ, nghiên cứu sinh)
+- [x] 3 bài báo, 3 sách, 1 đề tài cấp Đại học Huế
 - [x] 5 học phần giảng dạy
 
-Còn lại — những chỗ này hiện đang ghi `TODO` trên trang, nên làm sớm:
+Còn lại:
 
 - [ ] `_bibliography/papers.bib` — bổ sung **tên đồng tác giả**, tập/số/trang và DOI.
-      Bản kê khai không ghi tên ai nên hiện mỗi công bố đang để một mình anh.
-- [ ] `_teachings/*.md` — điền học kỳ, phòng học, lịch học và tải slide/đề cương lên
-- [ ] `_data/cv.yml` — điền các bậc học (nghiên cứu sinh, thạc sĩ, cử nhân) và năm công tác
+      Bản kê khai 03/2025 không ghi những thông tin này, nên hiện mỗi công bố đang
+      để một mình anh đứng tên.
 - [ ] Bổ sung các công bố trước 2023 (bản kê khai chỉ liệt kê 36 tháng gần nhất)
+- [ ] `_teachings/*.md` — khi bắt đầu học kỳ thì mở phần `term`, `location`, `time`
+      và `schedule` (đang để dạng ghi chú), rồi tải slide/đề cương lên `assets/pdf/`
 - [ ] `_data/resources.yml` — thay bằng tài liệu thật, hoặc xoá hết nội dung
-- [ ] `_news/2025-10-02-tai-lieu-hoc-phan.md` — sửa hoặc xoá
-- [ ] `_posts/2025-10-01-chao-mung.md` — sửa hoặc xoá
-- [ ] `_projects/*.md` — viết mô tả cho 3 dự án GitHub
+- [ ] `_news/2025-10-02-cong-bo-moi.md` — tin mẫu, sửa hoặc xoá
+- [ ] `_posts/2025-10-01-chao-mung.md` — bài mẫu, sửa hoặc xoá
+- [ ] `_projects/*.md` — viết phần mô tả chi tiết cho 3 dự án GitHub
 - [ ] `assets/pdf/example_pdf.pdf` — xoá sau khi đã thay bằng tài liệu thật
 
 ---

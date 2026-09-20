@@ -7,7 +7,7 @@ lang: en
 lang_alt: /vi/
 
 hero:
-  title: Thai Hoa Tran
+  title: Hoa Tran Thai
   # highlight: ...   # chữ nhấn màu xanh nối sau tên, bỏ trống thì chỉ hiện tên
   role: >
     PhD student in Computer Science · Lecturer, Faculty of Economic Information Systems,
@@ -57,11 +57,11 @@ forecasting, such as hybrid 1D-CNN/LSTM models for cryptocurrency prices.
 
 ## Education
 
-<!-- TODO: điền các bậc học. Mỗi dòng: bằng cấp, ngành, trường, năm. -->
-
-- **PhD in Computer Science**, in progress — *TODO: institution, start year*
-- **MSc**, *TODO: field, institution, years*
-- **BSc**, *TODO: field, institution, years*
+- **PhD in Computer Science** — Faculty of Information Technology,
+  University of Sciences, Hue University *(in progress)*
+- **MSc in Economic Information Management and Analysis** — National Economics University,
+  Hanoi *(2007–2009)*
+- **BSc in Information Technology** — University of Sciences, Hue University *(2001–2005)*
 
 ## Contact
 

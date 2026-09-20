@@ -63,11 +63,11 @@ giá tiền mã hoá.
 
 ## Học tập
 
-<!-- TODO: điền các bậc học. Mỗi dòng: bằng cấp, ngành, trường, năm. -->
-
-- **Nghiên cứu sinh Khoa học Máy tính**, đang theo học — *TODO: cơ sở đào tạo, năm bắt đầu*
-- **Thạc sĩ**, *TODO: chuyên ngành, trường, thời gian*
-- **Cử nhân**, *TODO: chuyên ngành, trường, thời gian*
+- **Nghiên cứu sinh Khoa học Máy tính** — Khoa Công nghệ thông tin,
+  Trường Đại học Khoa học, Đại học Huế *(đang theo học)*
+- **Thạc sĩ Quản lý và Phân tích thông tin kinh tế** — Trường Đại học Kinh tế Quốc dân,
+  Hà Nội *(2007–2009)*
+- **Cử nhân Công nghệ thông tin** — Trường Đại học Khoa học, Đại học Huế *(2001–2005)*
 
 ## Liên hệ
 
