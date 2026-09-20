@@ -2,12 +2,22 @@
   Hook do chính theme al-folio cung cấp (_layouts/bib.liquid gọi tới file này nếu
   có), nên đây KHÔNG phải bản sao layout — nâng cấp theme không ảnh hưởng.
 
-  Việc của nó: layout gốc chỉ in tên tạp chí rồi đến năm. Hook này nối thêm
-  tập(số), trang — lấy thẳng từ các trường volume/number/pages của entry, nên
-  không phải nhập hai lần — và vai trò tác giả với sách (trường role).
+  Việc của nó — bù ba chỗ layout gốc bỏ trống:
+    1. Với SÁCH, layout gốc không in nhà xuất bản. Hook này in ra.
+    2. Layout gốc không in tập(số) và trang. Hook này lấy thẳng từ các trường
+       volume / number / pages của entry, nên không phải nhập hai lần.
+    3. In vai trò của anh trong sách (trường role).
 
-  Kết quả: "International Journal of Information Technology 17(7), 3999–4011, 2025"
+  Kết quả:
+    Bài báo -> "International Journal of Information Technology 17(7), 3999–4011, 2025"
+    Sách    -> "Nhà xuất bản Đại học Huế (Chủ biên), 2023"
 {%- endcomment -%}
+
+{%- if entry.type == 'book' and entry.publisher -%}
+  {%- capture entrytype -%}
+    <em>{{ entry.publisher }}</em>
+  {%- endcapture -%}
+{%- endif -%}
 
 {%- if entry.volume -%}
   {%- capture entrytype -%}

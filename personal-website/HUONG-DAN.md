@@ -117,6 +117,24 @@ Nội dung viết bằng Markdown.
 
 ### 2.2. Thêm một công bố khoa học
 
+Danh mục chia làm **hai file**:
+
+| File | Chứa gì |
+| --- | --- |
+| `_bibliography/papers.bib` | Bài báo tạp chí và báo cáo hội thảo |
+| `_bibliography/books.bib` | Sách và giáo trình |
+
+Cách viết **tên tác giả** — quan trọng, viết sai là tên người ta bị đảo lộn:
+
+```bibtex
+author = {Tran Thai, Hoa and {Lê Mạnh Thạnh} and {Nguyễn Đình Hoa Cương}}
+```
+
+- Tên anh viết dạng `Họ, Tên` **không bọc ngoặc**, nhờ vậy trang tự in đậm tên anh.
+- Tên đồng tác giả người Việt **bọc trong dấu `{}`** để giữ nguyên thứ tự họ-tên.
+  Không bọc thì BibTeX sẽ đảo thành "Thạnh Lê Mạnh".
+
+
 Mở `_bibliography/papers.bib`, dán thêm một khối BibTeX (lấy sẵn từ nút "Cite" trên
 Google Scholar hoặc trang tạp chí):
 
@@ -270,7 +288,7 @@ ngoài repo này. Trong repo chỉ có mấy file sau là phần tuỳ biến:
 | `_includes/projects.liquid` | Bản sao; sửa để mô tả dự án hiện theo ngôn ngữ |
 | `_includes/news.liquid` | Bản sao; sửa để tin ngắn hiện theo ngôn ngữ |
 | `_layouts/about.liquid` | Bản sao; sửa để bật banner và dịch được 3 tiêu đề mục |
-| `_includes/hook/bib.liquid` | **Không phải bản sao** — đây là điểm mở rộng theme cung cấp sẵn; dùng để in thêm tập(số), trang và vai trò tác giả ở sách |
+| `_includes/hook/bib.liquid` | **Không phải bản sao** — đây là điểm mở rộng theme cung cấp sẵn; dùng để in thêm nhà xuất bản của sách, tập(số), trang và vai trò tác giả |
 
 Mỗi file bản sao đều có ghi chú ở đầu nói rõ đã sửa những gì. Khi nâng cấp theme,
 nếu giao diện có chỗ lạ thì chép lại file tương ứng từ bản mới của gem rồi áp dụng
@@ -363,23 +381,23 @@ grep -rn "TODO" _pages _data _projects _teachings _posts _news _bibliography _co
 - [x] Tên hiển thị: **Trần Thái Hòa** (tiếng Việt) / **Hoa Tran Thai** (tiếng Anh)
 - [x] Font Inter, bảng màu xám nhạt – đen – xanh nhạt
 - [x] Quá trình học tập (cử nhân, thạc sĩ, nghiên cứu sinh)
-- [x] 9 bài báo & kỷ yếu (2023–2026), 3 sách, 1 đề tài cấp Đại học Huế,
-      kèm đồng tác giả và tập/số/trang
+- [x] **18 bài báo & kỷ yếu** (2013–2026), **8 sách, giáo trình**, **11 đề tài**
+      — lấy từ ba file kết xuất CSDL Khoa học ĐH Huế, đủ đồng tác giả và tập/số/trang
 - [x] 5 học phần giảng dạy
 
 Còn lại:
 
-- [ ] **DOI** — chưa công bố nào có. Thêm vào entry tương ứng trong
-      `_bibliography/papers.bib`: `doi = {10.xxxx/yyyy}` và
-      `html = {https://doi.org/10.xxxx/yyyy}` để tên bài thành liên kết bấm được.
-- [ ] **Tên đồng tác giả viết tắt** — Google Scholar chỉ ghi tắt ("TM Le", "ND Binh"),
-      hiện đang giữ nguyên. Viết đầy đủ ra thì danh mục chuyên nghiệp hơn.
-- [ ] **Ba cụm chữ cái chưa rõ là ai**: "HBK" (bài N-BEATS 2026), "HPTD" (bài
-      Transformer/Gold 2025), "CHND" (bài So sánh 1D-CNN 2024). Nếu là đồng tác giả
-      thì bổ sung vào trường `author`.
-- [ ] **Hai bài kỷ yếu bị Scholar cắt ngắn**: tên hội thảo của bài NASDAQ (2026) và
-      số trang của cả hai bài kỷ yếu 2025–2026.
-- [ ] Bổ sung các công bố trước 2023, nếu có
+- [ ] **DOI** — chưa công bố nào có. Thêm `doi` và `html` vào entry thì tên bài
+      thành liên kết bấm được. Đáng làm nhất cho bài IJIT 2025 và bài CCIS 2026.
+- [ ] **Vài bài chỉ có trang bắt đầu** trong file CSDL (bài GRU 2026 trang 15,
+      ba bài logistics 2023, bài ICYREB 2025 trang 379). Bổ sung trang kết thúc.
+- [ ] **Bài CCIS 2026** — file CSDL ghi nhà xuất bản là "Marcel Dekker Inc.",
+      nhưng Communications in Computer and Information Science là tùng thư của
+      Springer. Tôi để trống chỗ này, anh điền lại.
+- [ ] **Hai cuốn sách trùng mã ISBN** `978-604-393-670-4`: cuốn "Ứng dụng công nghệ
+      chuỗi khối..." (2023) và "Thương mại và Logistics Việt Nam..." (2022).
+- [ ] **Ba số liệu lệch giữa CSDL và Google Scholar** — xem ghi chú đầu file
+      `papers.bib`, mục "CẦN ANH KIỂM TRA LẠI".
 - [ ] `_teachings/*.md` — khi vào học kỳ thì mở phần `term`, `location`, `time`,
       `schedule` (đang để dạng ghi chú) và tải slide/đề cương lên `assets/pdf/`
 - [ ] `_data/resources.yml` — thay bằng tài liệu thật, hoặc xoá hết nội dung

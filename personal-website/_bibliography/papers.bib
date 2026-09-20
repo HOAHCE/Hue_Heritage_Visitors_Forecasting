@@ -3,96 +3,96 @@
 
 @comment{
 
+  NGUỒN DỮ LIỆU
+  -------------
+  Toàn bộ danh mục này lấy từ ba file kết xuất của CSDL Khoa học Đại học Huế
+  (bài báo, sách/giáo trình, đề tài), cập nhật tháng 9/2026.
+
   CÁCH THÊM MỘT CÔNG BỐ MỚI
   -------------------------
-  Dán thêm một khối entry (article, inproceedings, book...) vào file này.
-  Trang /publications/ và /vi/nghien-cuu/ tự cập nhật, tự nhóm theo năm và tự
-  in đậm tên anh trong danh sách tác giả.
+  Dán thêm một khối entry vào file này (bài báo, kỷ yếu) hoặc vào books.bib (sách).
+  Trang Nghiên cứu tự cập nhật, tự nhóm theo năm và tự in đậm tên anh.
 
-  Cách nhanh nhất để lấy khối BibTeX: bấm nút "Cite" trên Google Scholar hoặc
-  trên trang của tạp chí, chọn BibTeX, rồi dán vào đây.
+  CÁCH VIẾT TÊN TÁC GIẢ
+  ---------------------
+  - Tên anh viết dạng {Họ, Tên}:  author = {Tran Thai, Hoa}
+    Nhờ khai báo scholar.last_name trong _config.yml, tên anh tự được in đậm.
+  - Đồng tác giả người Việt bọc trong dấu {} để giữ nguyên thứ tự họ-tên:
+        author = {Tran Thai, Hoa and {Lê Mạnh Thạnh} and {Nguyễn Đình Hoa Cương}}
+    Không bọc {} thì BibTeX sẽ đảo thành "Thạnh Lê Mạnh", sai tên người ta.
 
-  Các trường riêng của al-folio (đều KHÔNG bắt buộc):
+  CÁC TRƯỜNG RIÊNG CỦA al-folio (đều KHÔNG bắt buộc):
     abbr        = {IJIT}                    -> nhãn nhỏ bên trái
     selected    = {true}                    -> bài chọn lọc, hiện trên trang chủ
     bibtex_show = {true}                    -> nút xem mã BibTeX
     pdf         = {ten-file.pdf}            -> file đặt trong assets/pdf/
-    code        = {https://github.com/...}  -> link mã nguồn
     html        = {https://doi.org/...}     -> link bài báo
-    preview     = {ten-anh.png}             -> ảnh trong assets/img/publication_preview/
     abstract    = {Tóm tắt...}              -> nút xem tóm tắt
-
-  Tên tác giả viết theo dạng {Họ, Tên}, ví dụ: {Tran Thai, Hoa} — hiển thị ra
-  thành "Hoa Tran Thai", đúng dạng tên tiếng Anh dùng trên trang.
-  Nhiều tác giả nối bằng chữ "and".
+  Tập(số), trang và vai trò ở sách được in ra nhờ _includes/hook/bib.liquid,
+  lấy thẳng từ các trường volume / number / pages / role.
 
   ===========================================================================
-  CÒN THIẾU / CẦN ANH KIỂM TRA LẠI
+  CẦN ANH KIỂM TRA LẠI
   ===========================================================================
 
-  0) Tập/số/trang và vai trò ở sách được in ra nhờ _includes/hook/bib.liquid,
-     vì layout gốc của theme chỉ in tên tạp chí rồi đến năm. Chỉ cần điền đúng
-     các trường volume / number / pages / role, không phải nhập lại lần nữa.
-
-  1) DOI: chưa có bài nào. Thêm bằng cách điền hai dòng vào entry tương ứng:
+  1) DOI: chưa công bố nào có. Thêm hai dòng vào entry tương ứng thì tên bài
+     sẽ thành liên kết bấm được:
         doi  = {10.xxxx/yyyy},
         html = {https://doi.org/10.xxxx/yyyy},
 
-  2) TÊN VIẾT TẮT CỦA ĐỒNG TÁC GIẢ: danh sách copy từ Google Scholar chỉ ghi
-     tắt (ví dụ "TM Le", "ND Binh"). Các tên này đang giữ nguyên dạng viết tắt.
-     Anh viết đầy đủ ra thì danh mục sẽ chuyên nghiệp hơn.
+  2) BA CHỖ SỐ LIỆU LỆCH NHAU giữa file CSDL và Google Scholar — tôi lấy số
+     đầy đủ hơn, anh đối chiếu lại giúp:
+     - Bài "Hybrid model of 1D-CNN and LSTM..." (IJIT 2025): file CSDL bỏ trống
+       tập/số/trang, nên lấy theo Scholar: 17(7), 3999–4011.
+     - Bài "Phân tích thực nghiệm mô hình N-BEATS" (2026): file CSDL ghi trang
+       59–74, Scholar ghi 59–73. Đang lấy theo file CSDL.
+     - Bài "So sánh hiệu quả mô hình học sâu 1D-CNN, LSTM..." (2024): file CSDL
+       ghi tên tạp chí là "Tạp chí Khoa học công nghệ (91)" nhưng mã ISSN
+       2354-0842 lại là của Tạp chí Khoa học và Công nghệ, Trường ĐH Khoa học,
+       ĐH Huế. Đang dùng tên theo ISSN và trang 121–136 theo Scholar
+       (file CSDL chỉ ghi trang bắt đầu 121).
 
-  3) BA CHỖ GOOGLE SCHOLAR CẮT NGẮN, cần anh điền nốt:
-     - "Integrating NASDAQ Spillover Signals..." (2026): tên hội thảo bị cắt,
-       và danh sách tác giả còn dấu "..." nên có thể thiếu người.
-     - "A Multi-Objective GA-LSTM Framework..." (2025): tên kỷ yếu bị cắt.
-     - Hai bài kỷ yếu trên cũng chưa có số trang.
+  3) NHIỀU BÀI CHỈ CÓ TRANG BẮT ĐẦU trong file CSDL (ví dụ "trang 15", "trang 63").
+     Những bài đó đang để đúng như vậy; anh bổ sung trang kết thúc thì đầy đủ hơn.
 
-  4) BA CỤM CHỮ CÁI KHÔNG RÕ LÀ AI — tôi KHÔNG đoán, anh xác nhận giúp:
-     - "HBK" đứng trước Trần Thái Hòa ở bài N-BEATS (2026)
-     - "HPTD" đứng trước Hoa Tran Thai ở bài Transformer/Gold (2025)
-     - "CHND" đứng trước Hoa Tran Thai ở bài So sánh 1D-CNN, LSTM (2024)
-     Nếu đó là đồng tác giả thì bổ sung vào trường author của entry tương ứng.
+  4) Bài "Integrating NASDAQ Spillover Signals..." (2026): file CSDL ghi nhà xuất
+     bản là "Marcel Dekker Inc.", nhưng Communications in Computer and Information
+     Science là tùng thư của Springer. Tôi đã BỎ TRỐNG nhà xuất bản thay vì ghi một
+     bên có thể sai — anh điền lại giúp.
 
-  5) TIÊU ĐỀ TIẾNG VIỆT: Google Scholar hiển thị IN HOA TOÀN BỘ (do tạp chí
-     trình bày như vậy). Ở đây tôi viết lại dạng chữ thường theo đúng thông lệ
-     trình bày danh mục tài liệu. Muốn giữ nguyên chữ in hoa thì sửa lại trực
-     tiếp trong các entry bên dưới.
+  5) Tôi đã sửa vài lỗi gõ rõ ràng trong file CSDL: "Integraling" -> "Integrating",
+     "apdoption" -> "adoption", "comercial" -> "commercial".
 
-  6) Bản kê khai tháng 03/2025 còn 2 bài blockchain và 3 cuốn sách năm 2023
-     (ở cuối file) — những mục này KHÔNG có trên Google Scholar nên không có
-     số trang. Anh bổ sung sau nếu cần.
+  6) Các tiêu đề tiếng Việt trong file CSDL viết IN HOA TOÀN BỘ; ở đây viết lại
+     dạng chữ thường theo thông lệ trình bày danh mục tài liệu.
 
   LƯU Ý: mọi ghi chú trong file .bib phải nằm trong khối comment như thế này.
 
 }
 
-% =============================================================================
-% BÀI BÁO TẠP CHÍ
-% =============================================================================
-
-@article{tranthai2025ethereum,
-  abbr        = {IJIT},
-  title       = {Hybrid model of 1D-CNN and LSTM for forecasting Ethereum closing prices: a case study of temporal analysis},
-  author      = {Tran Thai, Hoa and Le, Thanh Manh and Nguyen-Dinh, Cuong H.},
-  journal     = {International Journal of Information Technology},
-  publisher   = {Springer},
-  volume      = {17},
-  number      = {7},
-  pages       = {3999--4011},
-  year        = {2025},
+@article{tranthai2026gru,
+  abbr        = {HUJS},
+  title       = {Short-term Bitcoin forecasting across multiple horizons: The effectiveness of GRU networks},
+  author      = {Tran Thai, Hoa and {Dương Thị Hải Phương} and {Lê Mạnh Thạnh} and {Nguyễn Đình Hoa Cương}},
+  journal     = {Tạp chí Khoa học Đại học Huế: Kỹ thuật và Công nghệ},
+  issn        = {2588-1175},
+  volume      = {135},
+  number      = {2A},
+  pages       = {15},
+  year        = {2026},
   selected    = {true},
   bibtex_show = {true}
 }
 
-@article{tranthai2026vcb,
-  abbr        = {HUJS},
-  title       = {Dự báo giá cổ phiếu bằng các mô hình học sâu được tối ưu bằng PSO: Xét trường hợp mã cổ phiếu VCB},
-  author      = {Tran Thai, Hoa and Le, N. L. Q. and Le, L. T. Q.},
-  journal     = {Hue University Journal of Science: Economics and Development},
-  volume      = {135},
-  number      = {5A},
-  pages       = {157--177},
+@article{tranthai2026nasdaq,
+  abbr        = {CCIS},
+  title       = {Integrating NASDAQ spillover signals into hybrid 1D-CNN-LSTM frameworks for multi-horizon Bitcoin forecasting},
+  author      = {Tran Thai, Hoa and {Nguyễn Đình Hoa Cương} and {Nguyễn Ngọc Nam} and {Hoàng Hữu Trung} and {Lê Mạnh Thạnh}},
+  journal     = {Communications in Computer and Information Science},
+  issn        = {1865-0929},
+  volume      = {2944},
+  number      = {2},
+  pages       = {475--489},
   year        = {2026},
   selected    = {true},
   bibtex_show = {true}
@@ -101,20 +101,72 @@
 @article{tranthai2026nbeats,
   abbr        = {TCKHCN},
   title       = {Phân tích thực nghiệm mô hình N-BEATS cho bài toán dự báo giá Bitcoin theo nhiều khung thời gian},
-  author      = {Tran Thai, Hoa and Duong, Duc Hung and Nguyen, Thanh Nam},
-  journal     = {Tạp chí Khoa học và Công nghệ, Trường Đại học Khoa học, Đại học Huế},
+  author      = {Tran Thai, Hoa and {Nguyễn Thanh Nam} and {Dương Đức Hưng}},
+  journal     = {Tạp chí Khoa học và Công nghệ: Khoa học tự nhiên, Trường Đại học Khoa học, Đại học Huế},
+  issn        = {2354-0842},
   volume      = {33},
   number      = {1},
-  pages       = {59--73},
+  pages       = {59--74},
   year        = {2026},
+  bibtex_show = {true}
+}
+
+@article{tranthai2026vcb,
+  abbr        = {HUJS},
+  title       = {Dự báo giá cổ phiếu bằng các mô hình học sâu được tối ưu bằng PSO: Xét trường hợp mã cổ phiếu VCB},
+  author      = {Tran Thai, Hoa and {Lê Ngọc Lưu Quang} and {Lê Thị Quỳnh Liên}},
+  journal     = {Tạp chí Khoa học Đại học Huế: Kinh tế và phát triển},
+  issn        = {2588-1205},
+  volume      = {135},
+  number      = {5A},
+  pages       = {157--177},
+  year        = {2026},
+  bibtex_show = {true}
+}
+
+@inproceedings{tranthai2025galstm,
+  abbr        = {FAIR},
+  title       = {A multi-objective GA-LSTM framework for simultaneous optimization of predictive accuracy and computational efficiency in Bitcoin price forecasting},
+  author      = {Tran Thai, Hoa and {Lê Mạnh Thạnh} and {Nguyễn Đăng Bình} and {Nguyễn Thanh Nam} and {Nguyễn Đình Hoa Cương}},
+  booktitle   = {Kỷ yếu Hội nghị khoa học quốc gia lần thứ 18 về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR 2025)},
+  isbn        = {978-604-357-455-5},
+  pages       = {26--31},
+  year        = {2025},
+  bibtex_show = {true}
+}
+
+@inproceedings{tranthai2025gold,
+  abbr        = {ICYREB},
+  title       = {Advancing financial forecasting: On the effectiveness of the Transformer architecture for gold price time series analysis},
+  author      = {Tran Thai, Hoa and {Dương Thị Hải Phương} and {Nguyễn Đình Hoa Cương}},
+  booktitle   = {Proceedings of ICYREB 2025 — The 11th International Conference for Young Researchers in Economics and Business},
+  isbn        = {978-604-79-5179-6},
+  pages       = {379},
+  year        = {2025},
+  bibtex_show = {true}
+}
+
+@article{tranthai2025ethereum,
+  abbr        = {IJIT},
+  title       = {Hybrid model of 1D-CNN and LSTM for forecasting Ethereum closing prices: A case study of temporal analysis},
+  author      = {Tran Thai, Hoa and {Lê Mạnh Thạnh} and {Nguyễn Đình Hoa Cương}},
+  journal     = {International Journal of Information Technology},
+  publisher   = {Springer Nature},
+  issn        = {2511-2104},
+  volume      = {17},
+  number      = {7},
+  pages       = {3999--4011},
+  year        = {2025},
+  selected    = {true},
   bibtex_show = {true}
 }
 
 @article{tranthai2024sosanh,
   abbr        = {TCKHCN},
   title       = {So sánh hiệu quả mô hình học sâu 1D-CNN, LSTM và mô hình lai trong dự báo giá đóng cửa Bitcoin},
-  author      = {Tran Thai, Hoa and Le, Thanh Manh},
+  author      = {Tran Thai, Hoa and {Lê Mạnh Thạnh} and {Nguyễn Đình Hoa Cương}},
   journal     = {Tạp chí Khoa học và Công nghệ, Trường Đại học Khoa học, Đại học Huế},
+  issn        = {2354-0842},
   volume      = {27},
   number      = {1B},
   pages       = {121--136},
@@ -125,86 +177,115 @@
 @article{tranthai2023blockchain,
   abbr        = {HUJS},
   title       = {Phân tích khả năng ứng dụng công nghệ blockchain vào chuỗi cung ứng dầu tràm tại Huế},
-  author      = {Tran Thai, Hoa},
+  author      = {Tran Thai, Hoa and {Dương Đắc Quang Hảo} and {Trương Tấn Quân}},
   journal     = {Tạp chí Khoa học Đại học Huế: Kinh tế và phát triển},
-  publisher   = {Nhà xuất bản Đại học Huế},
   issn        = {2588-1205},
+  volume      = {132},
+  number      = {5C},
+  pages       = {183--202},
   year        = {2023},
   bibtex_show = {true}
 }
 
-% =============================================================================
-% BÁO CÁO HỘI THẢO, KỶ YẾU
-% =============================================================================
-
-@inproceedings{tranthai2026nasdaq,
-  abbr        = {ICCIE},
-  title       = {Integrating NASDAQ spillover signals into hybrid 1D-CNN-LSTM frameworks for multi-horizon Bitcoin forecasting},
-  author      = {Tran Thai, Hoa and Le, Thanh Manh and Hoang, H. T. and Ngoc, N. N. and Truong-Nguyen, H. T.},
-  booktitle   = {International Conference on Computational Intelligence in Engineering},
-  year        = {2026},
+@inproceedings{tranthai2023logistics_moitruong,
+  abbr        = {Kỷ yếu},
+  title       = {Xây dựng môi trường logistics nhằm giảm chi phí lưu thông trong xuất, nhập khẩu ở Việt Nam},
+  author      = {Tran Thai, Hoa},
+  booktitle   = {Kỷ yếu hội thảo khoa học quốc tế — Phát triển hệ thống Logistics nhằm thúc đẩy xuất, nhập khẩu hàng hoá, dịch vụ ở nước ta trong bối cảnh mới},
+  isbn        = {978-604-480-548-1},
+  pages       = {63},
+  year        = {2023},
   bibtex_show = {true}
 }
 
-@inproceedings{tranthai2025galstm,
-  abbr        = {FAIR},
-  title       = {A multi-objective GA-LSTM framework for simultaneous optimization of predictive accuracy and computational efficiency in Bitcoin price forecasting},
-  author      = {Tran Thai, Hoa and Le, Thanh Manh and Nguyen, D. Binh and Nguyen, T. Nam and Nguyen-Dinh, Cuong H.},
-  booktitle   = {Proceedings of the 18th National Conference on Fundamental and Applied Information Technology Research},
-  year        = {2025},
+@inproceedings{tranthai2023logistics_trungtam,
+  abbr        = {Kỷ yếu},
+  title       = {Trung tâm logistics — mô hình kinh doanh mới trong phát triển kinh tế và thúc đẩy xuất nhập khẩu của địa phương},
+  author      = {Tran Thai, Hoa},
+  booktitle   = {Kỷ yếu hội thảo khoa học quốc tế — Phát triển hệ thống Logistics nhằm thúc đẩy xuất, nhập khẩu hàng hoá, dịch vụ ở nước ta trong bối cảnh mới},
+  isbn        = {978-604-480-548-1},
+  pages       = {96},
+  year        = {2023},
   bibtex_show = {true}
 }
 
-@inproceedings{tranthai2025gold,
-  abbr        = {ICYREB},
-  title       = {Advancing financial forecasting: On the effectiveness of the Transformer architecture for gold price time series analysis},
-  author      = {Tran Thai, Hoa and Nguyen-Dinh, Cuong H. and Nguyen, Dung Thi Kim},
-  booktitle   = {ICYREB 2025 — The 11th International Conference for Young Researchers in Economics and Business},
-  year        = {2025},
+@inproceedings{tranthai2023logistics_quantri,
+  abbr        = {Kỷ yếu},
+  title       = {Một số vấn đề quản trị tổ chức hệ thống logistics doanh nghiệp},
+  author      = {Tran Thai, Hoa},
+  booktitle   = {Kỷ yếu hội thảo khoa học quốc tế — Phát triển hệ thống Logistics nhằm thúc đẩy xuất, nhập khẩu hàng hoá, dịch vụ ở nước ta trong bối cảnh mới},
+  isbn        = {978-604-480-548-1},
+  pages       = {525},
+  year        = {2023},
   bibtex_show = {true}
 }
 
 @inproceedings{tranthai2023melaleuca,
-  abbr        = {Hội thảo},
+  abbr        = {Kỷ yếu},
   title       = {Modelling blockchain technology applications in developing agricultural supply chains: The case of melaleuca oil in Hue},
-  author      = {Tran Thai, Hoa},
+  author      = {Tran Thai, Hoa and {Trương Tấn Quân} and {Dương Đắc Quang Hảo}},
   booktitle   = {Kỷ yếu hội thảo khoa học quốc tế — Phát triển kinh tế xanh ở Việt Nam},
-  publisher   = {Nhà xuất bản Lao Động},
+  isbn        = {978-604-55-7851},
+  volume      = {2},
+  pages       = {30},
   year        = {2023},
   bibtex_show = {true}
 }
 
-% =============================================================================
-% SÁCH, GIÁO TRÌNH
-% =============================================================================
-
-@book{tranthai2023sach_dautram,
-  abbr            = {Sách},
-  title           = {Xây dựng mô hình ứng dụng công nghệ Blockchain trong quản lý chuỗi cung ứng: Trường hợp sản phẩm dầu tràm ở Huế},
-  author          = {Tran Thai, Hoa},
-  publisher       = {Nhà xuất bản Đại học Huế},
-  year            = {2023},
-  selected        = {true},
-  bibtex_show     = {true},
-  role            = {Chủ biên}
+@inproceedings{nguyen2023nanglucso,
+  abbr        = {Kỷ yếu},
+  title       = {Năng lực số của sinh viên và các nhân tố ảnh hưởng},
+  author      = {{Nguyễn Ngọc Nam} and {Lê Tô Minh Tân} and Tran Thai, Hoa},
+  booktitle   = {Kỷ yếu hội thảo khoa học quốc tế — Phát triển kinh tế xanh ở Việt Nam},
+  isbn        = {978-604-55-7851},
+  volume      = {2},
+  pages       = {480},
+  year        = {2023},
+  bibtex_show = {true}
 }
 
-@book{tranthai2023sach_daihocthongminh,
-  abbr            = {Sách},
-  title           = {Nghiên cứu xây dựng mô hình đại học thông minh và đề xuất quá trình chuyển đổi cho các trường đại học Việt Nam},
-  author          = {Tran Thai, Hoa},
-  publisher       = {Nhà xuất bản Lao Động},
-  year            = {2023},
-  bibtex_show     = {true},
-  role            = {Đồng chủ biên}
+@article{duong2020blockchain,
+  abbr        = {HUJS},
+  title       = {Factors affecting customer acceptance on the adoption of blockchain technology at Dong A Commercial Joint Stock Bank, Hue branch},
+  author      = {{Dương Đắc Quang Hảo} and Tran Thai, Hoa},
+  journal     = {Tạp chí Khoa học Đại học Huế: Kinh tế và phát triển},
+  issn        = {2588-1205},
+  volume      = {129},
+  number      = {5B},
+  pages       = {5--16},
+  year        = {2020},
+  bibtex_show = {true}
 }
 
-@book{tranthai2023sach_chuoikhoi,
-  abbr            = {Sách},
-  title           = {Ứng dụng công nghệ chuỗi khối (Blockchain) nhằm phát triển chuỗi cung ứng nông nghiệp},
-  author          = {Tran Thai, Hoa},
-  publisher       = {Nhà xuất bản Lao động},
-  year            = {2023},
-  bibtex_show     = {true},
-  role            = {Thành viên tham gia}
+@inproceedings{tranthai2018logistics,
+  abbr        = {Kỷ yếu},
+  title       = {Một số xu hướng phát triển logistics trong quá trình toàn cầu hoá},
+  author      = {Tran Thai, Hoa},
+  booktitle   = {Kỷ yếu hội thảo quốc gia “Xây dựng và phát triển hệ thống Logistics quốc gia và vùng kinh tế trọng điểm miền Trung”},
+  pages       = {136},
+  year        = {2018},
+  bibtex_show = {true}
+}
+
+@inproceedings{mai2017khaiphadulieu,
+  abbr        = {Kỷ yếu},
+  title       = {Ứng dụng khai phá dữ liệu trong quản lý giáo dục tại Trường Đại học Kinh tế Huế},
+  author      = {{Mai Thu Giang} and Tran Thai, Hoa},
+  booktitle   = {Kỷ yếu hội thảo quốc tế “Khung trình độ quốc gia Việt Nam và phát triển chương trình đào tạo đại học”},
+  pages       = {166--174},
+  address     = {Nha Trang},
+  year        = {2017},
+  bibtex_show = {true}
+}
+
+@article{tranthai2013hailong,
+  abbr        = {HUJS},
+  title       = {Mức độ hài lòng của sinh viên về hoạt động đào tạo theo học chế tín chỉ tại Trường Đại học Kinh tế, Đại học Huế},
+  author      = {Tran Thai, Hoa},
+  journal     = {Tạp chí Khoa học Đại học Huế: Khoa học xã hội và Nhân văn},
+  issn        = {2588-1213},
+  volume      = {72B},
+  number      = {3},
+  year        = {2013},
+  bibtex_show = {true}
 }

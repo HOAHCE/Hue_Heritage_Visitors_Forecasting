@@ -373,3 +373,23 @@ html[data-theme="dark"] .hero {
     color: var(--global-divider-color);
   }
 }
+
+/*******************************************************************************
+ * Danh sách đề tài nghiên cứu (trang Nghiên cứu)
+ ******************************************************************************/
+
+.grant-list {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 1.25rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--global-divider-color);
+  }
+
+  .text-muted {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+}

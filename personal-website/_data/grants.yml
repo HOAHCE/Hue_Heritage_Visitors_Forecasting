@@ -1,19 +1,104 @@
 # Đề tài / dự án nghiên cứu khoa học.
-# Hiển thị ở cuối trang /publications/ (tiếng Anh) và /vi/nghien-cuu/ (tiếng Việt).
+# Nguồn: file kết xuất CSDL Khoa học Đại học Huế, cập nhật 9/2026.
+# Hiển thị ở trang /publications/ (tiếng Anh) và /vi/nghien-cuu/ (tiếng Việt).
+#
 # Các trường *_vi là bản tiếng Việt; bỏ trống thì trang tiếng Việt dùng bản tiếng Anh.
-# Thêm đề tài mới = thêm một khối "- title:" nữa, không cần sửa code.
+# Thêm đề tài mới = thêm một khối "- code:" nữa, không cần sửa code trang.
+#
+# LƯU Ý: file CSDL không có cột "cấp đề tài", nên ở đây không ghi cấp.
+# Mã số đề tài đã nói lên điều đó với người trong ngành. Muốn hiện thêm thì
+# thêm trường level / level_vi vào từng khối.
 
-- title: "Building a blockchain application model for supply chain management: The case of melaleuca oil in Hue"
-  title_vi: "Xây dựng mô hình ứng dụng công nghệ Blockchain trong quản lý chuỗi cung ứng: Trường hợp sản phẩm dầu tràm ở Huế"
-  code: "" # TODO: mã số đề tài, nếu có
-  level: "Hue University"
-  level_vi: "Cấp Đại học Huế"
+- code: "ĐHKH2026D-002"
+  title: "Applying the N-BEATS model to financial time series forecasting"
+  title_vi: "Nghiên cứu ứng dụng mô hình N-BEATS trong dự báo chuỗi thời gian tài chính"
   role: "Principal investigator"
-  role_vi: "Chủ trì"
+  role_vi: "Chủ nhiệm"
+  members_vi: "Nguyễn Thanh Nam, Dương Đức Hưng"
+  start_year: 2026
+  end_year: 2027
+
+- code: "DHH2025-06-164"
+  title: "Improving deep learning models to enhance cryptocurrency price prediction"
+  title_vi: "Nghiên cứu cải tiến các mô hình học sâu nhằm nâng cao hiệu quả dự đoán giá tiền điện tử"
+  role: "Principal investigator"
+  role_vi: "Chủ nhiệm"
+  members_vi: "Trương Tấn Quân, Phan Thị Thu Hương, Nguyễn Thanh Tuấn, Hồ Minh Toàn, Nguyễn Thanh Nam, Dương Thị Hải Phương"
+  start_year: 2025
+  end_year: 2027
+
+- code: "DHH2025-08-22"
+  title: "Methods and models for personality detection in text"
+  title_vi: "Nghiên cứu các phương pháp và xây dựng một số mô hình phát hiện tính cách trong văn bản"
+  role: "Member"
+  role_vi: "Thành viên"
+  pi_vi: "Nguyễn Thanh Nam"
+  start_year: 2025
+  end_year: 2027
+
+- code: "DHH2021-06-107"
+  title: "A blockchain application model for supply chain management: The case of melaleuca oil in Hue"
+  title_vi: "Xây dựng mô hình ứng dụng công nghệ blockchain trong quản lý chuỗi cung ứng: Trường hợp sản phẩm dầu tràm ở Huế"
+  role: "Principal investigator"
+  role_vi: "Chủ nhiệm"
+  members_vi: "Trương Tấn Quân, Dương Đắc Quang Hảo, Mai Thu Giang"
   start_year: 2021
   end_year: 2024
-  status: "Completed — rated Good"
-  status_vi: "Đã nghiệm thu — xếp loại Tốt"
-  description: "24 months, 06/2021 – 03/2024."
-  description_vi: "Thời gian thực hiện 24 tháng, 06/2021 – 03/2024."
-  url:
+
+- code: "DHH2018-06-54"
+  title: "Identifying and controlling the factors behind successful ERP implementation in Vietnamese enterprises"
+  title_vi: "Xác định và kiểm soát các nhân tố ảnh hưởng đến việc triển khai thành công hệ thống Hoạch định tài nguyên doanh nghiệp (ERP) tại các doanh nghiệp Việt Nam"
+  role: "Member"
+  role_vi: "Thành viên"
+  pi_vi: "Dương Thị Hải Phương"
+  start_year: 2018
+  end_year: 2020
+
+- code: "CS-DT"
+  title: "Using data mining techniques to predict student grades at the University of Economics, Hue University"
+  title_vi: "Ứng dụng các kỹ thuật khai phá dữ liệu để dự báo điểm của sinh viên Trường Đại học Kinh tế, Đại học Huế"
+  role: "Principal investigator"
+  role_vi: "Chủ nhiệm"
+  start_year: 2017
+  end_year: 2017
+
+- code: "DHH2013-06-22"
+  title: "Applying a tourism satellite account in Thua Thien Hue"
+  title_vi: "Nghiên cứu ứng dụng tài khoản vệ tinh du lịch tại Thừa Thiên Huế"
+  role: "Member"
+  role_vi: "Thành viên"
+  pi_vi: "Phan Thị Thu Hương"
+  start_year: 2013
+  end_year: 2015
+
+- code: "DHH12324"
+  title: "Applying the ERP model to university management in Vietnam: The case of the University of Economics, Hue University"
+  title_vi: "Nghiên cứu ứng dụng mô hình ERP (Enterprise Resource Planning) vào công tác quản lý trường đại học ở Việt Nam — Trường hợp Trường Đại học Kinh tế, Đại học Huế"
+  role: "Member"
+  role_vi: "Thành viên"
+  start_year: 2013
+  end_year: 2014
+
+- code: "CS-DT"
+  title: "Student satisfaction with credit-based training at the University of Economics, Hue University"
+  title_vi: "Đánh giá mức độ hài lòng của sinh viên về hoạt động đào tạo theo học chế tín chỉ tại Trường Đại học Kinh tế, Đại học Huế"
+  role: "Principal investigator"
+  role_vi: "Chủ nhiệm"
+  start_year: 2012
+  end_year: 2012
+
+- code: "CS-DT"
+  title: "A management system for computer labs and equipment"
+  title_vi: "Hệ thống quản lý phòng máy thực hành và thiết bị"
+  role: "Principal investigator"
+  role_vi: "Chủ nhiệm"
+  start_year: 2009
+  end_year: 2009
+
+- code: "CS-DT"
+  title: "Building an online lookup system"
+  title_vi: "Xây dựng hệ thống tra cứu trực tuyến"
+  role: "Principal investigator"
+  role_vi: "Chủ nhiệm"
+  start_year: 2005
+  end_year: 2005

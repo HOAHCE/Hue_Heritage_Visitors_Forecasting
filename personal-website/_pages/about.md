@@ -14,12 +14,12 @@ hero:
     University of Economics, Hue University.
   image: prof_pic.png
   stats:
-    - num: "9"
+    - num: "18"
       label: Journal &amp; conference papers
-    - num: "3"
+    - num: "8"
       label: Books
-    - num: "1"
-      label: Funded project
+    - num: "11"
+      label: Funded projects
     - num: "5"
       label: Courses taught
   buttons:

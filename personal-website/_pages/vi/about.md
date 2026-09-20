@@ -19,11 +19,11 @@ hero:
     Trường Đại học Kinh tế, Đại học Huế.
   image: prof_pic.png
   stats:
-    - num: "9"
+    - num: "18"
       label: Bài báo &amp; kỷ yếu
-    - num: "3"
+    - num: "8"
       label: Sách, giáo trình
-    - num: "1"
+    - num: "11"
       label: Đề tài
     - num: "5"
       label: Học phần
