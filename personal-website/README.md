@@ -1,7 +1,11 @@
 # Trang cá nhân — Trần Thái Hòa
 
 Mã nguồn trang cá nhân học thuật, xây trên [Jekyll](https://jekyllrb.com/) với theme
-[al-folio](https://github.com/alshedivat/al-folio), host trên GitHub Pages.
+[al-folio](https://github.com/alshedivat/al-folio), host trên GitHub Pages
+tại **<https://tranthaihoa.id.vn>**.
+
+Mỗi lần đẩy thay đổi lên nhánh `main`, GitHub Actions tự build lại và cập nhật
+trang sau 2–4 phút.
 
 **👉 Hướng dẫn sử dụng và cập nhật nội dung: [HUONG-DAN.md](HUONG-DAN.md)**
 

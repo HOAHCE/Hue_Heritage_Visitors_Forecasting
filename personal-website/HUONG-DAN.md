@@ -6,58 +6,31 @@ host miễn phí trên **GitHub Pages**. Anh không cần cài gì trên máy: m
 
 ---
 
-## 1. Đưa trang lên mạng lần đầu
+## 1. Đưa trang lên mạng
 
-### Bước 1 — Tạo repository
+Mã nguồn nằm trong repo **`HOAHCE.github.io`**, nhánh `main`. Tên repo đặt đúng
+dạng `<tên tài khoản>.github.io` nên GitHub xem đây là **user site** — địa chỉ mặc
+định là `https://hoahce.github.io`, không có phần đuôi nào phía sau.
 
-Vào https://github.com/new và tạo repo với tên **chính xác** là:
+### Bước 1 — Bật GitHub Pages
 
-```
-HOAHCE.github.io
-```
-
-Chọn **Public**, **không** tích "Add a README file".
-
-### Bước 2 — Đẩy mã nguồn lên
-
-Trên máy anh, mở terminal (hoặc Git Bash trên Windows):
-
-```bash
-# Lấy mã nguồn về (thư mục personal-website trong repo hiện tại)
-git clone -b claude/compassionate-ride-mdc6s1 \
-  https://github.com/HOAHCE/Hue_Heritage_Visitors_Forecasting.git tam
-cp -r tam/personal-website HOAHCE.github.io
-rm -rf tam
-
-cd HOAHCE.github.io
-git init
-git add .
-git commit -m "Khoi tao trang ca nhan"
-git branch -M main
-git remote add origin https://github.com/HOAHCE/HOAHCE.github.io.git
-git push -u origin main
-```
-
-### Bước 3 — Bật GitHub Pages
-
-Vào repo `HOAHCE.github.io` → **Settings** → **Pages** → mục **Build and deployment**:
+Vào repo → **Settings** → **Pages** → mục **Build and deployment**:
 
 - **Source**: `Deploy from a branch`
 - **Branch**: `gh-pages` / thư mục `/ (root)` → **Save**
 
-Nhánh `gh-pages` được workflow tự tạo sau lần build đầu tiên. Nếu chưa thấy, vào tab
-**Actions** đợi job *Deploy site* chạy xong rồi quay lại.
+Nhánh `gh-pages` do workflow tự tạo sau lần build đầu tiên. Nếu chưa thấy trong
+danh sách, vào tab **Actions** đợi job *Deploy site* chạy xong rồi quay lại.
 
-Sau đó trang chạy tại `https://HOAHCE.github.io`.
+### Bước 2 — Trỏ tên miền `tranthaihoa.id.vn`
 
-### Bước 4 — Trỏ tên miền `tranthaihoa.id.vn`
-
-Mã nguồn đã có sẵn file `CNAME` chứa `tranthaihoa.id.vn`, và `_config.yml` đã đặt
-`url: https://tranthaihoa.id.vn`. Chỉ còn hai việc:
+File `CNAME` đã có sẵn trong mã nguồn và `_config.yml` đã đặt
+`url: https://tranthaihoa.id.vn`, nên GitHub sẽ tự nhận tên miền. Việc còn lại
+là cấu hình DNS.
 
 **a) Tại Tenten.vn** — đăng nhập https://tenten.vn → **Quản lý tên miền** → chọn
-`tranthaihoa.id.vn` → **Quản lý DNS** (hoặc *Cấu hình bản ghi DNS*). Xoá các bản ghi A
-đang trỏ tới trang chờ (parking) của Tenten, rồi thêm:
+`tranthaihoa.id.vn` → **Quản lý DNS**. Xoá các bản ghi A đang trỏ tới trang chờ
+(parking) của Tenten, rồi thêm:
 
 | Loại | Host / Tên | Giá trị / Trỏ tới | TTL |
 | --- | --- | --- | --- |
@@ -67,16 +40,14 @@ Mã nguồn đã có sẵn file `CNAME` chứa `tranthaihoa.id.vn`, và `_config
 | A | `@` | `185.199.111.153` | mặc định |
 | CNAME | `www` | `hoahce.github.io.` | mặc định |
 
-> Cả 4 bản ghi A đều dùng host `@` — đó là cách GitHub cân bằng tải, không phải khai trùng.
-> Nếu ô Host của Tenten không nhận ký tự `@`, hãy để **trống** hoặc điền
-> `tranthaihoa.id.vn`. Giá trị CNAME nhớ giữ **dấu chấm ở cuối**.
+> Cả 4 bản ghi A đều dùng host `@` — đó là cách GitHub cân bằng tải, không phải
+> khai trùng. Nếu ô Host của Tenten không nhận ký tự `@`, hãy để **trống** hoặc
+> điền `tranthaihoa.id.vn`. Giá trị CNAME nhớ giữ **dấu chấm ở cuối**.
 
-**b) Tại GitHub** — repo `HOAHCE.github.io` → **Settings** → **Pages** →
-mục **Custom domain** điền `tranthaihoa.id.vn` → **Save**.
-
-Đợi DNS lan truyền (thường 15–60 phút, tối đa 24 giờ). Khi GitHub báo
-*DNS check successful*, quay lại tích **Enforce HTTPS** để trang chạy `https://`.
-Chứng chỉ SSL do GitHub cấp miễn phí, tự gia hạn.
+**b) Tại GitHub** — Settings → Pages → **Custom domain** điền `tranthaihoa.id.vn`
+→ **Save**. Đợi DNS lan truyền (thường 15–60 phút, tối đa 24 giờ). Khi GitHub báo
+*DNS check successful*, tích **Enforce HTTPS**. Chứng chỉ SSL do GitHub cấp miễn
+phí và tự gia hạn.
 
 Kiểm tra DNS đã cập nhật chưa:
 
@@ -85,6 +56,26 @@ nslookup tranthaihoa.id.vn
 ```
 
 Kết quả đúng là 4 địa chỉ `185.199.10x.153` ở trên.
+
+---
+
+### Lấy mã nguồn về máy để sửa
+
+```bash
+git clone https://github.com/HOAHCE/HOAHCE.github.io.git
+cd HOAHCE.github.io
+```
+
+Sửa xong thì đẩy lên:
+
+```bash
+git add .
+git commit -m "Cap nhat noi dung"
+git push
+```
+
+Với thay đổi nhỏ, anh có thể sửa thẳng trên giao diện web của GitHub
+(mở file → biểu tượng bút chì → sửa → *Commit changes*), không cần dùng terminal.
 
 ---
 
