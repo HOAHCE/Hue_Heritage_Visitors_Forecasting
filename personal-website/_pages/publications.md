@@ -15,8 +15,6 @@ Titles of Vietnamese-language publications are kept in the original language.
 
 ## Articles and conference papers
 
-{% include bib_search.liquid %}
-
 <div class="publications">
 {% bibliography %}
 </div>

@@ -416,3 +416,35 @@ html[data-theme="dark"] .pub-status {
   color: $c-blue-dark;
   border-color: $c-blue-dark;
 }
+
+/*******************************************************************************
+ * Tiêu đề năm trong danh mục nghiên cứu (bài báo, sách, đề tài)
+ *
+ * Theme gốc in năm màu xám rất nhạt, canh phải, kèm một đường kẻ ngang.
+ * Ở đây đổi thành một nhãn nền xanh nhạt đặt bên trái cho dễ bắt mắt,
+ * và bỏ đường kẻ vì nhãn đã đủ tách các nhóm năm với nhau.
+ ******************************************************************************/
+
+.publications h2.bibliography {
+  display: inline-block;
+  margin: 2.75rem 0 1.25rem;
+  padding: 0.2rem 0.75rem;
+  border-top: none;
+  border-radius: 3px;
+  background: rgba($c-blue, 0.12);
+  color: $c-blue;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+// Nhóm năm đầu tiên nằm ngay dưới tiêu đề mục nên không cần khoảng trống lớn.
+.publications h2.bibliography:first-of-type {
+  margin-top: 1rem;
+}
+
+html[data-theme="dark"] .publications h2.bibliography {
+  background: rgba($c-blue-dark, 0.16);
+  color: $c-blue-dark;
+}
