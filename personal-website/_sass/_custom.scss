@@ -393,3 +393,26 @@ html[data-theme="dark"] .hero {
     line-height: 1.6;
   }
 }
+
+/*******************************************************************************
+ * Nhãn tình trạng công bố (ví dụ "Accepted") — do _includes/hook/bib.liquid in ra
+ ******************************************************************************/
+
+.pub-status {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.05rem 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.03em;
+  color: $c-blue;
+  border: 1px solid $c-blue;
+  border-radius: 3px;
+  vertical-align: 0.05rem;
+}
+
+html[data-theme="dark"] .pub-status {
+  color: $c-blue-dark;
+  border-color: $c-blue-dark;
+}

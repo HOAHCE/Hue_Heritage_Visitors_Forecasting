@@ -7,6 +7,7 @@
     2. Layout gốc không in tập(số) và trang. Hook này lấy thẳng từ các trường
        volume / number / pages của entry, nên không phải nhập hai lần.
     3. In vai trò của anh trong sách (trường role).
+    4. In nhãn tình trạng cho bài chưa xuất bản (trường status, ví dụ Accepted).
 
   Kết quả:
     Bài báo -> "International Journal of Information Technology 17(7), 3999–4011, 2025"
@@ -28,6 +29,12 @@
 {%- if entry.pages -%}
   {%- capture entrytype -%}
     {{ entrytype }}, {{ entry.pages | replace: "--", "–" }}
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if entry.status -%}
+  {%- capture entrytype -%}
+    {{ entrytype }} <span class="pub-status">{{ entry.status }}</span>
   {%- endcapture -%}
 {%- endif -%}
 

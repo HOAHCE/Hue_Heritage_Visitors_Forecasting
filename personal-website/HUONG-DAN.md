@@ -145,12 +145,23 @@ author = {Thái Hòa, Trần and {Lê Mạnh Thạnh} and {Nguyễn Đình Hoa C
 
 Bảng chuyển tên đồng tác giả sang dạng Latin nằm ở đầu file `papers.bib`.
 
-**Thêm DOI** cho một bài — nên làm, vì khi đó tên bài có thêm nút bấm sang bài gốc:
+**Tình trạng công bố:**
 
-```bibtex
-  doi  = {10.1007/s41870-025-02472-6},
-  html = {https://doi.org/10.1007/s41870-025-02472-6},
-```
+- Bài **đã xuất bản và có DOI** — thêm hai dòng, tên bài sẽ có nút bấm sang bài gốc:
+
+  ```bibtex
+    doi    = {10.1007/s41870-025-02472-6},
+    html   = {https://doi.org/10.1007/s41870-025-02472-6},
+  ```
+
+- Bài **đã nhận đăng nhưng chưa xuất bản** — thêm một dòng:
+
+  ```bibtex
+    status = {Accepted},
+  ```
+
+  Trang sẽ hiện nhãn *Accepted* viền xanh bên cạnh tên tạp chí. Khi bài lên trang
+  chính thức thì **xoá dòng `status`** và điền `volume`, `number`, `pages`, `doi`.
 
 
 Mở `_bibliography/papers.bib`, dán thêm một khối BibTeX (lấy sẵn từ nút "Cite" trên
@@ -399,26 +410,27 @@ grep -rn "TODO" _pages _data _projects _teachings _posts _news _bibliography _co
 - [x] Tên hiển thị: **Trần Thái Hòa** (tiếng Việt) / **Hoa Tran Thai** (tiếng Anh)
 - [x] Font Inter, bảng màu xám nhạt – đen – xanh nhạt
 - [x] Quá trình học tập (cử nhân, thạc sĩ, nghiên cứu sinh)
-- [x] **18 bài báo & kỷ yếu** (2013–2026), **8 sách, giáo trình**, **11 đề tài**
+- [x] **22 bài báo & kỷ yếu** (2013–2026), **8 sách, giáo trình**, **11 đề tài**
       — lấy từ ba file kết xuất CSDL Khoa học ĐH Huế, đủ đồng tác giả và tập/số/trang
 - [x] Tên tác giả thống nhất theo ngôn ngữ từng bài (Anh / Việt)
 - [x] 5 học phần giảng dạy
 
 Còn lại:
 
-- [ ] **DOI — mới có 1/18 bài** (bài IJIT 2025). Các dịch vụ tra DOI (Crossref,
-      doi.org, OpenAlex) đều bị chặn trong môi trường tôi làm việc, và tạp chí
-      trong nước hầu như không có trong chỉ mục tìm kiếm. Anh bổ sung dần; cách
-      thêm xem mục 2.2 ở trên.
-- [ ] **Bảng chuyển tên đồng tác giả sang dạng Latin** ở đầu `papers.bib` — hai
-      dòng đầu lấy đúng theo trang Springer, phần còn lại do tôi chuyển theo lối
-      thông thường. Anh đối chiếu với bản in thật của từng bài.
-- [ ] **Vài bài chỉ có trang bắt đầu** (bài GRU 2026 trang 15, ba bài logistics
-      2023, bài ICYREB 2025 trang 379). Bổ sung trang kết thúc.
-- [ ] **Bài CCIS 2026** — file CSDL ghi nhà xuất bản là "Marcel Dekker Inc.",
-      nhưng đây là tùng thư của Springer. Tôi để trống, anh điền lại.
-- [ ] **Hai cuốn sách trùng mã ISBN** `978-604-393-670-4`.
-- [ ] **Ba số liệu lệch giữa CSDL và Google Scholar** — xem ghi chú đầu `papers.bib`.
+- [ ] **Bốn bài đang để nhãn `Accepted`** — tôi suy ra từ chỗ file CSDL bỏ trống
+      tập/số/trang, trong khi LNNS và LNICST là tùng thư Springer vốn luôn có số
+      trang khi đã in. Bài nào thực ra đã xuất bản thì xoá dòng `status` và điền
+      số trang.
+- [ ] **DOI — mới có 1/22 bài** (bài IJIT 2025). Crossref, doi.org và OpenAlex
+      đều bị chặn trong môi trường tôi làm việc nên không tra tự động được.
+- [ ] **Nhà xuất bản ghi sai trong file CSDL** — bài CCIS 2026 ghi "Marcel Dekker
+      Inc." và bài LNICST 2026 ghi "Nickan Research Institute", trong khi cả hai
+      tùng thư đều của Springer. Tôi để trống thay vì chép lại.
+- [ ] **Vài bài chỉ có trang bắt đầu** (GRU 2026 trang 15, ba bài logistics 2023,
+      ICYREB 2025 trang 379). Bổ sung trang kết thúc.
+- [ ] **Bảng chuyển tên đồng tác giả sang dạng Latin** ở đầu `papers.bib` — ba tên
+      đối chiếu được với Springer và Scholar, phần còn lại suy theo cùng quy tắc.
+      Anh đối chiếu với bản in thật của từng bài.
 - [ ] `_teachings/*.md` — khi vào học kỳ thì mở phần `term`, `location`, `time`,
       `schedule` (đang để dạng ghi chú) và tải slide/đề cương lên `assets/pdf/`
 - [ ] `_data/resources.yml` — thay bằng tài liệu thật, hoặc xoá hết nội dung

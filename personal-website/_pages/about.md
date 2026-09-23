@@ -14,7 +14,7 @@ hero:
     University of Economics, Hue University.
   image: prof_pic.png
   stats:
-    - num: "18"
+    - num: "22"
       label: Journal &amp; conference papers
     - num: "8"
       label: Books

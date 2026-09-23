@@ -5,107 +5,156 @@
 
   NGUỒN DỮ LIỆU
   -------------
-  Danh mục lấy từ ba file kết xuất của CSDL Khoa học Đại học Huế (9/2026).
+  Danh mục lấy từ file kết xuất CSDL Khoa học Đại học Huế, bản cập nhật 22/9/2026
+  (22 bài báo và kỷ yếu). Sách, giáo trình nằm ở file books.bib.
 
   TÊN TÁC GIẢ — NGUYÊN TẮC
   ------------------------
   Bài viết bằng NGÔN NGỮ NÀO thì ghi tên tác giả theo ngôn ngữ đó:
-    - Bài tiếng Anh  -> tên dạng Latin:      Tran Thai, Hoa and {Thanh Manh Le}
-    - Bài tiếng Việt -> tên tiếng Việt đầy đủ: Thái Hòa, Trần and {Lê Mạnh Thạnh}
+    - Bài tiếng Anh  -> tên dạng Latin:       {Thanh Manh Le}
+    - Bài tiếng Việt -> tên tiếng Việt đầy đủ: {Lê Mạnh Thạnh}
+  Mỗi tên ĐỒNG TÁC GIẢ bọc trong {} để BibTeX giữ nguyên thứ tự, không đảo họ ra sau.
 
-  Mỗi tên BỌC TRONG DẤU {} để BibTeX giữ nguyên thứ tự, không đảo họ ra sau.
+  Quy tắc chuyển sang dạng Latin: TÊN GỌI (âm cuối) đứng trước, rồi các âm đệm
+  theo thứ tự cũ, cuối cùng là HỌ. Quy tắc này suy ra từ ba chỗ đối chiếu được:
+      Lê Mạnh Thạnh         -> Thanh Manh Le        (Springer ghi "Le, T.M.")
+      Nguyễn Đình Hoa Cương -> Cuong Hoa Nguyen-Dinh (Springer ghi "Nguyen-Dinh, C.H.")
+      Nguyễn Thị Kim Dung   -> Dung Thi Kim Nguyen  (Google Scholar)
 
-  Bảng chuyển tên sang dạng Latin đang dùng:
-    Trần Thái Hòa          -> Hoa Tran Thai
-    Lê Mạnh Thạnh          -> Thanh Manh Le
-    Nguyễn Đình Hoa Cương  -> Cuong Hoa Nguyen-Dinh
-    Dương Thị Hải Phương   -> Thi Hai Phuong Duong
-    Nguyễn Ngọc Nam        -> Ngoc Nam Nguyen
-    Hoàng Hữu Trung        -> Huu Trung Hoang
-    Nguyễn Đăng Bình       -> Dang Binh Nguyen
-    Nguyễn Thanh Nam       -> Thanh Nam Nguyen
-    Trương Tấn Quân        -> Tan Quan Truong
-    Dương Đắc Quang Hảo    -> Dac Quang Hao Duong
-
-  CẦN KIỂM TRA: hai dòng đầu lấy theo đúng cách Springer ghi trên bài IJIT 2025
-  ("Hoa, T.T., Le, T.M., Nguyen-Dinh, C.H."). Các dòng còn lại do tôi chuyển theo
-  lối thông thường "tên + họ", anh đối chiếu lại với bản in thật của từng bài.
-
-  LƯU Ý VỀ TÊN ANH TRÊN BẢN IN: trang Springer của bài IJIT 2025 ghi anh là
-  "Hoa, T.T." — tức là họ được hiểu là "Hoa", tên là "Tran Thai". Ở đây đang dùng
-  dạng "Hoa Tran Thai" theo yêu cầu của anh. Hai dạng này khiến hệ thống trích dẫn
-  quốc tế có thể tách thành hai hồ sơ khác nhau; anh cân nhắc chọn một dạng và
-  dùng thống nhất khi gửi bài về sau.
+  Bảng chuyển đang dùng:
+    Nguyễn Hoàng Hà          -> Ha Hoang Nguyen
+    Nguyễn Thanh Tuấn        -> Tuan Thanh Nguyen
+    Nguyễn Thanh Nam         -> Nam Thanh Nguyen
+    Nguyễn Ngọc Nam          -> Nam Ngoc Nguyen
+    Nguyễn Đăng Bình         -> Binh Dang Nguyen
+    Hoàng Bảo Khánh          -> Khanh Bao Hoang
+    Hoàng Hữu Trung          -> Trung Huu Hoang
+    Dương Thị Hải Phương     -> Phuong Thi Hai Duong
+    Dương Đắc Quang Hảo      -> Hao Quang Dac Duong
+    Dương Đức Hưng           -> Hung Duc Duong
+    Phan Thị Thu Hương       -> Huong Thi Thu Phan
+    Hồ Quốc Dũng             -> Dung Quoc Ho
+    Lê Thị Quỳnh Liên        -> Lien Thi Quynh Le
+    Lê Ngọc Lưu Quang        -> Quang Ngoc Luu Le
+    Lê Tô Minh Tân           -> Tan To Minh Le
+    Trần Ngọc Phương Thảo    -> Thao Ngoc Phuong Tran
+    Trương Tấn Quân          -> Quan Tan Truong
+    Trương Nguyễn Trung Hiếu -> Hieu Nguyen Trung Truong
+    Mai Thu Giang            -> Giang Thu Mai
 
   TÊN CỦA ANH VIẾT KHÁC MỘT CHÚT — CÓ LÝ DO
   -----------------------------------------
-  Tên anh KHÔNG bọc {} như các đồng tác giả, mà viết dạng "Họ, Tên":
+  Tên anh KHÔNG bọc {}, mà viết dạng "Họ, Tên":
       bài tiếng Anh : Tran Thai, Hoa    -> hiện ra "Hoa Tran Thai"
       bài tiếng Việt: Thái Hòa, Trần    -> hiện ra "Trần Thái Hòa"
-  Theme chỉ in đậm được tên tác giả khi tách được phần họ và phần tên riêng.
-  Tên bọc trong {} thì phần tên riêng rỗng, và phép so khớp của theme luôn sai,
-  nên tên anh sẽ không được in đậm. Cách viết trên là để giữ được nút in đậm đó.
+  Theme chỉ in đậm được tên tác giả khi tách rời được phần họ và phần tên riêng.
   Hai giá trị này phải khớp với scholar.last_name / scholar.first_name trong _config.yml.
 
-  CÁC TRƯỜNG RIÊNG CỦA al-folio (đều KHÔNG bắt buộc):
-    abbr, selected, bibtex_show, pdf, html, abstract
-  Tập(số), trang, nhà xuất bản của sách và vai trò tác giả được in ra nhờ
-  _includes/hook/bib.liquid, lấy thẳng từ volume / number / pages / publisher / role.
+  TÌNH TRẠNG CÔNG BỐ
+  ------------------
+  - Bài ĐÃ XUẤT BẢN và có DOI: thêm hai dòng, tên bài sẽ thành liên kết bấm được:
+        doi    = {10.xxxx/yyyy},
+        html   = {https://doi.org/10.xxxx/yyyy},
+  - Bài ĐÃ NHẬN ĐĂNG nhưng CHƯA XUẤT BẢN: thêm dòng
+        status = {Accepted},
+    Trang sẽ hiện nhãn "Accepted" màu xanh bên cạnh tên tạp chí.
+    Khi bài lên trang chính thức thì XOÁ dòng status và điền volume/number/pages/doi.
 
   ===========================================================================
   CẦN ANH KIỂM TRA LẠI
   ===========================================================================
 
-  1) DOI: mới có 1/18 bài (bài IJIT 2025). Các dịch vụ tra DOI (Crossref, doi.org)
-     bị chặn trong môi trường tôi làm việc, và tạp chí trong nước hầu như không có
-     trong chỉ mục tìm kiếm. Anh bổ sung bằng cách thêm hai dòng vào entry:
-        doi  = {10.xxxx/yyyy},
-        html = {https://doi.org/10.xxxx/yyyy},
-     Có html thì tên bài trên trang sẽ thành liên kết bấm được.
+  1) BỐN BÀI ĐANG ĐỂ "Accepted" — tôi suy ra từ chỗ file CSDL bỏ trống tập/số/trang
+     trong khi đây là các tùng thư Springer (LNNS, LNICST) vốn luôn có số trang khi
+     đã in. Nếu bài nào thực ra ĐÃ xuất bản thì xoá dòng status và điền số trang:
+       - N-BEATS for multi-asset forecasting (LNNS, 2026)
+       - Comparative multi-horizon forecasting of Bitcoin, Ethereum, Binance Coin (LNICST, 2026)
+       - Enhancing GRU forecasting accuracy with EMD (LNNS, 2026)
+       - A comparative study of CEEMDAN–attention-based CNN and RNN models (LNNS, 2026)
 
-  2) NHIỀU BÀI CHỈ CÓ TRANG BẮT ĐẦU trong file CSDL (bài GRU 2026 trang 15,
-     ba bài logistics 2023, bài ICYREB 2025 trang 379). Bổ sung trang kết thúc.
+  2) DOI: mới có 1/22 bài (bài IJIT 2025). Các dịch vụ tra DOI (Crossref, doi.org,
+     OpenAlex) bị chặn trong môi trường tôi làm việc, nên phải nhờ anh bổ sung dần.
 
-  3) Bài "Integrating NASDAQ Spillover Signals..." (2026): file CSDL ghi nhà xuất
-     bản là "Marcel Dekker Inc.", nhưng Communications in Computer and Information
-     Science là tùng thư của Springer. Tôi để trống, anh điền lại giúp.
+  3) NHÀ XUẤT BẢN GHI SAI TRONG FILE CSDL — tôi để trống thay vì chép lại:
+       - Bài CCIS 2026: file ghi "Marcel Dekker Inc.", nhưng Communications in
+         Computer and Information Science là tùng thư của Springer.
+       - Bài LNICST 2026: file ghi "Nickan Research Institute", nhưng Lecture Notes
+         of ICST cũng là tùng thư của Springer.
 
-  4) BA CHỖ SỐ LIỆU LỆCH giữa file CSDL và Google Scholar:
-     - "Hybrid model of 1D-CNN and LSTM..." (IJIT 2025): file CSDL bỏ trống
-       tập/số/trang, lấy theo Scholar và trang Springer: 17(7), 3999–4011.
-     - "Phân tích thực nghiệm mô hình N-BEATS" (2026): CSDL ghi 59–74,
-       Scholar ghi 59–73. Đang lấy theo CSDL.
-     - "So sánh hiệu quả mô hình học sâu 1D-CNN, LSTM..." (2024): CSDL ghi tên
-       tạp chí là "Tạp chí Khoa học công nghệ (91)" nhưng ISSN 2354-0842 lại là
-       của Tạp chí KH&CN Trường ĐH Khoa học, ĐH Huế. Đang dùng tên theo ISSN,
-       trang 121–136 theo Scholar (CSDL chỉ ghi trang bắt đầu 121).
+  4) VÀI BÀI CHỈ CÓ TRANG BẮT ĐẦU trong file CSDL (bài GRU 2026 trang 15, ba bài
+     logistics 2023, bài ICYREB 2025 trang 379). Bổ sung trang kết thúc.
 
-  5) Đã sửa vài lỗi gõ trong file CSDL: "Integraling" -> "Integrating",
-     "apdoption" -> "adoption", "comercial" -> "commercial".
+  5) Bài "So sánh hiệu quả mô hình học sâu 1D-CNN, LSTM..." (2024): file CSDL ghi
+     tên tạp chí là "Tạp chí Khoa học công nghệ (91)" nhưng ISSN 2354-0842 lại là
+     của Tạp chí KH&CN Trường ĐH Khoa học, ĐH Huế. Đang dùng tên theo ISSN, và
+     trang 121–136 theo Google Scholar (CSDL chỉ ghi trang bắt đầu 121).
 
-  6) Tiêu đề tiếng Việt trong CSDL viết IN HOA; ở đây viết lại dạng chữ thường
+  6) Bài IJIT 2025: file CSDL bỏ trống tập/số/trang, đang lấy theo trang Springer
+     là 17(7), 3999–4011.
+
+  7) Đã sửa vài lỗi gõ trong file CSDL: "apdoption" -> "adoption",
+     "comercial" -> "commercial", "hảng hoá" -> "hàng hoá", và bỏ dấu phẩy thừa ở
+     cuối tên bài CEEMDAN.
+
+  8) Tiêu đề tiếng Việt trong CSDL viết IN HOA; ở đây viết lại dạng chữ thường
      theo thông lệ trình bày danh mục tài liệu.
+
+  LƯU Ý: mọi ghi chú trong file .bib phải nằm trong khối comment như thế này.
 
 }
 
-@article{tranthai2026gru,
-  abbr        = {HUJS},
-  title       = {Short-term Bitcoin forecasting across multiple horizons: The effectiveness of GRU networks},
-  author      = {Tran Thai, Hoa and {Thi Hai Phuong Duong} and {Thanh Manh Le} and {Cuong Hoa Nguyen-Dinh}},
-  journal     = {Tạp chí Khoa học Đại học Huế: Kỹ thuật và Công nghệ},
-  issn        = {2588-1175},
-  volume      = {135},
-  number      = {2A},
-  pages       = {15},
+@article{nguyen2026nbeats_multiasset,
+  abbr        = {LNNS},
+  title       = {N-BEATS for multi-asset forecasting: Superior performance without recurrence or convolution},
+  author      = {{Ha Hoang Nguyen} and {Thanh Manh Le} and {Cuong Hoa Nguyen-Dinh} and {Khanh Bao Hoang} and Tran Thai, Hoa},
+  journal     = {Lecture Notes in Networks and Systems},
+  publisher   = {Springer Nature},
+  issn        = {2367-3370},
+  status      = {Accepted},
+  year        = {2026},
+  bibtex_show = {true}
+}
+
+@article{tranthai2026comparative,
+  abbr        = {LNICST},
+  title       = {Comparative multi-horizon forecasting of Bitcoin, Ethereum, and Binance Coin using hybrid 1D-CNN–LSTM models},
+  author      = {Tran Thai, Hoa and {Thanh Manh Le} and {Cuong Hoa Nguyen-Dinh}},
+  journal     = {Lecture Notes of the Institute for Computer Sciences, Social-Informatics and Telecommunications Engineering},
+  issn        = {1867-8211},
+  status      = {Accepted},
   year        = {2026},
   selected    = {true},
+  bibtex_show = {true}
+}
+
+@article{tranthai2026gru_emd,
+  abbr        = {LNNS},
+  title       = {Enhancing GRU forecasting accuracy with empirical mode decomposition for Bitcoin prices},
+  author      = {Tran Thai, Hoa and {Tuan Thanh Nguyen} and {Huong Thi Thu Phan} and {Dung Quoc Ho} and {Lien Thi Quynh Le}},
+  journal     = {Lecture Notes in Networks and Systems},
+  publisher   = {Springer Nature},
+  issn        = {2367-3370},
+  status      = {Accepted},
+  year        = {2026},
+  bibtex_show = {true}
+}
+
+@article{tranthai2026ceemdan,
+  abbr        = {LNNS},
+  title       = {A comparative study of CEEMDAN–attention-based CNN and RNN models for Bitcoin price and trading signal prediction},
+  author      = {Tran Thai, Hoa and {Thao Ngoc Phuong Tran} and {Binh Dang Nguyen} and {Hieu Nguyen Trung Truong} and {Trung Huu Hoang}},
+  journal     = {Lecture Notes in Networks and Systems},
+  publisher   = {Springer Nature},
+  issn        = {2367-3370},
+  status      = {Accepted},
+  year        = {2026},
   bibtex_show = {true}
 }
 
 @article{tranthai2026nasdaq,
   abbr        = {CCIS},
   title       = {Integrating NASDAQ spillover signals into hybrid 1D-CNN-LSTM frameworks for multi-horizon Bitcoin forecasting},
-  author      = {Tran Thai, Hoa and {Cuong Hoa Nguyen-Dinh} and {Ngoc Nam Nguyen} and {Huu Trung Hoang} and {Thanh Manh Le}},
+  author      = {Tran Thai, Hoa and {Cuong Hoa Nguyen-Dinh} and {Nam Ngoc Nguyen} and {Trung Huu Hoang} and {Thanh Manh Le} and {Hieu Nguyen Trung Truong}},
   journal     = {Communications in Computer and Information Science},
   issn        = {1865-0929},
   volume      = {2944},
@@ -116,10 +165,23 @@
   bibtex_show = {true}
 }
 
+@article{tranthai2026gru,
+  abbr        = {HUJS},
+  title       = {Short-term Bitcoin forecasting across multiple horizons: The effectiveness of GRU networks},
+  author      = {Tran Thai, Hoa and {Phuong Thi Hai Duong} and {Thanh Manh Le} and {Cuong Hoa Nguyen-Dinh}},
+  journal     = {Tạp chí Khoa học Đại học Huế: Kỹ thuật và Công nghệ},
+  issn        = {2588-1175},
+  volume      = {135},
+  number      = {2B},
+  pages       = {15},
+  year        = {2026},
+  bibtex_show = {true}
+}
+
 @article{tranthai2026nbeats,
   abbr        = {TCKHCN},
   title       = {Phân tích thực nghiệm mô hình N-BEATS cho bài toán dự báo giá Bitcoin theo nhiều khung thời gian},
-  author      = {Thái Hòa, Trần and {Nguyễn Thanh Nam} and {Dương Đức Hưng}},
+  author      = {Thái Hòa, Trần and {Nguyễn Thanh Nam} and {Dương Đức Hưng} and {Hoàng Bảo Khánh}},
   journal     = {Tạp chí Khoa học và Công nghệ: Khoa học tự nhiên, Trường Đại học Khoa học, Đại học Huế},
   issn        = {2354-0842},
   volume      = {33},
@@ -145,7 +207,7 @@
 @inproceedings{tranthai2025galstm,
   abbr        = {FAIR},
   title       = {A multi-objective GA-LSTM framework for simultaneous optimization of predictive accuracy and computational efficiency in Bitcoin price forecasting},
-  author      = {Tran Thai, Hoa and {Thanh Manh Le} and {Dang Binh Nguyen} and {Thanh Nam Nguyen} and {Cuong Hoa Nguyen-Dinh}},
+  author      = {Tran Thai, Hoa and {Thanh Manh Le} and {Binh Dang Nguyen} and {Nam Thanh Nguyen} and {Cuong Hoa Nguyen-Dinh}},
   booktitle   = {Kỷ yếu Hội nghị khoa học quốc gia lần thứ 18 về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR 2025)},
   isbn        = {978-604-357-455-5},
   pages       = {26--31},
@@ -156,7 +218,7 @@
 @inproceedings{tranthai2025gold,
   abbr        = {ICYREB},
   title       = {Advancing financial forecasting: On the effectiveness of the Transformer architecture for gold price time series analysis},
-  author      = {Tran Thai, Hoa and {Thi Hai Phuong Duong} and {Cuong Hoa Nguyen-Dinh}},
+  author      = {Tran Thai, Hoa and {Phuong Thi Hai Duong} and {Cuong Hoa Nguyen-Dinh} and {Dung Thi Kim Nguyen}},
   booktitle   = {Proceedings of ICYREB 2025 — The 11th International Conference for Young Researchers in Economics and Business},
   isbn        = {978-604-79-5179-6},
   pages       = {379},
@@ -243,7 +305,7 @@
 @inproceedings{tranthai2023melaleuca,
   abbr        = {Kỷ yếu},
   title       = {Modelling blockchain technology applications in developing agricultural supply chains: The case of melaleuca oil in Hue},
-  author      = {Tran Thai, Hoa and {Tan Quan Truong} and {Dac Quang Hao Duong}},
+  author      = {Tran Thai, Hoa and {Quan Tan Truong} and {Hao Quang Dac Duong}},
   booktitle   = {Kỷ yếu hội thảo khoa học quốc tế — Phát triển kinh tế xanh ở Việt Nam},
   isbn        = {978-604-55-7851},
   volume      = {2},
@@ -267,7 +329,7 @@
 @article{duong2020blockchain,
   abbr        = {HUJS},
   title       = {Factors affecting customer acceptance on the adoption of blockchain technology at Dong A Commercial Joint Stock Bank, Hue branch},
-  author      = {{Dac Quang Hao Duong} and Tran Thai, Hoa},
+  author      = {{Hao Quang Dac Duong} and Tran Thai, Hoa},
   journal     = {Tạp chí Khoa học Đại học Huế: Kinh tế và phát triển},
   issn        = {2588-1205},
   volume      = {129},

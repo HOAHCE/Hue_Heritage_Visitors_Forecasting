@@ -423,6 +423,7 @@ filtered_bibtex_keywords:
     preview,
     role,
     selected,
+    status,
     slides,
     supp,
     video,

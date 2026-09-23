@@ -19,7 +19,7 @@ hero:
     Trường Đại học Kinh tế, Đại học Huế.
   image: prof_pic.png
   stats:
-    - num: "18"
+    - num: "22"
       label: Bài báo &amp; kỷ yếu
     - num: "8"
       label: Sách, giáo trình
