@@ -10,8 +10,8 @@ hero:
   title: Hoa Tran Thai
   # highlight: ...   # chữ nhấn màu xanh nối sau tên, bỏ trống thì chỉ hiện tên
   role: >
-    PhD student in Computer Science · Lecturer, Faculty of Economic Information Systems,
-    University of Economics, Hue University.
+    Lecturer, Faculty of Economic Information Systems, University of Economics, Hue University<br>
+    PhD student in Computer Science, Faculty of Information Technology, University of Sciences, Hue University
   image: prof_pic.png
   stats:
     - num: "22"
@@ -49,11 +49,13 @@ latest_posts:
 I am a PhD student in Computer Science and a lecturer in the Faculty of Economic
 Information Systems at the University of Economics, Hue University, Viet Nam.
 
-My research applies information technology to economic problems. Recent work covers
-blockchain in agricultural supply chains — including a Hue University project on
-traceability for melaleuca (cajuput) oil in Hue — digital transformation and smart
-university models for Vietnamese higher education, and deep learning for time series
-forecasting, such as hybrid 1D-CNN/LSTM models for cryptocurrency prices.
+My research applies information technology to economic problems, with a focus on
+artificial intelligence, machine learning and deep learning, information systems,
+and time series forecasting.
+
+I also teach entrepreneurship and innovation, and have founded several education
+ventures — ECO, ANI, IPA and SkillUP. I currently own the IPA Foreign Language Centre
+and the SkillUP Centre for Skills Training and Development.
 
 ## Education
 

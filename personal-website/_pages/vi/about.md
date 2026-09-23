@@ -15,8 +15,8 @@ hero:
   title: Trần Thái Hòa
   # highlight: ...   # chữ nhấn màu xanh nối sau tên, bỏ trống thì chỉ hiện tên
   role: >
-    Nghiên cứu sinh ngành Khoa học Máy tính · Giảng viên Khoa Hệ thống thông tin kinh tế,
-    Trường Đại học Kinh tế, Đại học Huế.
+    Giảng viên Khoa Hệ thống thông tin kinh tế, Trường Đại học Kinh tế, Đại học Huế<br>
+    NCS Khoa học máy tính, Khoa CNTT, Trường Đại học Khoa học, Đại học Huế
   image: prof_pic.png
   stats:
     - num: "22"
@@ -54,12 +54,13 @@ latest_posts:
 Tôi là nghiên cứu sinh ngành Khoa học Máy tính, đồng thời là giảng viên Khoa Hệ thống
 thông tin kinh tế, Trường Đại học Kinh tế, Đại học Huế.
 
-Hướng nghiên cứu của tôi là ứng dụng công nghệ thông tin vào các bài toán kinh tế.
-Các công trình gần đây tập trung vào ứng dụng blockchain trong chuỗi cung ứng nông
-nghiệp — trong đó có đề tài cấp Đại học Huế về truy xuất nguồn gốc sản phẩm dầu tràm
-ở Huế — chuyển đổi số và mô hình đại học thông minh cho các trường đại học Việt Nam,
-và học sâu trong dự báo chuỗi thời gian, chẳng hạn mô hình lai 1D-CNN/LSTM dự báo
-giá tiền mã hoá.
+Hướng nghiên cứu của tôi là ứng dụng công nghệ thông tin vào các bài toán kinh tế,
+tập trung vào trí tuệ nhân tạo, học máy và học sâu, hệ thống thông tin, và dự báo
+dữ liệu chuỗi thời gian.
+
+Bên cạnh đó, tôi giảng dạy Khởi nghiệp và đổi mới sáng tạo, là người sáng lập nhiều
+dự án giáo dục (ECO, ANI, IPA, SkillUP); hiện là chủ sở hữu Trung tâm Ngoại ngữ IPA
+và Trung tâm Đào tạo và Phát triển kỹ năng SkillUP.
 
 ## Học tập
 
