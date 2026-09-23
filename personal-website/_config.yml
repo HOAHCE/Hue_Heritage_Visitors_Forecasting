@@ -27,8 +27,8 @@ footer_text_vi: > # chân trang bản tiếng Việt
   Lưu trữ trên <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: Trần Thái Hòa, Tran Thai Hoa, Đại học Kinh tế Huế, Hue University, dự báo du lịch, tourism demand forecasting, time series, machine learning
 lang: en # ngôn ngữ mặc định của mã HTML; các trang tiếng Việt tự khai báo lang: vi
-icon: 🏯 # emoji dùng làm favicon (hoặc đặt tên file ảnh trong /assets/img/)
-apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
+icon: favicon.ico # logo Trường ĐH Kinh tế, ĐH Huế (file trong /assets/img/; chứa sẵn các cỡ 16/32/48/64 px cho thanh tab)
+apple_touch_icon: apple-touch-icon.png # PNG 180x180 nền trắng, dùng khi lưu trang ra màn hình chính iOS (Safari bỏ qua favicon .ico ở trên)
 
 # Tên miền riêng. Đổi ở đây nếu sau này dùng tên miền khác.
 # (Nhà cung cấp: tenten.vn — xem phần DNS trong HUONG-DAN.md)

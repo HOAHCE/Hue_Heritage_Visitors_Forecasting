@@ -375,6 +375,28 @@ Toàn bộ màu sắc và font nằm trong **một file duy nhất**: `_sass/_cu
 
 Trang có sẵn chế độ nền sáng / nền tối; nút chuyển nằm ở góc trên bên phải.
 
+### Đổi favicon (biểu tượng hiện ở thanh tab trình duyệt)
+
+Favicon hiện dùng logo Trường Đại học Kinh tế, Đại học Huế. Có hai file trong
+`assets/img/`:
+
+| File | Dùng ở đâu | Yêu cầu |
+|---|---|---|
+| `favicon.ico` | thanh tab trình duyệt, bookmark | file .ico chứa sẵn 4 cỡ 16/32/48/64 px |
+| `apple-touch-icon.png` | khi lưu trang ra màn hình chính iPhone/iPad | PNG **180x180**, **nền trắng** (iOS không hiểu nền trong suốt, sẽ tô đen) |
+
+Hai file này được khai báo ở `_config.yml`, dòng `icon:` và `apple_touch_icon:`.
+Muốn thay logo khác thì tạo lại hai file đúng tên, đúng kích thước rồi ghi đè —
+không phải sửa gì trong `_config.yml`.
+
+Nếu chỉ muốn quay lại dùng emoji cho nhanh, sửa `icon: favicon.ico` thành một emoji
+bất kỳ (ví dụ `icon: 🏯`) và để trống `apple_touch_icon:`.
+
+> Lưu ý về cỡ 16 px: logo dạng con dấu tròn có vòng chữ bao quanh thì ở 16 px vòng chữ
+> chắc chắn nhoè, chỉ còn nhận ra vòng xanh và mái vòm vàng — đây là giới hạn chung của
+> mọi logo dạng này, không phải lỗi file. Màn hình độ phân giải cao dùng cỡ 32 px nên
+> nhìn rõ chữ HUE.
+
 ---
 
 ## 7. Xem thử trên máy trước khi đẩy lên (tuỳ chọn)
